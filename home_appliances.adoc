@@ -55,5 +55,7 @@ E_ref,annual_rtd = habara formula
 
 ==== 3.2． 家電
 
+hogehoge
+
 
 
