@@ -25,7 +25,33 @@
 
 ==== 3.1． 家電
 
-hogehoge
+
+==== 3.2. 冷蔵庫
+
+
+1日単位の消費電力
+E_d,t=　　｛150 * 0.9 * 1　|t=0,23
+　　　　　｛E_operate,d 　|t<>0,23
+
+
+E_operate,d =[(3.283×10^(-3)-2.0×10^(-6)×E_(E,ref,annual_rtd_1999,a) )×(θ_(amb,ave,d)^2-30×θ_(amb,ave,d) )+1.85×10^(-3)×E_(E,ref,annual_rtd_1999,a)+1.329]×1000
+
+
+θ_(amb,ave,d)=0.4142×θ_(o,ave,d)+15.47
+
+
+
+製造年が2005年以前（JIS C 9801:1999による）：
+E_ref,annual_rtd = habara formula 
+
+製造年が2006年～2015年（JIS C 9801:2006による）：
+E_ref,annual_rtd = habara formula
+
+製造年が2016年以降（JIS C 9801:2015による）：
+E_ref,annual_rtd = habara formula
+
+
+
 
 ==== 3.2． 家電
 
