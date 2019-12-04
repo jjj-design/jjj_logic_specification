@@ -390,7 +390,7 @@ P_{ Elc, microwave, cook } = 0.9373 \times P_{ Elc, microwave, rtd }
 ++++
 
 0.9373 : 実測値との補正係数[-] +
-stem:[ E_{ Elc, microwave, rtd } ] : 電子レンジの調理時の定格消費電力[W] +
+stem:[ P_{ Elc, microwave, rtd } ] : 電子レンジの調理時の定格消費電力[W] +
 
 
 ===== 3.4.2. 調理時間
