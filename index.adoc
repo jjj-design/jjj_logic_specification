@@ -29,3 +29,7 @@ include::home_number_of_occupants.adoc[]
 == 暖房設備タブ
 
 include::heating_operation_mode.adoc[]
+
+== 家電タブ
+
+include::home_appliances.adoc[]
