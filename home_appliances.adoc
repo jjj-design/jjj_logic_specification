@@ -27,13 +27,12 @@ A.1 家電による消費電力量
 
 ====
 【メモ】この仕様書に、評価式中のマジックナンバーの根拠となる引用元の情報を載せるべきか？
-プログラマーには不要。対外的には必要。結局、この資料の公開方法次第。要相談
+プログラマーには不要。対外的には必要。結局、この資料の公開方法次第。要相談　+
+
+【メモ】解説書では1時間あたりの消費電力量を求めているので、年間の部分は不要ではないか？
+
 ====
 
-////
-解説書では1時間当たりとしているため
-年間の部分はいらない気がする。
-////
 
 ここでは、住宅に持ち込まれた評価対象となる全ての家電を家電群と呼称する。
 
@@ -41,7 +40,7 @@ A.1 家電による消費電力量
 
 [stem]
 ++++
-E_{ Elc, HAEs } = \sum_i E_{ Elc, HEA, i }
+E_{ Elc, HEAs } = \sum_i E_{ Elc, HEA, i }
 ++++
 
 
@@ -84,11 +83,11 @@ stem:[ E_{ Elc, HEA, i } ] : 家電群に属する家電 stem:[ i ] の年間消
 
 ====== 3.1.1． 家電毎の年間消費電力量
 
-家電群に属する家電 stem:[ i ] のの年間消費電力量は、時刻別の家電の消費電力量の積算値である。
+家電群に属する家電 stem:[ i ] の年間消費電力量は、時刻別の家電の消費電力量の積算値である。
 
 [stem]
 ++++
-E_{ Elc, HAE, i } = 
+E_{ Elc, HEA, i } = 
 \frac
 { 1 }
 { \eta_{ batt-chrg, HEA, i } \times \eta_{ batt-dischrg, HEA, i }}
@@ -231,9 +230,9 @@ stem:[ APF_{ JIS2015 } ] : JIS C 9801 2015に基づく冷蔵庫の年間消費�
 E_{ Elc, kttl, d, t } =  
 \begin
 {cases}
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t }  & (4人世帯) \\
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times \frac{ 2 }{ 3 } & (2人世帯) \\
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times \frac{ 1 }{ 3 } & (1人世帯)
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } & (4人世帯) \\
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 2 }{ 3 } & (2人世帯) \\
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 1 }{ 3 } & (1人世帯)
 \end
 {cases}
 ++++
@@ -248,12 +247,9 @@ stem:[ tm_{ kttl, boil, d, t } ] : 日付 stem:[ d ] の時刻 stem:[ t ] にお
 ++++
 E_{ Elc, kttl, boil } =
 \frac
-{ 
-\frac
 { c_w \times \rho_w \times V_w \times ( \theta_{ boil } - \theta_w ) }
-{ 3600 }
-}
 { \eta_{ kttl }}
+\times \frac{ 1 }{ 3600 }
 ++++
 
 stem:[ E_{ Elc, kttl, boil } ] : 電気ケトルの1回当たりの消費電力量[Wh] +
@@ -431,12 +427,12 @@ stem:[ \eta_{ kttl } ] : 電気ケトルの熱効率( = 0.829)[-] +
 
 [stem]
 ++++
-E_{ Elc, microwave, d, t } = P_{ Elc, microwave, cook } \times t_{ microwave, cook, d, t } 
+E_{ Elc, microwave, d, t } = P_{ Elc, microwave, cook } \times t_{ microwave, cook, d, t } \times 10^{ -3 }
 ++++
 
-stem:[ E_{ Elc, microwave, d, t } ] : 日付 stem:[ d ] の時刻 stem:[ t ] における電子レンジの消費電力量[Wh/時] +
+stem:[ E_{ Elc, microwave, d, t } ] : 日付 stem:[ d ] の時刻 stem:[ t ] における電子レンジの消費電力量[kWh/時] +
 stem:[ P_{ Elc, microwave, cook } ] : 電子レンジの調理の消費電力[W] +
-stem:[ t_{ microwave, cook, d, t } ] : 日付 stem:[ d ] の時刻 stem:[ t ] における電子レンジの調理時間[h] +
+stem:[ t_{ microwave, cook, d, t } ] : 日付 stem:[ d ] の時刻 stem:[ t ] における電子レンジの調理時間[h/時] +
 
 ====== 3.4.2. 調理の消費電力量
 
@@ -629,7 +625,7 @@ E_{ Elc, rice-cooker, d, t } = ( P_{ Elc, rice-cooker, cook } \times t_{ rice-co
 
 |stem:[ E_{ Elc, rice-cooker, d, t } ] 
 |日付 stem:[ d ] の時刻 stem:[ t ] における電気炊飯器の消費電力量
-|kWh
+|kWh/時
 
 |stem:[ P_{ Elc, rice-cooker, cook } ] 
 |炊飯の消費電力
@@ -637,7 +633,7 @@ E_{ Elc, rice-cooker, d, t } = ( P_{ Elc, rice-cooker, cook } \times t_{ rice-co
 
 |stem:[ t_{ rice-cooker, cook, d, t } ] 
 |日付 stem:[ d ] の時刻 stem:[ t ] における炊飯時間
-|h
+|h/時
 
 |stem:[ P_{ Elc, rice-cooker, keep } ] 
 |保温の消費電力
@@ -645,7 +641,7 @@ E_{ Elc, rice-cooker, d, t } = ( P_{ Elc, rice-cooker, cook } \times t_{ rice-co
 
 |stem:[ t_{ rice-cooker, keep, d, t } ] 
 |日付 stem:[ d ] の時刻 stem:[ t ] における保温時間
-|h
+|h/時
 
 |stem:[ 10^{ -3 } ]
 |単位換算(Wh -> kWh)
@@ -742,7 +738,7 @@ P_{ Elc, rice-cooker, keep } =
 |Wh
 
 |1
-|1時間(消費電力を消費電力量に換算するための値)
+|1時間(消費電力量を消費電力に換算するための値)
 |h
 
 |===

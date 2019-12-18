@@ -700,7 +700,10 @@ n_p = \left\{ \begin{array}{ll}
 <div class="content">
 <div class="paragraph">
 <p>【メモ】この仕様書に、評価式中のマジックナンバーの根拠となる引用元の情報を載せるべきか？
-プログラマーには不要。対外的には必要。結局、この資料の公開方法次第。要相談</p>
+プログラマーには不要。対外的には必要。結局、この資料の公開方法次第。要相談　+</p>
+</div>
+<div class="paragraph">
+<p>【メモ】解説書では1時間あたりの消費電力量を求めているので、年間の部分は不要ではないか？</p>
 </div>
 </div>
 </div>
@@ -712,7 +715,7 @@ n_p = \left\{ \begin{array}{ll}
 </div>
 <div class="stemblock">
 <div class="content">
-\[E_{ Elc, HAEs } = \sum_i E_{ Elc, HEA, i }\]
+\[E_{ Elc, HEAs } = \sum_i E_{ Elc, HEA, i }\]
 </div>
 </div>
 <div class="paragraph">
@@ -772,11 +775,11 @@ n_p = \left\{ \begin{array}{ll}
 <div class="sect5">
 <h6 id="_3_1_1_家電毎の年間消費電力量"><a class="link" href="#_3_1_1_家電毎の年間消費電力量">3.1.1． 家電毎の年間消費電力量</a></h6>
 <div class="paragraph">
-<p>家電群に属する家電 \( i \) のの年間消費電力量は、時刻別の家電の消費電力量の積算値である。</p>
+<p>家電群に属する家電 \( i \) の年間消費電力量は、時刻別の家電の消費電力量の積算値である。</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\[E_{ Elc, HAE, i } =
+\[E_{ Elc, HEA, i } =
 \frac
 { 1 }
 { \eta_{ batt-chrg, HEA, i } \times \eta_{ batt-dischrg, HEA, i }}
@@ -941,9 +944,9 @@ E_{ Elc, rfrg, oprt, d } \times 10^{ -3 } &amp; (それ以外)
 \[E_{ Elc, kttl, d, t } =
 \begin
 {cases}
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t }  &amp; (4人世帯) \\
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times \frac{ 2 }{ 3 } &amp; (2人世帯) \\
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times \frac{ 1 }{ 3 } &amp; (1人世帯)
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } &amp; (4人世帯) \\
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 2 }{ 3 } &amp; (2人世帯) \\
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 1 }{ 3 } &amp; (1人世帯)
 \end
 {cases}\]
 </div>
@@ -959,12 +962,9 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times \frac{ 1 }{ 3 } &amp
 <div class="content">
 \[E_{ Elc, kttl, boil } =
 \frac
-{
-\frac
 { c_w \times \rho_w \times V_w \times ( \theta_{ boil } - \theta_w ) }
-{ 3600 }
-}
-{ \eta_{ kttl }}\]
+{ \eta_{ kttl }}
+\times \frac{ 1 }{ 3600 }\]
 </div>
 </div>
 <div class="paragraph">
@@ -1651,13 +1651,13 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times \frac{ 1 }{ 3 } &amp
 </div>
 <div class="stemblock">
 <div class="content">
-\[E_{ Elc, microwave, d, t } = P_{ Elc, microwave, cook } \times t_{ microwave, cook, d, t }\]
+\[E_{ Elc, microwave, d, t } = P_{ Elc, microwave, cook } \times t_{ microwave, cook, d, t } \times 10^{ -3 }\]
 </div>
 </div>
 <div class="paragraph">
-<p>\( E_{ Elc, microwave, d, t } \) : 日付 \( d \) の時刻 \( t \) における電子レンジの消費電力量[Wh/時]<br>
+<p>\( E_{ Elc, microwave, d, t } \) : 日付 \( d \) の時刻 \( t \) における電子レンジの消費電力量[kWh/時]<br>
 \( P_{ Elc, microwave, cook } \) : 電子レンジの調理の消費電力[W]<br>
-\( t_{ microwave, cook, d, t } \) : 日付 \( d \) の時刻 \( t \) における電子レンジの調理時間[h]<br></p>
+\( t_{ microwave, cook, d, t } \) : 日付 \( d \) の時刻 \( t \) における電子レンジの調理時間[h/時]<br></p>
 </div>
 </div>
 <div class="sect5">
@@ -2365,7 +2365,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times \frac{ 1 }{ 3 } &amp
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">\( E_{ Elc, rice-cooker, d, t } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) における電気炊飯器の消費電力量</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">kWh</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">kWh/時</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, rice-cooker, cook } \)</p></td>
@@ -2375,7 +2375,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times \frac{ 1 }{ 3 } &amp
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ rice-cooker, cook, d, t } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) における炊飯時間</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">h/時</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, rice-cooker, keep } \)</p></td>
@@ -2385,7 +2385,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times \frac{ 1 }{ 3 } &amp
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ rice-cooker, keep, d, t } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) における保温時間</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">h/時</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">\( 10^{ -3 } \)</p></td>
@@ -2503,7 +2503,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times \frac{ 1 }{ 3 } &amp
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1時間(消費電力を消費電力量に換算するための値)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1時間(消費電力量を消費電力に換算するための値)</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">h</p></td>
 </tr>
 </tbody>
