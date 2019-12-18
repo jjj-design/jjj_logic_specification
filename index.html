@@ -3601,7 +3601,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_6_2_2_保温の消費電力"><a class="link" href="#_3_6_2_2_保温の消費電力">3.6.2.2. 保温の消費電力</a></h6>
+<h6 id="_3_6_2_2_視聴時の消費電力"><a class="link" href="#_3_6_2_2_視聴時の消費電力">3.6.2.2. 視聴時の消費電力</a></h6>
 <div class="paragraph">
 <p>視聴とは液晶テレビが映像を出力している状態である。</p>
 </div>
@@ -4629,7 +4629,758 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 </div>
 <div class="sect4">
 <h5 id="_3_7_パソコンデスクトップ"><a class="link" href="#_3_7_パソコンデスクトップ">3.7． パソコン（デスクトップ）</a></h5>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>【メモ】シャットダウンと使用時のみしかなく、スリープは考慮されていない。<br>
+【メモ】使用モードの予測式の切片が間違っている可能性がある。</p>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_3_7_1_時刻別消費電力量"><a class="link" href="#_3_7_1_時刻別消費電力量">3.7.1. 時刻別消費電力量</a></h6>
+<div class="paragraph">
+<p>パソコン（デスクトップ）の動作は「停止」および「使用」とする。</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[E_{ Elc, PC, d, t } =  P_{ Elc, PC } \times t_{ PC, d, t } \times 10^{ -3 }\]
+</div>
+</div>
+<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<colgroup>
+<col style="width: 23.0769%;">
+<col style="width: 61.5384%;">
+<col style="width: 15.3847%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">\( E_{ Elc, PC, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) におけるパソコン（デスクトップ）の消費電力量</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">kWh/時</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, PC } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">パソコン（デスクトップ）の使用時の消費電力</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ PC, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) におけるパソコン（デスクトップ）の使用時間</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">h/時</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">\( 10^{ -3 } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">単位換算(Wh &#8594; kWh)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5">
+<h6 id="_3_7_2_動作別の消費電力"><a class="link" href="#_3_7_2_動作別の消費電力">3.7.2. 動作別の消費電力</a></h6>
 
+</div>
+<div class="sect5">
+<h6 id="_3_7_2_1_使用時の消費電力"><a class="link" href="#_3_7_2_1_使用時の消費電力">3.7.2.1. 使用時の消費電力</a></h6>
+<div class="paragraph">
+<p>使用とはパソコン（デスクトップ）を起動し使用している状態である。</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[P_{ Elc, PC } =　1.0871 \times P_{ Elc, PC, rtd } + 2.2719\]
+</div>
+</div>
+<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<colgroup>
+<col style="width: 23.0769%;">
+<col style="width: 61.5384%;">
+<col style="width: 15.3847%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, PC, rtd } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">パソコン（デスクトップ）の定格消費電力</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1.0871</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">定格値を実測値に換算する補正式の係数</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">2.2719</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">定格値を実測値に換算する補正式の係数</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5">
+<h6 id="_3_4_2_動作時間_3"><a class="link" href="#_3_4_2_動作時間_3">3.4.2. 動作時間</a></h6>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>【メモ】NHKの調査から落し込む？それとも自立委員会の独自数値とする？　+
+【メモ】WORDは共用パソコンとして居間にしかパソコンはないが、各居室にもパソコンを置けるようにすべきでは？その際は、使用時間を1を超えてもよい形で処理するか、各パソコンのインスタンスを用意するか、か？</p>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">表 17. 4人世帯</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock">時刻</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">平日</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">休日在宅</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">休日外出</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0:00 -  1:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1:00 -  2:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2:00 -  3:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3:00 -  4:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">4:00 -  5:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">5:00 -  6:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">6:00 -  7:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">7:00 -  8:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">8:00 -  9:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">9:00 - 10:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">10:00 - 11:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">11:00 - 12:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">12:00 - 13:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">13:00 - 14:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">14:00 - 15:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">15:00 - 16:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">16:00 - 17:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">17:00 - 18:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">18:00 - 19:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">19:00 - 20:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">20:00 - 21:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">21:00 - 22:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">22:00 - 23:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">23:00 -  0:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">表 18. 3人世帯</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock">時刻</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">平日</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">休日在宅</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">休日外出</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0:00 -  1:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1:00 -  2:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2:00 -  3:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3:00 -  4:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">4:00 -  5:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">5:00 -  6:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">6:00 -  7:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">7:00 -  8:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">8:00 -  9:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">9:00 - 10:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">10:00 - 11:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">11:00 - 12:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">12:00 - 13:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">13:00 - 14:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">14:00 - 15:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">15:00 - 16:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">16:00 - 17:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">17:00 - 18:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">18:00 - 19:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">19:00 - 20:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">20:00 - 21:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">21:00 - 22:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">22:00 - 23:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">23:00 -  0:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">表 19. 2人世帯</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock">時刻</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">平日</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">休日在宅</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">休日外出</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0:00 -  1:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1:00 -  2:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2:00 -  3:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3:00 -  4:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">4:00 -  5:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">5:00 -  6:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">6:00 -  7:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">7:00 -  8:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">8:00 -  9:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">9:00 - 10:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">10:00 - 11:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">11:00 - 12:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">12:00 - 13:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">13:00 - 14:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">14:00 - 15:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">15:00 - 16:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">16:00 - 17:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">17:00 - 18:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">18:00 - 19:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">19:00 - 20:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">20:00 - 21:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">21:00 - 22:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">22:00 - 23:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">23:00 -  0:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">表 20. 1人世帯</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock">時刻</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">平日</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">休日在宅</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">休日外出</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0:00 -  1:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1:00 -  2:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2:00 -  3:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3:00 -  4:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">4:00 -  5:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">5:00 -  6:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">6:00 -  7:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">7:00 -  8:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">8:00 -  9:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">9:00 - 10:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">10:00 - 11:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">11:00 - 12:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">12:00 - 13:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">13:00 - 14:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">14:00 - 15:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">15:00 - 16:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">16:00 - 17:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">17:00 - 18:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">18:00 - 19:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">19:00 - 20:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">20:00 - 21:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">21:00 - 22:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">22:00 - 23:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">23:00 -  0:00</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect4">
 <h5 id="_3_8_cdラジカセmdコンポ"><a class="link" href="#_3_8_cdラジカセmdコンポ">3.8． CDラジカセ　MDコンポ</a></h5>
@@ -4675,7 +5426,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0(201907)<br>
-Last updated 2019-12-16 13:20:17 +0900
+Last updated 2019-12-18 14:33:11 +0900
 </div>
 </div>
 <script type="text/x-mathjax-config">
