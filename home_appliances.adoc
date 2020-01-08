@@ -36,78 +36,102 @@ A.1 家電による消費電力量
 
 ここでは、住宅に持ち込まれた評価対象となる全ての家電を家電群と呼称する。
 
-家電群の年間消費電力量は、住宅に持ち込まれた個々の家電の年間消費電力量の積算値である。
+家電群の年間消費電力量は、時刻別の家電群の消費電力量の積算値である。
 
 [stem]
 ++++
-E_{ Elc, HEAs } = \sum_i E_{ Elc, HEA, i }
+E_{ Elc, HEAs } = 
+\sum_{ d = 1 }^{ 365 } \sum_{ t = 0 }^{ 23 } E_{ Elc, HEAs, d, t }
+
 ++++
 
-
-これと
-[cols="^.^3,<8,^.^2", frame=topbot, grid=rows, stripes=none]
-|===
-
-^h|記号・数値
-^h|項目
-^h|単位
-
-|stem:[ E_{ Elc, HEAs } ]
-|家電群の年間消費電力量
-|kWh/年
-
-|stem:[ E_{ Elc, HEA, i } ]
-|家電群に属する家電 stem:[ i ] の年間消費電力量
-|kWh/年
-
-|===
-
-これと
-[cols="<.<3,<.<8,^.<2", frame=none, grid=none, stripes=none]
+[cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
 |===
 
 |stem:[ E_{ Elc, HEAs } ]
-|:家電群の年間消費電力量
-|kWh/年
+|:家電群の年間消費電力量, kWh/年
 
-|stem:[ E_{ Elc, HEA, i } ]
-|:家電群に属する家電 stem:[ i ] の年間消費電力量
-|kWh/年
+|stem:[ E_{ Elc, HEAs, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] における家電群の消費電力量, kWh/h 
 
 |===
 
-これは、どれが一番見やすいだろうか？ +
-stem:[ E_{ Elc, HEAs } ] : 家電群の年間消費電力量[kWh/年] +
-stem:[ E_{ Elc, HEA, i } ] : 家電群に属する家電 stem:[ i ] の年間消費電力量[kWh/年] +
 
 
-====== 3.1.1． 家電毎の年間消費電力量
+====== 3.1.1． 家電群の消費電力量
 
-家電群に属する家電 stem:[ i ] の年間消費電力量は、時刻別の家電の消費電力量の積算値である。
+家電群の消費電力量は、住宅に持ち込まれた個々の家電の消費電力量の積算値である。
+
 
 [stem]
 ++++
-E_{ Elc, HEA, i } = 
-\frac
-{ 1 }
-{ \eta_{ batt-chrg, HEA, i } \times \eta_{ batt-dischrg, HEA, i }}
-\times
-\sum_{ d = 1 }^{ 365 } \sum_{ t = 0 }^{ 23 } E_{ Elc, HEA, i, d, t }
+\begin{eqnarray*}
+E_{ Elc, HEAs, d, t } 
+& = & E_{ Elc, rfrg, d, t } + E_{ Elc, kttl, d, t } \\ 
+& \quad & + E_{ Elc, microwave, d, t } + E_{ Elc, rice-cooker, d, t } \\
+& \quad & + E_{ Elc, TV_{ LED }, d, t } + E_{ Elc, PC, d, t } \\
+& \quad & +  E_{ Elc, audio_{CD-radio-cassette}, d, t } + E_{ Elc, audio_{MicroSystem-with-MD}, d, t } \\
+& \quad & +  E_{ Elc, cleaner d, t } + E_{ Elc, iron, d, t } \\
+& \quad & +  E_{ Elc, game, d, t } + E_{ Elc, desk-lamp, d, t } \\
+& \quad & +  E_{ Elc, washer, d, t } + E_{ Elc, dryer, d, t } \\
+& \quad & +  E_{ Elc, toilet-seat-heater, d, t }
+\end{eqnarray*}
 ++++
 
+[cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
+|===
 
-stem:[ \eta_{ batt-chrg, HEA, i } ] : 家電 stem:[ i ] に内蔵された充電池の充電効率（充電池を内蔵しない場合は 1 とする）[-] +
-stem:[ \eta_{ batt-dischrg, HEA, i } ] : 家電 stem:[ i ] に内蔵された充電池の放電効率（充電池を内蔵しない場合は 1 とする）[-] +
-stem:[ E_{ Elc, HEA, i, d, t } ] : 日付 stem:[ d ] の時刻 stem:[ t ] における家電 stem:[ i ] の消費電力量[kWh/時] +
+|stem:[ E_{ Elc, rfrg, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] における冷蔵庫の消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, kttl, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] における電気ケトルの消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, microwave, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] における電子レンジの消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, rice-cooker, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] における電気炊飯器の消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, TV_{ LED }, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] における液晶テレビの消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, PC, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] におけるパソコン（デスクトップ）の消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, audio_{ CD-radio-cassette }, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] におけるCDラジカセの消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, audio_{ MicroSystem-with-MD }, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] におけるMDコンポの消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, cleaner, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] における掃除機の消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, iron, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] におけるアイロンの消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, game, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] におけるPCゲームの消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, desk-lamp, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] におけるスタンドの消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, washer, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] における洗濯機の消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, dryer, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] におけるヘアドライヤーの消費電力量, kWh/h 
+
+|stem:[ E_{ Elc, toilet-seat-heater, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] における便座の消費電力量, kWh/h 
+
+|===
 
 
 
-===== 3.2. 冷蔵庫
 
-====
-【メモ】この方法だと、「休止電力（=10W）」が無視されているのではないか？
-逆に、APFの測定時に休止が含まれていれば、今回の方法の方が正しいのではないだろうか？
-====
+===== 3.2． 冷蔵庫
 
 ====== 3.2.1. 時刻別消費電力量
 
@@ -128,11 +152,25 @@ E_{ Elc, rfrg, oprt, d } \times 10^{ -3 } & (それ以外)
 {cases}
 ++++
 
-stem:[ E_{ Elc, rfrg, d, t } ] : 日付 stem:[ d ] の時刻 stem:[ t ] における冷蔵庫の消費電力量[kWh/時] +
-stem:[ P_{ Elc, dfrst, rtd } ] : 冷蔵庫の除霜用電熱装置の定格消費電力( = 150 )[W] +
-stem:[ C_{ dfrst, sfty } ] : 冷蔵庫の除霜用電熱装置の消費電力を安全側に評価するための係数( = 0.9 )[-] +
-1 : 1時間[h] (消費電力を消費電力量に換算するための数値) +
-stem:[ E_{ Elc, rfrg, oprt, d } ] : 冷蔵庫の稼働時における日平均消費電力量[Wh] +
+[cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
+|===
+
+|stem:[ E_{ Elc, rfrg, d, t } ]
+|:日付 stem:[ d ] の時刻 stem:[ t ] における冷蔵庫の消費電力量, kWh/h
+
+|stem:[ P_{ Elc, dfrst, rtd } ]
+|:冷蔵庫の除霜用電熱装置の定格消費電力( = 150 ),W
+
+|stem:[ C_{ dfrst, sfty } ]
+|:冷蔵庫の除霜用電熱装置の消費電力を安全側に評価するための係数( = 0.9 ),-
+
+|1
+|:1時間(消費電力を消費電力量に換算するための数値),h
+
+|stem:[ E_{ Elc, rfrg, oprt, d } ]
+|:冷蔵庫の稼働時における日平均消費電力量,Wh
+
+|===
 
 
 ====== 3.2.2. 稼働時の日平均消費電力量
