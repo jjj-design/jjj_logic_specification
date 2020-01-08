@@ -715,17 +715,6 @@ n_p = \left\{ \begin{array}{ll}
 <h4 id="_3_変更内容_3"><a class="link" href="#_3_変更内容_3">3. 変更内容</a></h4>
 <div class="sect4">
 <h5 id="_3_1_家電"><a class="link" href="#_3_1_家電">3.1． 家電</a></h5>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【メモ】この仕様書に、評価式中のマジックナンバーの根拠となる引用元の情報を載せるべきか？
-プログラマーには不要。対外的には必要。結局、この資料の公開方法次第。要相談　+</p>
-</div>
-<div class="paragraph">
-<p>【メモ】解説書では1時間あたりの消費電力量を求めているので、年間の部分は不要ではないか？</p>
-</div>
-</div>
-</div>
 <div class="paragraph">
 <p>ここでは、住宅に持ち込まれた評価対象となる全ての家電を家電群と呼称する。</p>
 </div>
@@ -746,11 +735,11 @@ n_p = \left\{ \begin{array}{ll}
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, HEAs } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:家電群の年間消費電力量, kWh/年</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:家電群の年間消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, HEAs, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における家電群の消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における家電群の消費電力量, kWh</p></td>
 </tr>
 </tbody>
 </table>
@@ -782,63 +771,63 @@ E_{ Elc, HEAs, d, t }
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, rfrg, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における冷蔵庫の消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における冷蔵庫の消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, kttl, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における電気ケトルの消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における電気ケトルの消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, microwave, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における電子レンジの消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における電子レンジの消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, rice-cooker, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における電気炊飯器の消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における電気炊飯器の消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, TV_{ LED }, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における液晶テレビの消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における液晶テレビの消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, PC, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるパソコン（デスクトップ）の消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるパソコン（デスクトップ）の消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, audio_{ CD-radio-cassette }, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるCDラジカセの消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるCDラジカセの消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, audio_{ MicroSystem-with-MD }, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるMDコンポの消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるMDコンポの消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, cleaner, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における掃除機の消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における掃除機の消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, iron, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるアイロンの消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるアイロンの消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, game, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるPCゲームの消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるPCゲームの消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, desk-lamp, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるスタンドの消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるスタンドの消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, washer, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における洗濯機の消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における洗濯機の消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, dryer, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるヘアドライヤーの消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) におけるヘアドライヤーの消費電力量, kWh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, toilet-seat-heater, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における便座の消費電力量, kWh/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における便座の消費電力量, kWh</p></td>
 </tr>
 </tbody>
 </table>
