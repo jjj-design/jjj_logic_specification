@@ -1143,7 +1143,7 @@ APF_{ JIS1999 } &amp; (\mbox{JIS C 9801:1999})　\\
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( 10^{ -3 } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">単位換算,Wh &#8594; kWh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：単位換算,Wh &#8594; kWh</p></td>
 </tr>
 </tbody>
 </table>
@@ -2466,7 +2466,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 <h5 id="_3_4_便座"><a class="link" href="#_3_4_便座">3.4． 便座</a></h5>
 <div class="paragraph">
 <p>自立循環型住宅への設計ガイドラインにおける最重要家電は「”温水”暖房便座」であるあが、ここで扱う便座は「暖房便座」である。<br>
-Webインターフェース定義表を以下に示す。</p>
+入力項目と入力条件を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <colgroup>
@@ -2531,37 +2531,27 @@ Webインターフェース定義表を以下に示す。</p>
 \[E_{ Elc, toilet-seat-heater, d, t } =  P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ -3 }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, toilet-seat-heater, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における便座の消費電力量,kWh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( E_{ Elc, toilet-seat-heater, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) における便座の消費電力量</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">kWh/時</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, toilet-seat-heater } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：便座の暖房時の消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, toilet-seat-heater } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">便座の暖房時の消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ toilet-seat-heater, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における便座の暖房時間,h</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ toilet-seat-heater, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) における便座の暖房時間</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h/時</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( 10^{ -3 } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">単位換算(Wh &#8594; kWh)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( 10^{ -3 } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：単位換算,Wh &#8594; kWh</p></td>
 </tr>
 </tbody>
 </table>
@@ -2590,85 +2580,41 @@ Webインターフェース定義表を以下に示す。</p>
 \[\theta_{ toilet, ave, d } = 0.4984 \times \theta_{ oa, ave, d } + 13.427\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, toilet-seat-heater, d } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) における便座の暖房の消費電力量,Wh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( E_{ Elc, toilet-seat-heater, d } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) における便座の暖房の消費電力量</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">Wh/日</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \theta_{ toilet, ave, d } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) における便所の平均温度,℃</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( \theta_{ toilet, ave, d } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) における便所の平均温度</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">℃</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, toilet-seat-heater, rtd } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：便座の暖房の定格消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, toilet-seat-heater, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">便座の暖房の定格消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \theta_{ oa, ave, d } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) における平均外気温度（ 地域、季節に依らず 11.23）,℃</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( \theta_{ oa, ave, d } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) における平均外気温度（ 地域、季節に依らず 11.23）</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">℃</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：24時間（日積算電力量を時刻別電力量にに換算するための数値）,時/日</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">24</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">24時間（日積算電力量を時刻別電力量にに換算するための数値）</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">時/日</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1時間（消費電力量を消費電力に換算するための数値）</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-20.01</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">定格値を実測値に換算する補正式の係数</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">922.4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">定格値を実測値に換算する補正式の係数</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">45</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">定格値を実測値に換算する補正式の係数</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">0.4984</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">外気平均温度を便所平均温度に換算する補正式の係数</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">13.427</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">外気平均温度を便所平均温度に換算する補正式の係数</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：1時間（消費電力量を消費電力に換算するための数値）,h</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect5">
 <h6 id="_3_4_3_時刻別の延べ動作時間"><a class="link" href="#_3_4_3_時刻別の延べ動作時間">3.4.3. 時刻別の延べ動作時間</a></h6>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【メモ】</p>
-</div>
-</div>
-</div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 6. 4人世帯</caption>
 <colgroup>
@@ -3319,7 +3265,7 @@ Webインターフェース定義表を以下に示す。</p>
 <h5 id="_3_5_洗濯機"><a class="link" href="#_3_5_洗濯機">3.5． 洗濯機</a></h5>
 <div class="paragraph">
 <p>自立循環型住宅への設計ガイドラインにおける重要家電である。<br>
-Webインターフェース定義表を以下に示す。</p>
+入力項目と入力条件を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <colgroup>
@@ -4867,24 +4813,94 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </div>
 <div class="sect4">
 <h5 id="_3_7_電子レンジ"><a class="link" href="#_3_7_電子レンジ">3.7． 電子レンジ</a></h5>
+<div class="paragraph">
+<p>入力項目と入力条件を以下に示す。</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<colgroup>
+<col style="width: 6.25%;">
+<col style="width: 31.25%;">
+<col style="width: 12.5%;">
+<col style="width: 18.75%;">
+<col style="width: 12.5%;">
+<col style="width: 6.25%;">
+<col style="width: 12.5%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">識別子</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">項目</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">入力値の種別</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">初期値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">表示条件</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">調理の定格消費電力の入力の有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力量</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1450</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
+2)3人世帯<br>
+3)3人世帯<br>
+4)4人世帯</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect5">
 <h6 id="_3_7_1_時刻別消費電力量"><a class="link" href="#_3_7_1_時刻別消費電力量">3.7.1. 時刻別消費電力量</a></h6>
 <div class="paragraph">
 <p>電子レンジの動作は「停止」および「調理」とする。</p>
 </div>
 <div class="paragraph">
-<p>電子レンジの時刻別消費電力量は電気ケトルの調理の消費電力に該当時刻の調理時間を乗じて求める。</p>
+<p>電子レンジの時刻別消費電力量は電子レンジの調理の消費電力に該当時刻の調理時間を乗じて求める。</p>
 </div>
 <div class="stemblock">
 <div class="content">
 \[E_{ Elc, microwave, d, t } = P_{ Elc, microwave, cook } \times t_{ microwave, cook, d, t } \times 10^{ -3 }\]
 </div>
 </div>
-<div class="paragraph">
-<p>\( E_{ Elc, microwave, d, t } \) : 日付 \( d \) の時刻 \( t \) における電子レンジの消費電力量[kWh/時]<br>
-\( P_{ Elc, microwave, cook } \) : 電子レンジの調理の消費電力[W]<br>
-\( t_{ microwave, cook, d, t } \) : 日付 \( d \) の時刻 \( t \) における電子レンジの調理時間[h/時]<br></p>
-</div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, microwave, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における電子レンジの消費電力量,kWh</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, microwave, cook } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：電子レンジの調理の消費電力,W</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ microwave, cook, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:日付 \( d \) の時刻 \( t \) における電子レンジの調理時間,h</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect5">
 <h6 id="_3_7_2_調理の消費電力量"><a class="link" href="#_3_7_2_調理の消費電力量">3.7.2. 調理の消費電力量</a></h6>
@@ -4896,10 +4912,18 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 \[P_{ Elc, microwave, cook } = 0.9373 \times P_{ Elc, microwave, rtd }\]
 </div>
 </div>
-<div class="paragraph">
-<p>0.9373 : 実測値との補正係数[-]<br>
-\( P_{ Elc, microwave, rtd } \) : 電子レンジの調理時の定格消費電力[W]<br></p>
-</div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, microwave, rtd } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：電子レンジの調理時の定格消費電力,W</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect5">
 <h6 id="_3_7_3_調理時間"><a class="link" href="#_3_7_3_調理時間">3.7.3. 調理時間</a></h6>
@@ -5551,6 +5575,104 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </div>
 <div class="sect4">
 <h5 id="_3_8_電気炊飯器"><a class="link" href="#_3_8_電気炊飯器">3.8． 電気炊飯器</a></h5>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>【課題】炊飯号数の決め方と初期値をどうするか？</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>入力項目と入力条件を以下に示す。</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<colgroup>
+<col style="width: 6.25%;">
+<col style="width: 31.25%;">
+<col style="width: 12.5%;">
+<col style="width: 18.75%;">
+<col style="width: 12.5%;">
+<col style="width: 6.25%;">
+<col style="width: 12.5%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">識別子</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">項目</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">入力値の種別</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">初期値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">表示条件</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">炊飯の定格消費電力の入力の有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">炊飯の定格消費電力</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1210</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">保温の定格消費電力の入力の有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">保温の定格消費電力</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">15.1</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C3</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">炊飯号数の入力の有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V3</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">炊飯号数</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">未確定</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">合</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C4</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
+2)3人世帯<br>
+3)3人世帯<br>
+4)4人世帯</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect5">
 <h6 id="_3_8_1_時刻別消費電力量"><a class="link" href="#_3_8_1_時刻別消費電力量">3.8.1. 時刻別消費電力量</a></h6>
 <div class="paragraph">
@@ -5561,47 +5683,35 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 \[E_{ Elc, rice-cooker, d, t } = ( P_{ Elc, rice-cooker, cook } \times t_{ rice-cooker, cook, d, t } + P_{ Elc, rice-cooker, keep } \times t_{ rice-cooker, keep, d, t }  ) \times 10^{ -3 }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, rice-cooker, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における電気炊飯器の消費電力量,kWh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( E_{ Elc, rice-cooker, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) における電気炊飯器の消費電力量</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">kWh/時</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, rice-cooker, cook } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：炊飯の消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, rice-cooker, cook } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">炊飯の消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ rice-cooker, cook, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における炊飯時間,h</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ rice-cooker, cook, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) における炊飯時間</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h/時</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, rice-cooker, keep } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：保温の消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, rice-cooker, keep } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">保温の消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ rice-cooker, keep, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における保温時間,h</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ rice-cooker, keep, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) における保温時間</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h/時</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( 10^{ -3 } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">単位換算(Wh &#8594; kWh)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( 10^{ -3 } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：単位換算,Wh &#8594; kWh</p></td>
 </tr>
 </tbody>
 </table>
@@ -5633,42 +5743,27 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 \[E_{ Elc, rice-cooker, cook } = 0.029 \times P_{ Elc, rice-cooker, rtd } + ( 32.414 \times n_{ cup-of-rice } + 58.745)\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ rice-cooker, cook } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：炊飯1回あたりの時間( = \( \frac{ 54.19 }{ 60 } \)),h</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, rice-cooker, cook } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">電気炊飯器の炊飯の消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, rice-cooker, cook } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：炊飯1回あたりの消費電力量,Wh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ rice-cooker, cook } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">炊飯1回あたりの時間( = \( \frac{ 54.19 }{ 60 } \))</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, rice-cooker, rtd } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：電気炊飯器の定格消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( E_{ Elc, rice-cooker, cook } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">炊飯1回あたりの消費電力量</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">Wh</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, rice-cooker, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">電気炊飯器の定格消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( n_{ cup-of-rice } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">炊飯合数</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">合</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( n_{ cup-of-rice } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：炊飯合数,合</p></td>
 </tr>
 </tbody>
 </table>
@@ -5690,32 +5785,23 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, rice-cooker, keep } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：電気炊飯器の保温の消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, rice-cooker, keep } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">電気炊飯器の保温の消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, rice-cooker, keep } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：電気炊飯器の保温の消費電力,Wh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( E_{ Elc, rice-cooker, keep } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">電気炊飯器の保温の消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">Wh</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1時間(消費電力量を消費電力に換算するための値)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：1時間(消費電力量を消費電力に換算するための値),h</p></td>
 </tr>
 </tbody>
 </table>
@@ -6702,6 +6788,61 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </div>
 <div class="sect4">
 <h5 id="_3_9_パソコンデスクトップ"><a class="link" href="#_3_9_パソコンデスクトップ">3.9． パソコン（デスクトップ）</a></h5>
+<div class="paragraph">
+<p>入力項目と入力条件を以下に示す。</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<colgroup>
+<col style="width: 6.25%;">
+<col style="width: 31.25%;">
+<col style="width: 12.5%;">
+<col style="width: 18.75%;">
+<col style="width: 12.5%;">
+<col style="width: 6.25%;">
+<col style="width: 12.5%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">識別子</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">項目</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">入力値の種別</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">初期値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">表示条件</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力の入力の有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">97</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
+2)3人世帯<br>
+3)3人世帯<br>
+4)4人世帯</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect5">
 <h6 id="_3_9_1_時刻別消費電力量"><a class="link" href="#_3_9_1_時刻別消費電力量">3.9.1. 時刻別消費電力量</a></h6>
 <div class="paragraph">
@@ -6712,37 +6853,27 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 \[E_{ Elc, PC, d, t } =  P_{ Elc, PC } \times t_{ PC, d, t } \times 10^{ -3 }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, PC, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) におけるパソコン（デスクトップ）の消費電力量,kWh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( E_{ Elc, PC, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) におけるパソコン（デスクトップ）の消費電力量</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">kWh/時</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, PC } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：パソコン（デスクトップ）の使用時の消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, PC } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">パソコン（デスクトップ）の使用時の消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ PC, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) におけるパソコン（デスクトップ）の使用時間,h</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ PC, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) におけるパソコン（デスクトップ）の使用時間</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h/時</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( 10^{ -3 } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">単位換算(Wh &#8594; kWh)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( 10^{ -3 } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：単位換算,Wh &#8594; kWh</p></td>
 </tr>
 </tbody>
 </table>
@@ -6761,46 +6892,21 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 \[P_{ Elc, PC } =　1.0871 \times P_{ Elc, PC, rtd } + 2.2719\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, PC, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">パソコン（デスクトップ）の定格消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">1.0871</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">定格値を実測値に換算する補正式の係数</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">2.2719</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">定格値を実測値に換算する補正式の係数</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, PC, rtd } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：パソコン（デスクトップ）の定格消費電力,W</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect5">
 <h6 id="_3_9_3_動作時間"><a class="link" href="#_3_9_3_動作時間">3.9.3. 動作時間</a></h6>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【メモ】NHKの調査から落し込む？それとも自立委員会の独自数値とする？　+
-【メモ】WORDは共用パソコンとして居間にしかパソコンはないが、各居室にもパソコンを置けるようにすべきでは？その際は、使用時間を1を超えてもよい形で処理するか、各パソコンのインスタンスを用意するか、か？</p>
-</div>
-</div>
-</div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 26. 4人世帯</caption>
 <colgroup>
@@ -7456,6 +7562,79 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p>入力項目と入力条件を以下に示す。</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<colgroup>
+<col style="width: 6.25%;">
+<col style="width: 31.25%;">
+<col style="width: 12.5%;">
+<col style="width: 18.75%;">
+<col style="width: 12.5%;">
+<col style="width: 6.25%;">
+<col style="width: 12.5%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">識別子</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">項目</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">入力値の種別</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">初期値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">表示条件</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力の入力の有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">28</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">待機時の定格消費電力の入力の有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">待機時の定格消費電力</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">0.2</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C3</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
+2)3人世帯<br>
+3)3人世帯<br>
+4)4人世帯</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect5">
 <h6 id="_3_10_1_時刻別消費電力量"><a class="link" href="#_3_10_1_時刻別消費電力量">3.10.1. 時刻別消費電力量</a></h6>
 <div class="paragraph">
@@ -7469,47 +7648,35 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 \times 10^{ -3 }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, audio_{ CD-radio-cassette }, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) におけるCDラジカセの消費電力量,kWh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( E_{ Elc, audio_{ CD-radio-cassette }, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) におけるCDラジカセの消費電力量</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">kWh/時</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, audio_{ CD-radio-cassette }, listening } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：CDラジカセの視聴時の消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, audio_{ CD-radio-cassette }, listening } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CDラジカセの視聴時の消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ audio_{ CD-radio-cassette }, listening, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) におけるCDラジカセの聴取時間,h</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ audio_{ CD-radio-cassette }, listening, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) におけるCDラジカセの聴取時間</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h/時</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, audio_{ CD-radio-cassette }, standby } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：CDラジカセの待機時の消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, audio_{ CD-radio-cassette }, standby } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CDラジカセの待機時の消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ audio_{ CD-radio-cassette }, standby, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) におけるCDラジカセの待機時間,h</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ audio_{ CD-radio-cassette }, standby, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) におけるCDラジカセの待機時間</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h/時</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( 10^{ -3 } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">単位換算(Wh &#8594; kWh)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( 10^{ -3 } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：単位換算,Wh &#8594; kWh</p></td>
 </tr>
 </tbody>
 </table>
@@ -7528,27 +7695,15 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 \[P_{ Elc, audio_{ CD-radio-cassette }, listening } =　0.4 \times P_{ Elc, audio_{ CD-radio-cassette }, rtd }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, audio_{ CD-radio-cassette }, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CDラジカセの定格消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">0.4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">定格値を聴取時の値に換算する補正式の係数</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, audio_{ CD-radio-cassette }, rtd } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：CDラジカセの定格消費電力,W</p></td>
 </tr>
 </tbody>
 </table>
@@ -7563,22 +7718,15 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 \[P_{ Elc, audio_{ CD-radio-cassette }, standby } = P_{ Elc, audio_{ CD-radio-cassette }, standby, rtd }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, audio_{ CD-radio-cassette }, standby, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CDラジカセの定格待機消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, audio_{ CD-radio-cassette }, standby, rtd } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：CDラジカセの定格待機消費電力,W</p></td>
 </tr>
 </tbody>
 </table>
@@ -8572,6 +8720,79 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p>入力項目と入力条件を以下に示す。</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<colgroup>
+<col style="width: 6.25%;">
+<col style="width: 31.25%;">
+<col style="width: 12.5%;">
+<col style="width: 18.75%;">
+<col style="width: 12.5%;">
+<col style="width: 6.25%;">
+<col style="width: 12.5%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">識別子</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">項目</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">入力値の種別</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">初期値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">表示条件</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力の入力の有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">28</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">待機時の定格消費電力の入力の有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">待機時の定格消費電力</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">0.2</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C3</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
+2)3人世帯<br>
+3)3人世帯<br>
+4)4人世帯</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect5">
 <h6 id="_3_11_1_時刻別消費電力量"><a class="link" href="#_3_11_1_時刻別消費電力量">3.11.1. 時刻別消費電力量</a></h6>
 <div class="paragraph">
@@ -8585,47 +8806,35 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 \times 10^{ -3 }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, audio_{ MicroSystem-with-MD }, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) におけるMDコンポの消費電力量,kWh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( E_{ Elc, audio_{ MicroSystem-with-MD }, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) におけるMDコンポの消費電力量</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">kWh/時</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, audio_{ MicroSystem-with-MD }, listening } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：MDコンポの視聴時の消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, audio_{ MicroSystem-with-MD }, listening } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MDコンポの視聴時の消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ audio_{ MicroSystem-with-MD }, listening, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) におけるMDコンポの聴取時間,h</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ audio_{ MicroSystem-with-MD }, listening, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) におけるMDコンポの聴取時間</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h/時</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：MDコンポの待機時の消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MDコンポの待機時の消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ audio_{ MicroSystem-with-MD }, standby, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) におけるMDコンポの待機時間,h</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ audio_{ MicroSystem-with-MD }, standby, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) におけるMDコンポの待機時間</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h/時</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( 10^{ -3 } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">単位換算(Wh &#8594; kWh)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( 10^{ -3 } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：単位換算,Wh &#8594; kWh</p></td>
 </tr>
 </tbody>
 </table>
@@ -8644,27 +8853,15 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 \[P_{ Elc, audio_{ MicroSystem-with-MD }, listening } =　0.4 \times P_{ Elc, audio_{ MicroSystem-with-MD }, rtd }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, audio_{ MicroSystem-with-MD }, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MDコンポの定格消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">0.4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">定格値を聴取時の値に換算する補正式の係数</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, audio_{ MicroSystem-with-MD }, rtd } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：MDコンポの定格消費電力,W</p></td>
 </tr>
 </tbody>
 </table>
@@ -8679,22 +8876,15 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 \[P_{ Elc, audio_{  MicroSystem-with-MD }, standby } = P_{ Elc, audio_{  MicroSystem-with-MD }, standby, rtd }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, audio_{  MicroSystem-with-MD }, standby, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MDコンポの定格待機消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, audio_{  MicroSystem-with-MD }, standby, rtd } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：MDコンポの定格待機消費電力,W</p></td>
 </tr>
 </tbody>
 </table>
@@ -9688,13 +9878,61 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 <div class="sect4">
 <h5 id="_3_12_掃除機"><a class="link" href="#_3_12_掃除機">3.12． 掃除機</a></h5>
-<div class="exampleblock">
-<div class="content">
 <div class="paragraph">
-<p>【メモ】</p>
+<p>入力項目と入力条件を以下に示す。</p>
 </div>
-</div>
-</div>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<colgroup>
+<col style="width: 6.25%;">
+<col style="width: 31.25%;">
+<col style="width: 12.5%;">
+<col style="width: 18.75%;">
+<col style="width: 12.5%;">
+<col style="width: 6.25%;">
+<col style="width: 12.5%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">識別子</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">項目</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">入力値の種別</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">初期値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">表示条件</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力の入力の有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1000</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
+2)3人世帯<br>
+3)3人世帯<br>
+4)4人世帯</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect5">
 <h6 id="_3_12_1_時刻別消費電力量"><a class="link" href="#_3_12_1_時刻別消費電力量">3.12.1. 時刻別消費電力量</a></h6>
 <div class="paragraph">
@@ -9705,37 +9943,27 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 \[E_{ Elc, cleaner, d, t } =  P_{ Elc, cleaner } \times t_{ cleaner, d, t } \times 10^{ -3 }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, cleaner, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における掃除機の消費電力量,kWh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( E_{ Elc, cleaner, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) における掃除機の消費電力量</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">kWh/時</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, cleaner } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：掃除機の使用時の消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, cleaner } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">掃除機の使用時の消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ cleaner, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における掃除機の使用時間,h</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ cleaner, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) における掃除機の使用時間</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h/時</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( 10^{ -3 } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">単位換算(Wh &#8594; kWh)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( 10^{ -3 } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：単位換算,Wh &#8594; kWh</p></td>
 </tr>
 </tbody>
 </table>
@@ -9754,40 +9982,21 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 \[P_{ Elc, cleaner } =　1.0355 \times P_{ Elc, cleaner, rtd }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, cleaner, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">掃除機の定格消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">1.0355</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">定格値を実測値に換算する補正式の係数</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, cleaner, rtd } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：掃除機の定格消費電力,W</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect5">
 <h6 id="_3_12_3_動作時間"><a class="link" href="#_3_12_3_動作時間">3.12.3. 動作時間</a></h6>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【メモ】</p>
-</div>
-</div>
-</div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 38. 4人世帯</caption>
 <colgroup>
@@ -9805,147 +10014,147 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">0:00 -  1:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">1:00 -  2:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2:00 -  3:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">3:00 -  4:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">4:00 -  5:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">5:00 -  6:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">6:00 -  7:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">7:00 -  8:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">8:00 -  9:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">9:00 - 10:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">10:00 - 11:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">11:00 - 12:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">12:00 - 13:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">13:00 - 14:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">14:00 - 15:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">15:00 - 16:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">16:00 - 17:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">17:00 - 18:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">18:00 - 19:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">19:00 - 20:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">20:00 - 21:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">21:00 - 22:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">22:00 - 23:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">23:00 -  0:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 </tbody>
 </table>
@@ -9966,147 +10175,147 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">0:00 -  1:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">1:00 -  2:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2:00 -  3:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">3:00 -  4:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">4:00 -  5:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">5:00 -  6:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">6:00 -  7:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">7:00 -  8:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">8:00 -  9:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">9:00 - 10:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">10:00 - 11:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">11:00 - 12:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">12:00 - 13:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">13:00 - 14:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">14:00 - 15:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">15:00 - 16:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">16:00 - 17:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">17:00 - 18:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">18:00 - 19:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">19:00 - 20:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">20:00 - 21:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">21:00 - 22:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">22:00 - 23:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">23:00 -  0:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 </tbody>
 </table>
@@ -10127,147 +10336,147 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">0:00 -  1:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">1:00 -  2:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2:00 -  3:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">3:00 -  4:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">4:00 -  5:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">5:00 -  6:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">6:00 -  7:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">7:00 -  8:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">8:00 -  9:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">9:00 - 10:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">10:00 - 11:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">11:00 - 12:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">12:00 - 13:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">13:00 - 14:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">14:00 - 15:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">15:00 - 16:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">16:00 - 17:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">17:00 - 18:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">18:00 - 19:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">19:00 - 20:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">20:00 - 21:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">21:00 - 22:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">22:00 - 23:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">23:00 -  0:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 </tbody>
 </table>
@@ -10288,147 +10497,147 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">0:00 -  1:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">1:00 -  2:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2:00 -  3:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">3:00 -  4:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">4:00 -  5:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">5:00 -  6:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">6:00 -  7:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">7:00 -  8:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">8:00 -  9:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">9:00 - 10:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">10:00 - 11:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">11:00 - 12:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">12:00 - 13:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">13:00 - 14:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">14:00 - 15:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">15:00 - 16:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">16:00 - 17:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">17:00 - 18:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">18:00 - 19:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">19:00 - 20:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">20:00 - 21:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">21:00 - 22:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">22:00 - 23:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">23:00 -  0:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 </tbody>
 </table>
@@ -10436,13 +10645,61 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 <div class="sect4">
 <h5 id="_3_13_アイロン"><a class="link" href="#_3_13_アイロン">3.13． アイロン</a></h5>
-<div class="exampleblock">
-<div class="content">
 <div class="paragraph">
-<p>【メモ】</p>
+<p>入力項目と入力条件を以下に示す。</p>
 </div>
-</div>
-</div>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<colgroup>
+<col style="width: 6.25%;">
+<col style="width: 31.25%;">
+<col style="width: 12.5%;">
+<col style="width: 18.75%;">
+<col style="width: 12.5%;">
+<col style="width: 6.25%;">
+<col style="width: 12.5%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">識別子</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">項目</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">入力値の種別</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">初期値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">表示条件</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力の入力の有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1200</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
+2)3人世帯<br>
+3)3人世帯<br>
+4)4人世帯</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect5">
 <h6 id="_3_13_1_時刻別消費電力量"><a class="link" href="#_3_13_1_時刻別消費電力量">3.13.1. 時刻別消費電力量</a></h6>
 <div class="paragraph">
@@ -10453,37 +10710,27 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 \[E_{ Elc, iron, d, t } =  P_{ Elc, iron } \times t_{ iron, d, t } \times 10^{ -3 }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, iron, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) におけるアイロンの消費電力量,kWh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( E_{ Elc, iron, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) におけるアイロンの消費電力量</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">kWh/時</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, iron } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：アイロンの使用時の消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, iron } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">アイロンの使用時の消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ iron, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) におけるアイロンの使用時間,h</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( t_{ iron, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) の時刻 \( t \) におけるアイロンの使用時間</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">h/時</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( 10^{ -3 } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">単位換算(Wh &#8594; kWh)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( 10^{ -3 } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：単位換算,Wh &#8594; kWh</p></td>
 </tr>
 </tbody>
 </table>
@@ -10502,40 +10749,21 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 \[P_{ Elc, iron } =　0.53 \times P_{ Elc, iron, rtd }\]
 </div>
 </div>
-<table class="tableblock frame-topbot grid-rows stripes-none stretch">
+<table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
-<col style="width: 23.0769%;">
-<col style="width: 61.5384%;">
-<col style="width: 15.3847%;">
+<col style="width: 27.2727%;">
+<col style="width: 72.7273%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">記号・数値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">\( P_{ Elc, iron, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">アイロンの定格消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">0.53</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">定格値を実測値に換算する補正式の係数</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, iron, rtd } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：アイロンの定格消費電力,W</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect5">
 <h6 id="_3_13_3_動作時間"><a class="link" href="#_3_13_3_動作時間">3.13.3. 動作時間</a></h6>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【メモ】</p>
-</div>
-</div>
-</div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 42. 4人世帯</caption>
 <colgroup>
@@ -10553,147 +10781,147 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">0:00 -  1:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">1:00 -  2:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2:00 -  3:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">3:00 -  4:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">4:00 -  5:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">5:00 -  6:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">6:00 -  7:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">7:00 -  8:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">8:00 -  9:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">9:00 - 10:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">10:00 - 11:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">11:00 - 12:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">12:00 - 13:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">13:00 - 14:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">14:00 - 15:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">15:00 - 16:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">16:00 - 17:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">17:00 - 18:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">18:00 - 19:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">19:00 - 20:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">20:00 - 21:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">21:00 - 22:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">22:00 - 23:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">23:00 -  0:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 </tbody>
 </table>
@@ -10714,147 +10942,147 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">0:00 -  1:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">1:00 -  2:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2:00 -  3:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">3:00 -  4:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">4:00 -  5:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">5:00 -  6:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">6:00 -  7:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">7:00 -  8:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">8:00 -  9:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">9:00 - 10:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">10:00 - 11:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">11:00 - 12:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">12:00 - 13:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">13:00 - 14:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">14:00 - 15:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">15:00 - 16:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">16:00 - 17:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">17:00 - 18:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">18:00 - 19:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">19:00 - 20:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">20:00 - 21:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">21:00 - 22:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">22:00 - 23:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">23:00 -  0:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 </tbody>
 </table>
@@ -10875,147 +11103,147 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">0:00 -  1:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">1:00 -  2:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2:00 -  3:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">3:00 -  4:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">4:00 -  5:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">5:00 -  6:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">6:00 -  7:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">7:00 -  8:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">8:00 -  9:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">9:00 - 10:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">10:00 - 11:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">11:00 - 12:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">12:00 - 13:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">13:00 - 14:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">14:00 - 15:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">15:00 - 16:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">16:00 - 17:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">17:00 - 18:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">18:00 - 19:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">19:00 - 20:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">20:00 - 21:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">21:00 - 22:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">22:00 - 23:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">23:00 -  0:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 </tbody>
 </table>
@@ -11036,147 +11264,147 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">0:00 -  1:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">1:00 -  2:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">2:00 -  3:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">3:00 -  4:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">4:00 -  5:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">5:00 -  6:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">6:00 -  7:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">7:00 -  8:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">8:00 -  9:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">9:00 - 10:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">10:00 - 11:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">11:00 - 12:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">12:00 - 13:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">13:00 - 14:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">14:00 - 15:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">15:00 - 16:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">16:00 - 17:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">17:00 - 18:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">18:00 - 19:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">19:00 - 20:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">20:00 - 21:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">21:00 - 22:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">22:00 - 23:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top"><p class="tableblock">23:00 -  0:00</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.01</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.02</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">0.03</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0</p></td>
 </tr>
 </tbody>
 </table>
