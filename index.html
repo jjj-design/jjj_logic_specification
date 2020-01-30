@@ -904,7 +904,7 @@ E_{ Elc, HEAs, d, t }
 <div class="content">
 \[E_{ Elc, rfrg, d, t } =
 \begin{cases}
-P_{ Elc, dfrst, rtd } \times C_{ dfrst, sfty } \times 1  \times 10^{ -3 } &amp; (t = 0, 23) \\
+P_{ Elc, dfrst, rtd } \times C_{ dfrst } \times 1  \times 10^{ -3 } &amp; (t = 0, 23) \\
 P_{ Elc, rfrg, oprt, d } \times 1 \times 10^{ -3 } &amp; (それ以外)
 \end{cases}\]
 </div>
@@ -924,7 +924,7 @@ P_{ Elc, rfrg, oprt, d } \times 1 \times 10^{ -3 } &amp; (それ以外)
 <td class="tableblock halign-left valign-top"><p class="tableblock">：冷蔵庫の除霜用電熱装置の定格消費電力( = 150 ),W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( C_{ dfrst, sfty } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( C_{ dfrst } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：冷蔵庫の除霜用電熱装置の消費電力量の評価係数( = 0.9 ),-</p></td>
 </tr>
 <tr>
@@ -1021,9 +1021,9 @@ E_{ Elc, rfrg, est, d }
 <div class="content">
 \[E_{ Elc, rfrg, annual } =
 \begin{cases}
-APF_{ JIS1999 } &amp; (\mbox{JIS C 9801:1999})　\\
-\frac{ APF_{ JIS2006 } }{ 3.48 } &amp; (\mbox{JIS C 9801:2006})　\\
-\frac{ APF_{ JIS2015 } }{ 3.48 }  \times 0.2891 &amp; (\mbox{JIS C 9801:2015})
+E_{  Elc, rfrg, annual, JIS1999 } &amp; (\mbox{JIS C 9801:1999})　\\
+\frac{ E_{ Elc, rfrg, annual, JIS2006 } }{ 3.48 } &amp; (\mbox{JIS C 9801:2006})　\\
+\frac{ E_{  Elc, rfrg, annual, JIS2015 } }{ 3.48 }  \times 0.2891 &amp; (\mbox{JIS C 9801:2015})
 \end{cases}\]
 </div>
 </div>
@@ -1034,23 +1034,53 @@ APF_{ JIS1999 } &amp; (\mbox{JIS C 9801:1999})　\\
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( APF_{ JIS1999 } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：JIS C 9801 1999に基づく冷蔵庫の年間消費電力量,kWh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, rfrg, annual, JIS1999 } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：JIS C 9801：1999に基づく冷蔵庫の年間消費電力量,kWh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( APF_{ JIS2006 } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：JIS C 9801 2006に基づく冷蔵庫の年間消費電力量,kWh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, rfrg, annual, JIS2006 } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：JIS C 9801：2006に基づく冷蔵庫の年間消費電力量,kWh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( APF_{ JIS2015 } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：JIS C 9801 2015に基づく冷蔵庫の年間消費電力量,kWh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, rfrg, annual, JIS2015 } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：JIS C 9801：2015に基づく冷蔵庫の年間消費電力量,kWh</p></td>
 </tr>
 </tbody>
 </table>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>【共通課題】
+スケジュールを持つ家電は、世帯構成を入力パラメーターに持たなければスケジュールが選択できなくなるのではないか？</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_3_3_液晶テレビ"><a class="link" href="#_3_3_液晶テレビ">3.3． 液晶テレビ</a></h5>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>【疑問】
+なぜ、テレビの消費電力に人数補正が掛るのだろうか？</p>
+</div>
+<div class="paragraph">
+<p>視聴時間の補正であれば、待機電力と視聴電力の補正値は逆の傾向が無ければおかしいのでは？</p>
+</div>
+<div class="paragraph">
+<p>例）視聴時間が増える&#8594;待機時間が減る</p>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>【課題】
+設置場所を入力パラメーターとするのか？</p>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>自立循環型住宅への設計ガイドラインにおける最重要家電である。<br>
 入力項目と入力条件を以下に示す。</p>
@@ -2507,18 +2537,6 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
-2)3人世帯<br>
-3)3人世帯<br>
-4)4人世帯</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
-</tr>
 </tbody>
 </table>
 <div class="sect5">
@@ -3306,18 +3324,6 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 <td class="tableblock halign-center valign-middle"><p class="tableblock">Wh</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
-2)3人世帯<br>
-3)3人世帯<br>
-4)4人世帯</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
-</tr>
 </tbody>
 </table>
 <div class="sect5">
@@ -4072,18 +4078,6 @@ Webインターフェース定義表を以下に示す。</p>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
-2)3人世帯<br>
-3)3人世帯<br>
-4)4人世帯</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
-</tr>
 </tbody>
 </table>
 <div class="sect5">
@@ -4128,11 +4122,11 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <div class="paragraph">
 <p>【要調整】
 電気ケトルの定格消費電力からの推定は、電気ケトルの容量によって正確に評価できなくなる恐れがある。
-0.8、1.0、1.2Lタイプのものを同じ評価式では1.2Lが不利になる。
+0.8、1.0、1.2Lタイプのものを同じ評価式では1.2Lが不利になる（人数補正はするが、ベースの消費電力は同じであるため）。
 <a href="https://www.t-fal.co.jp/sp/products/CE/kettles/" class="bare">https://www.t-fal.co.jp/sp/products/CE/kettles/</a></p>
 </div>
 <div class="paragraph">
-<p>WORDに記載されているもう一つの評価方法、（水の沸騰熱量と機器効率の掛け算）の方が良い？
+<p>WORDに記載されているもう一つの評価方法、（水の沸騰熱量と機器効率の掛け算）の方が良いのだろうか？
 機器効率はカタログに載っていない事から、本方式の方がユーザーフレンドリーではある。</p>
 </div>
 </div>
@@ -4853,18 +4847,6 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <td class="tableblock halign-center valign-middle"><p class="tableblock">1450</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
-2)3人世帯<br>
-3)3人世帯<br>
-4)4人世帯</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
 </tr>
 </tbody>
 </table>
@@ -5658,18 +5640,6 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <td class="tableblock halign-center valign-middle"><p class="tableblock">未確定</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">合</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C4</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
-2)3人世帯<br>
-3)3人世帯<br>
-4)4人世帯</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
 </tr>
 </tbody>
 </table>
@@ -6829,18 +6799,6 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
-2)3人世帯<br>
-3)3人世帯<br>
-4)4人世帯</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
-</tr>
 </tbody>
 </table>
 <div class="sect5">
@@ -7620,18 +7578,6 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <td class="tableblock halign-center valign-middle"><p class="tableblock">0.2</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C3</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
-2)3人世帯<br>
-3)3人世帯<br>
-4)4人世帯</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
 </tr>
 </tbody>
 </table>
@@ -8779,18 +8725,6 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C3</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
-2)3人世帯<br>
-3)3人世帯<br>
-4)4人世帯</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
-</tr>
 </tbody>
 </table>
 <div class="sect5">
@@ -9919,18 +9853,6 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
-2)3人世帯<br>
-3)3人世帯<br>
-4)4人世帯</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
-</tr>
 </tbody>
 </table>
 <div class="sect5">
@@ -10685,18 +10607,6 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <td class="tableblock halign-center valign-middle"><p class="tableblock">1200</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
-2)3人世帯<br>
-3)3人世帯<br>
-4)4人世帯</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
 </tr>
 </tbody>
 </table>
@@ -11460,18 +11370,6 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">250</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
-2)3人世帯<br>
-3)3人世帯<br>
-4)4人世帯</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
 </tr>
 </tbody>
 </table>
@@ -12598,18 +12496,6 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
-2)3人世帯<br>
-3)3人世帯<br>
-4)4人世帯</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
-</tr>
 </tbody>
 </table>
 <div class="sect5">
@@ -13371,18 +13257,6 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">1200</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">世帯構成</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)1人世帯<br>
-2)3人世帯<br>
-3)3人世帯<br>
-4)4人世帯</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">4)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
 </tr>
 </tbody>
 </table>
