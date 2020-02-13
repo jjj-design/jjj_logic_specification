@@ -905,7 +905,7 @@ E_{ Elc, HEAs, d, t }
 \[E_{ Elc, rfrg, d, t } =
 \begin{cases}
 P_{ Elc, dfrst, rtd } \times C_{ dfrst } \times 1  \times 10^{ -3 } &amp; (t = 0, 23) \\
-P_{ Elc, rfrg, oprt, d } \times 1 \times 10^{ -3 } &amp; (それ以外)
+P_{ Elc, rfrg, oprt, ave, d } \times 1 \times 10^{ -3 } &amp; (それ以外)
 \end{cases}\]
 </div>
 </div>
@@ -932,17 +932,17 @@ P_{ Elc, rfrg, oprt, d } \times 1 \times 10^{ -3 } &amp; (それ以外)
 <td class="tableblock halign-left valign-top"><p class="tableblock">：1時間(消費電力を消費電力量に換算するための数値),h</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, rfrg, oprt, ave } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \(d\) における冷蔵庫の稼働時における平均消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, rfrg, oprt, ave, d } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \(d\) における冷蔵庫の稼働時における日平均消費電力,W</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_2_2_稼働時の平均消費電力"><a class="link" href="#_3_2_2_稼働時の平均消費電力">3.2.2. 稼働時の平均消費電力</a></h6>
+<h6 id="_3_2_2_稼働時の日平均消費電力"><a class="link" href="#_3_2_2_稼働時の日平均消費電力">3.2.2. 稼働時の日平均消費電力</a></h6>
 <div class="stemblock">
 <div class="content">
-\[P_{ Elc, rfrg, oprt, ave } =
+\[P_{ Elc, rfrg, oprt, ave, d} =
 \frac
 { E_{ Elc, rfrg, est, d } }
 { t_{ rfrg, oprt } }\]
@@ -2618,7 +2618,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( \theta_{ oa, ave, d } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">日付 \( d \) における平均外気温度（ 地域、季節に依らず 11.23）,℃</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) における平均外気温度（ 地域、季節に依らず 11.23）,℃</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">24</p></td>

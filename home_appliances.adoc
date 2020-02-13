@@ -176,7 +176,7 @@ E_{ Elc, HEAs, d, t }
 E_{ Elc, rfrg, d, t } = 
 \begin{cases}
 P_{ Elc, dfrst, rtd } \times C_{ dfrst } \times 1  \times 10^{ -3 } & (t = 0, 23) \\
-P_{ Elc, rfrg, oprt, d } \times 1 \times 10^{ -3 } & (それ以外)
+P_{ Elc, rfrg, oprt, ave, d } \times 1 \times 10^{ -3 } & (それ以外)
 \end{cases}
 ++++
 
@@ -195,17 +195,17 @@ P_{ Elc, rfrg, oprt, d } \times 1 \times 10^{ -3 } & (それ以外)
 |1
 |：1時間(消費電力を消費電力量に換算するための数値),h
 
-|stem:[ P_{ Elc, rfrg, oprt, ave } ]
-|：日付 stem:[d] における冷蔵庫の稼働時における平均消費電力,W
+|stem:[ P_{ Elc, rfrg, oprt, ave, d } ]
+|：日付 stem:[d] における冷蔵庫の稼働時における日平均消費電力,W
 
 |===
 
 
-====== 3.2.2. 稼働時の平均消費電力
+====== 3.2.2. 稼働時の日平均消費電力
 
 [stem]
 ++++
-P_{ Elc, rfrg, oprt, ave } = 
+P_{ Elc, rfrg, oprt, ave, d} = 
 \frac
 { E_{ Elc, rfrg, est, d } }
 { t_{ rfrg, oprt } } 
@@ -776,7 +776,7 @@ E_{ Elc, toilet-seat-heater, d } = -20.01 \times \theta_{ toilet, ave, d } + 922
 |：便座の暖房の定格消費電力,W
 
 |stem:[ \theta_{ oa, ave, d } ] 
-|日付 stem:[ d ] における平均外気温度（ 地域、季節に依らず 11.23）,℃
+|：日付 stem:[ d ] における平均外気温度（ 地域、季節に依らず 11.23）,℃
 
 |24
 |：24時間（日積算電力量を時刻別電力量にに換算するための数値）,時/日
