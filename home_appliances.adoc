@@ -1470,6 +1470,9 @@ E_{ Elc, microwave, d, t } = P_{ Elc, microwave, cook } \times t_{ microwave, co
 |stem:[ t_{ microwave, cook, d, t } ]
 |:日付 stem:[ d ] の時刻 stem:[ t ] における電子レンジの調理時間,h
 
+|stem:[ 10^{ -3 } ]
+|：単位換算,Wh -> kWh
+
 |===
 
 ====== 3.7.2. 調理の消費電力量
@@ -1478,13 +1481,13 @@ E_{ Elc, microwave, d, t } = P_{ Elc, microwave, cook } \times t_{ microwave, co
 
 [stem]
 ++++
-P_{ Elc, microwave, cook } = 0.9373 \times P_{ Elc, microwave, rtd }
+P_{ Elc, microwave, cook } = 0.9373 \times P_{ Elc, microwave, cook, rtd }
 ++++
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
 |===
 
-|stem:[ P_{ Elc, microwave, rtd } ]
+|stem:[ P_{ Elc, microwave, cook, rtd } ]
 |：電子レンジの調理時の定格消費電力,W
 
 |===
