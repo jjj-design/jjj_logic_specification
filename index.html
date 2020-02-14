@@ -1192,9 +1192,9 @@ E_{  Elc, rfrg, annual, JIS1999 } &amp; (\mbox{JIS C 9801:1999})　\\
 <div class="content">
 \[P_{ Elc, TV_{ LED }, standby } =
 \begin{cases}
-P_{ Elc, TV_{ LED }, standby, rtd }  &amp; ( \mbox{ 4人世帯の場合 } ) \\
-P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( \mbox{ 2人世帯の場合 } ) \\
-P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人世帯の場合 } )
+P_{ Elc, TV_{ LED }, standby, rtd }  &amp; ( \mbox{ 4人世帯 } ) \\
+P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( \mbox{ 2人世帯 } ) \\
+P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人世帯 } )
 \end{cases}\]
 </div>
 </div>
@@ -1220,9 +1220,9 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 <div class="content">
 \[P_{ Elc, TV_{ LED }, view } =
 \begin{cases}
-0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  &amp; ( \mbox{ 4人世帯の場合 } ) \\
-0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 2 }{ 3 } &amp; ( \mbox{ 2人世帯の場合 } ) \\
-0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人世帯の場合 } )
+0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  &amp; ( \mbox{ 4人世帯 } ) \\
+0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 2 }{ 3 } &amp; ( \mbox{ 2人世帯 } ) \\
+0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人世帯 } )
 \end{cases}\]
 </div>
 </div>
@@ -3352,7 +3352,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 <td class="tableblock halign-left valign-top"><p class="tableblock">：洗濯機の1回の洗濯の消費電力量,Wh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( tm_{ wahser, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( tm_{ wahser, wash, d, t } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における洗濯機の洗濯回数,回</p></td>
 </tr>
 <tr>
@@ -4089,13 +4089,11 @@ Webインターフェース定義表を以下に示す。</p>
 <div class="stemblock">
 <div class="content">
 \[E_{ Elc, kttl, d, t } =
-\begin
-{cases}
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } &amp; (4人世帯) \\
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 2 }{ 3 } &amp; (2人世帯) \\
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 1 }{ 3 } &amp; (1人世帯)
-\end
-{cases}\]
+\begin{cases}
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } &amp; (\mbox{4人世帯}) \\
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 2 }{ 3 } &amp; (\mbox{2人世帯}) \\
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 1 }{ 3 } &amp; (\mbox{1人世帯})
+\end{cases}\]
 </div>
 </div>
 <table class="tableblock frame-none grid-none stripes-none stretch">
@@ -4109,8 +4107,16 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における電気ケトルの消費電力量,kWh</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, kttl, boil } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：電気ケトルの1回の沸き上げ消費電力量,Wh</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( tm_{ kttl, boil, d, t } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における電気ケトルの沸き上げ回数,回</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( 10^{ -3 } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：単位換算,Wh &#8594; kWh</p></td>
 </tr>
 </tbody>
 </table>
@@ -4143,16 +4149,12 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, kttl, boil } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：電気ケトルの1回当たりの消費電力量,Wh</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, kttl, boil, rtd } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：電気ケトルの定格消費電力,W</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：沸き上げ時間( = 0.1 :1回の沸き上げ時間6分),h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：沸き上げ時間(1回の沸き上げ時間6分),h</p></td>
 </tr>
 </tbody>
 </table>
@@ -13987,7 +13989,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0(201907)<br>
-Last updated 2020-01-08 13:57:29 +0900
+Last updated 2020-02-13 11:57:15 +0900
 </div>
 </div>
 <script type="text/x-mathjax-config">
