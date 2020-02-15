@@ -5566,7 +5566,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>【課題】炊飯号数の決め方と初期値をどうするか？</p>
+<p>【課題】炊飯号数の決め方と初期値をどうするか？保温には定格値は無いのか？</p>
 </div>
 </div>
 </div>
@@ -5613,7 +5613,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">保温の定格消費電力の入力の有無</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">保温の定格消費電力量の入力の有無</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
@@ -5622,11 +5622,11 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">V2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">保温の定格消費電力</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">保温の消費電力量</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">15.1</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">Wh</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
 </tr>
 <tr>
@@ -5671,7 +5671,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, rice-cooker, cook } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：炊飯の消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：炊飯時の消費電力,W</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ rice-cooker, cook, d, t } \)</p></td>
@@ -5679,7 +5679,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, rice-cooker, keep } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：保温の消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：保温時の消費電力,W</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ rice-cooker, keep, d, t } \)</p></td>
@@ -5697,26 +5697,19 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 
 </div>
 <div class="sect5">
-<h6 id="_3_8_2_1_炊飯の消費電力"><a class="link" href="#_3_8_2_1_炊飯の消費電力">3.8.2.1. 炊飯の消費電力</a></h6>
+<h6 id="_3_8_2_1_炊飯時の消費電力"><a class="link" href="#_3_8_2_1_炊飯時の消費電力">3.8.2.1. 炊飯時の消費電力</a></h6>
 <div class="paragraph">
 <p>炊飯とは米を炊く行為である。<br>
 炊飯合数に応じた炊飯の消費電力は、定格消費電力と炊飯合数から以下の式より求める。</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\[P_{ Elc, rice-cooker, cook } =
-\frac
-{
-    E_{ Elc, rice-cooker, cook }
-}
-{
-    t_{ Elc, rice-cooker, cook }
-}\]
+\[P_{ Elc, rice-cooker, cook } = \frac { E_{ Elc, rice-cooker, cook } } { t_{ Elc, rice-cooker, cook } }\]
 </div>
 </div>
 <div class="stemblock">
 <div class="content">
-\[E_{ Elc, rice-cooker, cook } = 0.029 \times P_{ Elc, rice-cooker, rtd } + ( 32.414 \times n_{ cup-of-rice } + 58.745)\]
+\[E_{ Elc, rice-cooker, cook } = 0.029 \times P_{ Elc, rice-cooker, rtd } + ( 32.414 \times N_{ cup-of-rice } + 58.745)\]
 </div>
 </div>
 <table class="tableblock frame-none grid-none stripes-none stretch">
@@ -5726,19 +5719,19 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ rice-cooker, cook } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：炊飯1回あたりの時間( = \( \frac{ 54.19 }{ 60 } \)),h</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, rice-cooker, cook } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：炊飯1回あたりの消費電力量,Wh</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ rice-cooker, cook } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：炊飯1回あたりの時間( = \( \frac{ 54.19 }{ 60 } \)),h</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, rice-cooker, rtd } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：電気炊飯器の定格消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( n_{ cup-of-rice } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( N_{ cup-of-rice } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：炊飯合数,合</p></td>
 </tr>
 </tbody>
@@ -5751,14 +5744,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </div>
 <div class="stemblock">
 <div class="content">
-\[P_{ Elc, rice-cooker, keep } =
-\frac
-{
-    E_{ Elc, rice-cooker, keep }
-}
-{
-    1
-}\]
+\[P_{ Elc, rice-cooker, keep } = \frac { E_{ Elc, rice-cooker, keep } } { 1 }\]
 </div>
 </div>
 <table class="tableblock frame-none grid-none stripes-none stretch">
@@ -5768,12 +5754,8 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, rice-cooker, keep } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：電気炊飯器の保温の消費電力,W</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, rice-cooker, keep } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：電気炊飯器の保温の消費電力,Wh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：電気炊飯器の保温の消費電力量,Wh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
@@ -6814,7 +6796,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </div>
 <div class="stemblock">
 <div class="content">
-\[E_{ Elc, PC, d, t } =  P_{ Elc, PC } \times t_{ PC, d, t } \times 10^{ -3 }\]
+\[E_{ Elc, PC, d, t } =  P_{ Elc, PC, oprt } \times t_{ PC, oprt, d, t } \times 10^{ -3 }\]
 </div>
 </div>
 <table class="tableblock frame-none grid-none stripes-none stretch">
@@ -6825,15 +6807,15 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, PC, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) におけるパソコン（デスクトップ）の消費電力量,kWh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における消費電力量,kWh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, PC } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：パソコン（デスクトップ）の使用時の消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, PC, oprt } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：使用時の消費電力,W</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ PC, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) におけるパソコン（デスクトップ）の使用時間,h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における使用時間,h</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( 10^{ -3 } \)</p></td>
@@ -6853,7 +6835,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </div>
 <div class="stemblock">
 <div class="content">
-\[P_{ Elc, PC } =　1.0871 \times P_{ Elc, PC, rtd } + 2.2719\]
+\[P_{ Elc, PC, oprt } =　1.0871 \times P_{ Elc, PC, rtd } + 2.2719\]
 </div>
 </div>
 <table class="tableblock frame-none grid-none stripes-none stretch">

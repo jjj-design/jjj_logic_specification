@@ -1645,7 +1645,7 @@ P_{ Elc, microwave, cook } = 0.9373 \times P_{ Elc, microwave, cook, rtd }
 ===== 3.8． 電気炊飯器
 
 ====
-【課題】炊飯号数の決め方と初期値をどうするか？
+【課題】炊飯号数の決め方と初期値をどうするか？保温には定格値は無いのか？
 ====
 
 
@@ -1680,7 +1680,7 @@ P_{ Elc, microwave, cook } = 0.9373 \times P_{ Elc, microwave, cook, rtd }
 |表示しない
 
 |C2
-|保温の定格消費電力の入力の有無
+|保温の定格消費電力量の入力の有無
 |選択肢
 |1)入力しない +
 |1)
@@ -1688,11 +1688,11 @@ P_{ Elc, microwave, cook } = 0.9373 \times P_{ Elc, microwave, cook, rtd }
 |常に表示
 
 |V2
-|保温の定格消費電力
+|保温の消費電力量
 |値
 |小数（1位まで）
 |15.1
-|W
+|Wh
 |表示しない
 
 |C3
@@ -1730,13 +1730,13 @@ E_{ Elc, rice-cooker, d, t } = ( P_{ Elc, rice-cooker, cook } \times t_{ rice-co
 |：日付 stem:[ d ] の時刻 stem:[ t ] における電気炊飯器の消費電力量,kWh
 
 |stem:[ P_{ Elc, rice-cooker, cook } ] 
-|：炊飯の消費電力,W
+|：炊飯時の消費電力,W
 
 |stem:[ t_{ rice-cooker, cook, d, t } ] 
 |：日付 stem:[ d ] の時刻 stem:[ t ] における炊飯時間,h
 
 |stem:[ P_{ Elc, rice-cooker, keep } ] 
-|：保温の消費電力,W
+|：保温時の消費電力,W
 
 |stem:[ t_{ rice-cooker, keep, d, t } ] 
 |：日付 stem:[ d ] の時刻 stem:[ t ] における保温時間,h
@@ -1749,43 +1749,36 @@ E_{ Elc, rice-cooker, d, t } = ( P_{ Elc, rice-cooker, cook } \times t_{ rice-co
 
 ====== 3.8.2. 動作別の消費電力量
 
-====== 3.8.2.1. 炊飯の消費電力
+====== 3.8.2.1. 炊飯時の消費電力
 
 炊飯とは米を炊く行為である。 +
 炊飯合数に応じた炊飯の消費電力は、定格消費電力と炊飯合数から以下の式より求める。
 
 [stem]
 ++++
-P_{ Elc, rice-cooker, cook } = 
-\frac
-{
-    E_{ Elc, rice-cooker, cook } 
-}
-{
-    t_{ Elc, rice-cooker, cook }
-}
+P_{ Elc, rice-cooker, cook } = \frac { E_{ Elc, rice-cooker, cook } } { t_{ Elc, rice-cooker, cook } }
 ++++
 
 [stem]
 ++++
-E_{ Elc, rice-cooker, cook } = 0.029 \times P_{ Elc, rice-cooker, rtd } + ( 32.414 \times n_{ cup-of-rice } + 58.745)
+E_{ Elc, rice-cooker, cook } = 0.029 \times P_{ Elc, rice-cooker, rtd } + ( 32.414 \times N_{ cup-of-rice } + 58.745)
 ++++
 
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
 |===
 
-|stem:[ t_{ rice-cooker, cook } ] 
-|：炊飯1回あたりの時間( = stem:[ \frac{ 54.19 }{ 60 } ]),h
-
 
 |stem:[ E_{ Elc, rice-cooker, cook } ] 
 |：炊飯1回あたりの消費電力量,Wh
 
+|stem:[ t_{ rice-cooker, cook } ] 
+|：炊飯1回あたりの時間( = stem:[ \frac{ 54.19 }{ 60 } ]),h
+
 |stem:[ P_{ Elc, rice-cooker, rtd } ] 
 |：電気炊飯器の定格消費電力,W
 
-|stem:[ n_{ cup-of-rice } ] 
+|stem:[ N_{ cup-of-rice } ] 
 |：炊飯合数,合
 
 |===
@@ -1797,24 +1790,14 @@ E_{ Elc, rice-cooker, cook } = 0.029 \times P_{ Elc, rice-cooker, rtd } + ( 32.4
 
 [stem]
 ++++
-P_{ Elc, rice-cooker, keep } = 
-\frac
-{
-    E_{ Elc, rice-cooker, keep } 
-}
-{
-    1
-}
+P_{ Elc, rice-cooker, keep } = \frac { E_{ Elc, rice-cooker, keep } } { 1 }
 ++++
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
 |===
 
-|stem:[ P_{ Elc, rice-cooker, keep } ] 
-|：電気炊飯器の保温の消費電力,W
-
 |stem:[ E_{ Elc, rice-cooker, keep } ] 
-|：電気炊飯器の保温の消費電力,Wh
+|：電気炊飯器の保温の消費電力量,Wh
 
 |1
 |：1時間(消費電力量を消費電力に換算するための値),h
@@ -2037,7 +2020,7 @@ P_{ Elc, rice-cooker, keep } =
 
 [stem]
 ++++
-E_{ Elc, PC, d, t } =  P_{ Elc, PC } \times t_{ PC, d, t } \times 10^{ -3 }
+E_{ Elc, PC, d, t } =  P_{ Elc, PC, oprt } \times t_{ PC, oprt, d, t } \times 10^{ -3 }
 ++++
 
 
@@ -2046,13 +2029,13 @@ E_{ Elc, PC, d, t } =  P_{ Elc, PC } \times t_{ PC, d, t } \times 10^{ -3 }
 
 
 |stem:[ E_{ Elc, PC, d, t } ] 
-|：日付 stem:[ d ] の時刻 stem:[ t ] におけるパソコン（デスクトップ）の消費電力量,kWh
+|：日付 stem:[ d ] の時刻 stem:[ t ] における消費電力量,kWh
 
-|stem:[ P_{ Elc, PC } ] 
-|：パソコン（デスクトップ）の使用時の消費電力,W
+|stem:[ P_{ Elc, PC, oprt } ] 
+|：使用時の消費電力,W
 
 |stem:[ t_{ PC, d, t } ] 
-|：日付 stem:[ d ] の時刻 stem:[ t ] におけるパソコン（デスクトップ）の使用時間,h
+|：日付 stem:[ d ] の時刻 stem:[ t ] における使用時間,h
 
 |stem:[ 10^{ -3 } ]
 |：単位換算,Wh -> kWh
@@ -2068,7 +2051,7 @@ E_{ Elc, PC, d, t } =  P_{ Elc, PC } \times t_{ PC, d, t } \times 10^{ -3 }
 
 [stem]
 ++++
-P_{ Elc, PC } =　1.0871 \times P_{ Elc, PC, rtd } + 2.2719
+P_{ Elc, PC, oprt } =　1.0871 \times P_{ Elc, PC, rtd } + 2.2719
 ++++
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
