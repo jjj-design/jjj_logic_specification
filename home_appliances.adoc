@@ -2865,7 +2865,7 @@ P_{ Elc, audio_{  MicroSystem-with-MD }, standby } = P_{ Elc, audio_{  MicroSyst
 
 [stem]
 ++++
-E_{ Elc, cleaner, d, t } =  P_{ Elc, cleaner } \times t_{ cleaner, d, t } \times 10^{ -3 }
+E_{ Elc, cleaner, d, t } =  P_{ Elc, cleaner, oprt } \times t_{ cleaner, oprt, d, t } \times 10^{ -3 }
 ++++
 
 
@@ -2873,13 +2873,13 @@ E_{ Elc, cleaner, d, t } =  P_{ Elc, cleaner } \times t_{ cleaner, d, t } \times
 |===
 
 |stem:[ E_{ Elc, cleaner, d, t } ] 
-|：日付 stem:[ d ] の時刻 stem:[ t ] における掃除機の消費電力量,kWh
+|：日付 stem:[ d ] の時刻 stem:[ t ] における消費電力量,kWh
 
 |stem:[ P_{ Elc, cleaner } ] 
-|：掃除機の使用時の消費電力,W
+|：使用時の消費電力,W
 
 |stem:[ t_{ cleaner, d, t } ] 
-|：日付 stem:[ d ] の時刻 stem:[ t ] における掃除機の使用時間,h
+|：日付 stem:[ d ] の時刻 stem:[ t ] における使用時間,h
 
 |stem:[ 10^{ -3 } ]
 |：単位換算,Wh -> kWh
@@ -2895,7 +2895,7 @@ E_{ Elc, cleaner, d, t } =  P_{ Elc, cleaner } \times t_{ cleaner, d, t } \times
 
 [stem]
 ++++
-P_{ Elc, cleaner } =　1.0355 \times P_{ Elc, cleaner, rtd }
+P_{ Elc, cleaner, oprt } =　1.0355 \times P_{ Elc, cleaner, rtd }
 ++++
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
