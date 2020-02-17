@@ -3103,13 +3103,13 @@ E_{ Elc, iron, d, t } =  P_{ Elc, iron } \times t_{ iron, d, t } \times 10^{ -3 
 |===
 
 |stem:[ E_{ Elc, iron, d, t } ] 
-|：日付 stem:[ d ] の時刻 stem:[ t ] におけるアイロンの消費電力量,kWh
+|：日付 stem:[ d ] の時刻 stem:[ t ] における消費電力量,kWh
 
 |stem:[ P_{ Elc, iron } ] 
-|：アイロンの使用時の消費電力,W
+|：使用時の消費電力,W
 
 |stem:[ t_{ iron, d, t } ] 
-|：日付 stem:[ d ] の時刻 stem:[ t ] におけるアイロンの使用時間,h
+|：日付 stem:[ d ] の時刻 stem:[ t ] における使用時間,h
 
 |stem:[ 10^{ -3 } ]
 |：単位換算,Wh -> kWh
@@ -3132,7 +3132,7 @@ P_{ Elc, iron } =　0.53 \times P_{ Elc, iron, rtd }
 |===
 
 |stem:[ P_{ Elc, iron, rtd } ] 
-|：アイロンの定格消費電力,W
+|：定格消費電力,W
 
 |===
 
