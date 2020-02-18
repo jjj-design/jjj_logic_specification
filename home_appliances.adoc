@@ -3610,7 +3610,7 @@ P_{ Elc, game, play } =　95.7
 
 [stem]
 ++++
-E_{ Elc, desk-lamp, d, t } =  P_{ Elc, desk-lamp } \times t_{ desk-lamp, d, t } \times 10^{ -3 }
+E_{ Elc, desk-lamp, d, t } =  P_{ Elc, desk-lamp, oprt } \times t_{ desk-lamp, oprt, d, t } \times 10^{ -3 }
 ++++
 
 
@@ -3618,13 +3618,13 @@ E_{ Elc, desk-lamp, d, t } =  P_{ Elc, desk-lamp } \times t_{ desk-lamp, d, t } 
 |===
 
 |stem:[ E_{ Elc, desk-lamp, d, t } ] 
-|：日付 stem:[ d ] の時刻 stem:[ t ] におけるスタンドの消費電力量,kWh
+|：日付 stem:[ d ] の時刻 stem:[ t ] における消費電力量,kWh
 
-|stem:[ P_{ Elc, desk-lamp } ] 
-|：スタンドの使用時の消費電力,W
+|stem:[ P_{ Elc, desk-lamp, oprt } ] 
+|：点灯時の消費電力,W
 
-|stem:[ t_{ desk-lamp, d, t } ] 
-|：日付 stem:[ d ] の時刻 stem:[ t ] におけるスタンドの使用時間,h
+|stem:[ t_{ desk-lamp, oprt, d, t } ] 
+|：日付 stem:[ d ] の時刻 stem:[ t ] における点灯時間,h
 
 |stem:[ 10^{ -3 } ]
 |：単位換算,Wh -> kWh
@@ -3634,13 +3634,13 @@ E_{ Elc, desk-lamp, d, t } =  P_{ Elc, desk-lamp } \times t_{ desk-lamp, d, t } 
 
 ====== 3.15.2. 動作別の消費電力
 
-====== 3.15.2.1. 使用時の消費電力
+====== 3.15.2.1. 点灯時の消費電力
 
 点灯とはスタンドの電源を「入」した状態である。 
 
 [stem]
 ++++
-P_{ Elc, desk-lamp } =　1.07 \times P_{ Elc, desk-lamp, rtd }
+P_{ Elc, desk-lamp, oprt } =　1.07 \times P_{ Elc, desk-lamp, rtd }
 ++++
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
