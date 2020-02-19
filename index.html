@@ -1017,7 +1017,7 @@ E_{ Elc, rfrg, est, d }
 <div class="sect5">
 <h6 id="_3_2_3_冷蔵庫の年間消費電力量"><a class="link" href="#_3_2_3_冷蔵庫の年間消費電力量">3.2.3. 冷蔵庫の年間消費電力量</a></h6>
 <div class="paragraph">
-<p>冷蔵庫の年間消費電力量は、製品の性能を試験した際のJIS規格の年数により求め方が異なる。</p>
+<p>冷蔵庫の年間消費電力量は、製品の性能を試験した際のJIS規格の制定・改正年により求め方が異なる。</p>
 </div>
 <div class="stemblock">
 <div class="content">
@@ -1243,16 +1243,16 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_3_3_時刻別の延べ動作時間"><a class="link" href="#_3_3_3_時刻別の延べ動作時間">3.3.3. 時刻別の延べ動作時間</a></h6>
+<h6 id="_3_3_3_時刻別の動作時間"><a class="link" href="#_3_3_3_時刻別の動作時間">3.3.3. 時刻別の動作時間</a></h6>
 <div class="paragraph">
-<p>テレビの時刻別延べ動作時間は設置された部屋によって異なる。</p>
+<p>時刻別の動作時間は設置された部屋によって異なる。</p>
 </div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
 <p>【メモ】
-複数台設置された場合に対応するために「延べ」動作時間を採用したが、よく考えると同じ型番の家電でないと使用できない欠陥があった。<br>
-そのため、設置場所の概念を採用した（本音は間取りの概念は除外したい…）</p>
+複数台設置された場合に対応するために「延べ」動作時間での計算を検討したが、同じ型番（＝同じ消費電力）の家電でないと使用できない問題があった。<br>
+そのため、設置場所の概念を採用した。ただしし、計算ロジックの一般化を進めるためには間取りの概念は除外したい。</p>
 </div>
 </div>
 </div>
@@ -2239,7 +2239,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 <div class="sect5">
 <h6 id="_3_3_3_1_洋室1に設置した場合"><a class="link" href="#_3_3_3_1_洋室1に設置した場合">3.3.3.1. 洋室1に設置した場合</a></h6>
 <div class="paragraph">
-<p>4人世帯の場合は、居間に加え洋室1にもテレビを設置している。その際の延べ動作時間を以下に示す。</p>
+<p>4人世帯の場合は、居間に加え洋室1にもテレビを設置している。その際の動作時間を以下に示す。</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2636,7 +2636,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_4_3_時刻別の延べ動作時間"><a class="link" href="#_3_4_3_時刻別の延べ動作時間">3.4.3. 時刻別の延べ動作時間</a></h6>
+<h6 id="_3_4_3_時刻別の便座暖房時間"><a class="link" href="#_3_4_3_時刻別の便座暖房時間">3.4.3. 時刻別の便座暖房時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 6. 4人世帯</caption>
 <colgroup>
@@ -3322,7 +3322,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力量</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">標準コースの定格消費電力量</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">51</p></td>
@@ -3385,13 +3385,13 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, washer, wash, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">標準コースの洗濯の定格消費電力量,Wh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：標準コースの洗濯の定格消費電力量,Wh</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_5_3_時刻別の延べ動作回数"><a class="link" href="#_3_5_3_時刻別の延べ動作回数">3.5.3. 時刻別の延べ動作回数</a></h6>
+<h6 id="_3_5_3_時刻別の洗濯回数"><a class="link" href="#_3_5_3_時刻別の洗濯回数">3.5.3. 時刻別の洗濯回数</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 10. 4人世帯</caption>
 <colgroup>
@@ -4043,7 +4043,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 <h5 id="_3_6_電気ケトル"><a class="link" href="#_3_6_電気ケトル">3.6． 電気ケトル</a></h5>
 <div class="paragraph">
 <p>自立循環型住宅への設計ガイドラインにおける重要家電である。<br>
-Webインターフェース定義表を以下に示す。</p>
+入力項目と入力条件を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <colgroup>
@@ -4166,7 +4166,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_6_3_時刻別の延べ動作回数"><a class="link" href="#_3_6_3_時刻別の延べ動作回数">3.6.3. 時刻別の延べ動作回数</a></h6>
+<h6 id="_3_6_3_時刻別の沸き上げ回数"><a class="link" href="#_3_6_3_時刻別の沸き上げ回数">3.6.3. 時刻別の沸き上げ回数</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 14. 4人世帯</caption>
 <colgroup>
@@ -4850,7 +4850,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力量</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">調理時の定格消費電力量</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">1450</p></td>
@@ -4921,7 +4921,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_7_3_調理時間"><a class="link" href="#_3_7_3_調理時間">3.7.3. 調理時間</a></h6>
+<h6 id="_3_7_3_時刻別の調理時間"><a class="link" href="#_3_7_3_時刻別の調理時間">3.7.3. 時刻別の調理時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 18. 4人世帯</caption>
 <colgroup>
@@ -5773,7 +5773,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_8_3_動作時間"><a class="link" href="#_3_8_3_動作時間">3.8.3. 動作時間</a></h6>
+<h6 id="_3_8_3_時刻別の動作時間"><a class="link" href="#_3_8_3_時刻別の動作時間">3.8.3. 時刻別の動作時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 22. 4人世帯</caption>
 <colgroup>
@@ -6861,7 +6861,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_9_3_動作時間"><a class="link" href="#_3_9_3_動作時間">3.9.3. 動作時間</a></h6>
+<h6 id="_3_9_3_時刻別の使用時間"><a class="link" href="#_3_9_3_時刻別の使用時間">3.9.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 26. 4人世帯</caption>
 <colgroup>
@@ -7514,7 +7514,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>【メモ】WORDではCDラジカセとMDコンポを1つの節で解説しているが、スケジュールは別管理となっており、実質的に別機器として評価いているため、分ける</p>
+<p>【メモ】参考文献ではCDラジカセとMDコンポを1つの節で解説しているが、スケジュールは別管理となっており、実質的に別機器として評価いているため、章を分ける</p>
 </div>
 </div>
 </div>
@@ -7676,7 +7676,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_10_3_動作時間"><a class="link" href="#_3_10_3_動作時間">3.10.3. 動作時間</a></h6>
+<h6 id="_3_10_3_時刻別の動作時間"><a class="link" href="#_3_10_3_時刻別の動作時間">3.10.3. 時刻別の動作時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 30. 4人世帯</caption>
 <colgroup>
@@ -8661,7 +8661,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>【メモ】分けた先</p>
+<p>【メモ】CDラジカセと分けた</p>
 </div>
 </div>
 </div>
@@ -8751,7 +8751,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, audio_{ MicroSystem-with-MD }, listening } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：視聴時の消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：聴取時の消費電力,W</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ audio_{ MicroSystem-with-MD }, listening, d, t } \)</p></td>
@@ -8823,7 +8823,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_11_3_動作時間"><a class="link" href="#_3_11_3_動作時間">3.11.3. 動作時間</a></h6>
+<h6 id="_3_11_3_時刻別の動作時間"><a class="link" href="#_3_11_3_時刻別の動作時間">3.11.3. 時刻別の動作時間</a></h6>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -9918,7 +9918,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_12_3_動作時間"><a class="link" href="#_3_12_3_動作時間">3.12.3. 動作時間</a></h6>
+<h6 id="_3_12_3_時刻別の使用時間"><a class="link" href="#_3_12_3_時刻別の使用時間">3.12.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 38. 4人世帯</caption>
 <colgroup>
@@ -10674,7 +10674,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_13_3_動作時間"><a class="link" href="#_3_13_3_動作時間">3.13.3. 動作時間</a></h6>
+<h6 id="_3_13_3_時刻別の使用時間"><a class="link" href="#_3_13_3_時刻別の使用時間">3.13.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 42. 4人世帯</caption>
 <colgroup>
@@ -11357,7 +11357,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力の入力の有無</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">稼働時の消費電力（実測値）の入力の有無</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
@@ -11366,10 +11366,28 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">稼働時の消費電力（実測値）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">250</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">95.7</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">待機時の消費電力（実測値）の入力の有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">待機時の消費電力（実測値）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">0.3</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
 </tr>
@@ -11469,7 +11487,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_14_3_動作時間"><a class="link" href="#_3_14_3_動作時間">3.14.3. 動作時間</a></h6>
+<h6 id="_3_14_3_時刻別の動作時間"><a class="link" href="#_3_14_3_時刻別の動作時間">3.14.3. 時刻別の動作時間</a></h6>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -12564,7 +12582,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_15_3_動作時間"><a class="link" href="#_3_15_3_動作時間">3.15.3. 動作時間</a></h6>
+<h6 id="_3_15_3_時刻別の点灯時間"><a class="link" href="#_3_15_3_時刻別の点灯時間">3.15.3. 時刻別の点灯時間</a></h6>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -13332,7 +13350,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </table>
 </div>
 <div class="sect5">
-<h6 id="_3_16_3_動作時間"><a class="link" href="#_3_16_3_動作時間">3.16.3. 動作時間</a></h6>
+<h6 id="_3_16_3_時刻別の使用時間"><a class="link" href="#_3_16_3_時刻別の使用時間">3.16.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 54. 4人世帯</caption>
 <colgroup>
