@@ -255,6 +255,8 @@ E_{ Elc, rfrg, est, d }
 
 冷蔵庫の周辺空気の日平均温度は、建築研究所実証実験棟101号室における冷蔵庫の周辺空気の日平均温度と日平均外気温度の実測値の回帰式により求める。
 
+ただし、本計算においては日平均外気温度は地域、季節によらず14.6℃の固定とする。
+
 [stem]
 ++++
 \theta_{ amb, ave, d } = 
@@ -265,7 +267,7 @@ E_{ Elc, rfrg, est, d }
 |===
 
 |stem:[ \theta_{ oa, ave, d } ]
-|：日付 stem:[d] における日平均外気温度,℃
+|：日付 stem:[d] における日平均外気温度（地域、季節によらず14.6）,℃
 
 |===
 
@@ -309,19 +311,14 @@ E_{  Elc, rfrg, annual, JIS1999 } & (\mbox{JIS C 9801:1999})　\\
 <<<
 ===== 3.3． 液晶テレビ
 ====
-【疑問】
-なぜ、テレビの消費電力に人数補正が掛るのだろうか？
+居間と洋室1の足し算に変更する。
+4人世帯：居間（主たる居室）＋洋室1（その他居室）
+3人世帯以下：居間（主たる居室）＋洋室1（=ただし、0。その他の居室）
 
-視聴時間の補正であれば、待機電力と視聴電力の補正値は逆の傾向が無ければおかしいのでは？
-
-例）視聴時間が増える->待機時間が減る
-
+WORDでは、主たる居室は居間。　その他の居室は洋室1
 ====
 
-====
-【課題】
-設置場所を入力パラメーターとするのか？
-====
+
 
 自立循環型住宅への設計ガイドラインにおける最重要家電である。 + 
 入力項目と入力条件を以下に示す。
@@ -347,7 +344,7 @@ E_{  Elc, rfrg, annual, JIS1999 } & (\mbox{JIS C 9801:1999})　\\
 |常に
 
 |V1
-|稼働時の定格消費電力
+|稼働時の定格消費電力（測定条件を追記　経産省告示とする。あっているかどうかは作成者に確認する。）
 |値
 |小数（1位まで）
 |125.0
@@ -355,7 +352,7 @@ E_{  Elc, rfrg, annual, JIS1999 } & (\mbox{JIS C 9801:1999})　\\
 |C1=2の場合
 
 |V2
-|待機時の定格消費電力
+|待機時の定格消費電力（測定条件を追記　経産省告示とする。）
 |値
 |小数（2位まで）
 |0.15
@@ -410,10 +407,30 @@ E_{ Elc, TV_{ LED }, d, t } = ( P_{ Elc, TV_{ LED }, standby } \times t_{ TV_{ L
 P_{ Elc, TV_{ LED }, standby } =
 \begin{cases}
 P_{ Elc, TV_{ LED }, standby, rtd }  & ( \mbox{ 4人世帯 } ) \\
+P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 3 }{ 3 } & ( \mbox{ 3人世帯 } ) \\
 P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } & ( \mbox{ 2人世帯 } ) \\
 P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } & ( \mbox{ 1人世帯 } )
 \end{cases}
 ++++
+
+====
+WORDには3人世帯はないので、仮に数式を追加している。
+====
+
+====
+【疑問】
+なぜ、テレビの消費電力に人数補正が掛るのだろうか？
+
+視聴時間の補正であれば、待機電力と視聴電力の補正値は逆の傾向が無ければおかしいのでは？
+
+例）視聴時間が増える->待機時間が減る
+
+====
+
+====
+【課題】
+設置場所を入力パラメーターとするのか？
+====
 
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
@@ -434,10 +451,15 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } & ( \mbox{ 1人世�
 P_{ Elc, TV_{ LED }, view } =
 \begin{cases}
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  & ( \mbox{ 4人世帯 } ) \\
+0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 3 }{ 3 } & ( \mbox{ 3人世帯 } ) \\
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 2 }{ 3 } & ( \mbox{ 2人世帯 } ) \\
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 1 }{ 3 } & ( \mbox{ 1人世帯 } )
 \end{cases}
 ++++
+
+====
+WORDには3人世帯はないので、仮に数式を追加している。
+====
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
 |===
@@ -456,6 +478,8 @@ P_{ Elc, TV_{ LED }, view } =
 【メモ】
 複数台設置された場合に対応するために「延べ」動作時間での計算を検討したが、同じ型番（＝同じ消費電力）の家電でないと使用できない問題があった。 +
 そのため、設置場所の概念を採用した。ただしし、計算ロジックの一般化を進めるためには間取りの概念は除外したい。
+
+同じ型番は認める。
 ====
 
 ====== 3.3.3.1. 居間に設置した場合
@@ -691,8 +715,14 @@ P_{ Elc, TV_{ LED }, view } =
 <<<
 ===== 3.4． 便座
 自立循環型住宅への設計ガイドラインにおける最重要家電は「”温水”暖房便座」であるあが、ここで扱う便座は「暖房便座」である。 + 
-入力項目と入力条件を以下に示す。
 
+ただし、温水暖房便座も当面はこの評価方法を適用する。
+また、入力値は根拠がないので当面はなし。WORDのデフォルト値で計算する。
+
+
+// 入力項目と入力条件を以下に示す。
+
+////
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -706,7 +736,7 @@ P_{ Elc, TV_{ LED }, view } =
 
 
 |C1
-|定格消費電力の入力の有無
+|定格消費電力の入力の有無（測定条件：https://www.enecho.meti.go.jp/category/saving_and_new/saving/summary/pdf/top_runner/16toprunner_denkibenza.pdf）
 |選択肢
 |1)入力しない +
 2)入力する
@@ -723,6 +753,7 @@ P_{ Elc, TV_{ LED }, view } =
 |C1=2
 
 |===
+////
 
 ====== 3.4.1. 時刻別消費電力量
 
@@ -757,6 +788,8 @@ E_{ Elc, toilet-seat-heater, d, t } =  P_{ Elc, toilet-seat-heater } \times t_{ 
 ====== 3.4.2.1. 便座暖房時の消費電力
 
 暖房とは便座を加熱している状態である。 
+
+ただし、本計算においては日平均外気温度は地域、季節によらず11.23℃の固定とする。
 
 [stem]
 ++++
@@ -951,6 +984,9 @@ E_{ Elc, toilet-seat-heater, d } = -20.01 \times \theta_{ toilet, ave, d } + 922
 自立循環型住宅への設計ガイドラインにおける重要家電である。 + 
 入力項目と入力条件を以下に示す。
 
+JIS規格は　C 9811　を参照する。 
+
+
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -973,7 +1009,7 @@ E_{ Elc, toilet-seat-heater, d } = -20.01 \times \theta_{ toilet, ave, d } + 922
 |常に表示
 
 |V1
-|標準コースの定格消費電力量
+|標準コースの定格消費電力量（JIS C 9811）
 |値
 |小数（1位まで）
 |51
@@ -1018,7 +1054,7 @@ E_{ Elc, washer, d, t } =  E_{ Elc, washer, wash } \times tm_{ washer, wash, d, 
 
 [stem]
 ++++
-E_{ Elc, washer, wash } =　1.3503 \times E_{ Elc, washer, wash, rtd } - 42.848
+E_{ Elc, washer, wash } =　\min (0, 1.3503 \times E_{ Elc, washer, wash, rtd } - 42.848 )
 ++++
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
@@ -1224,11 +1260,16 @@ E_{ Elc, washer, wash } =　1.3503 \times E_{ Elc, washer, wash, rtd } - 42.848
 ++++
 E_{ Elc, kttl, d, t } =  
 \begin{cases}
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } & (\mbox{4人世帯}) \\
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 2 }{ 3 } & (\mbox{2人世帯}) \\
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 1 }{ 3 } & (\mbox{1人世帯})
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } & (\mbox{ 4人世帯 }) \\
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 3 }{ 3 } & (\mbox{ 3人世帯 }) \\
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 2 }{ 3 } & (\mbox{ 2人世帯 }) \\
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 1 }{ 3 } & (\mbox{ 1人世帯 })
 \end{cases}
 ++++
+
+====
+WORDには3人世帯はないので、仮に数式を追加している。
+====
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
 |===
