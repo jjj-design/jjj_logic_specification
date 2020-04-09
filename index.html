@@ -4098,9 +4098,42 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 </div>
 <div class="sect4">
 <h5 id="_3_6_電気ケトル"><a class="link" href="#_3_6_電気ケトル">3.6． 電気ケトル</a></h5>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>【メモ：電気ケトルの課題】</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>設置場所による評価は行えない。</p>
+</li>
+<li>
+<p>複数台の評価時は同一機種しか評価できない。</p>
+</li>
+<li>
+<p>製品の定格消費電力で評価する場合は、容量の多いモデルが不利（過大評価）になる。</p>
+<div class="paragraph">
+<p>電気ケトルの定格消費電力からの推定は、電気ケトルの容量によって正確に評価できなくなる恐れがある。
+0.8、1.0、1.2Lタイプのものを同じ評価式では1.2Lが不利になる（人数補正はするが、ベースの消費電力は同じであるため）。<br>
+<a href="https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx">省エネ基準参考資料_家電・調理.docx</a>
+では、水（1.073882299 L）の沸き上げに必要な熱量から電気ケトルの消費電力量を行う方法も記載されているが、機器効率が必要になる。</p>
+</div>
+</li>
+<li>
+<p>人数補正の根拠が不明である。</p>
+<div class="paragraph">
+<p><a href="https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx">省エネ基準参考資料_家電・調理.docx</a>
+では、1人世帯と2人世帯で補正項が追加されている。3人世帯と4人世帯は不明である。</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>自立循環型住宅への設計ガイドラインにおける重要家電である。<br>
-入力項目と入力条件を以下に示す。</p>
+ユーザー入力項目と入力条件を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <colgroup>
@@ -4115,7 +4148,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 <tbody>
 <tr>
 <th class="tableblock halign-center valign-middle"><p class="tableblock">識別子</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">項目</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">項目（値の根拠）</p></th>
 <th class="tableblock halign-center valign-middle"><p class="tableblock">入力値の種別</p></th>
 <th class="tableblock halign-center valign-middle"><p class="tableblock">値</p></th>
 <th class="tableblock halign-center valign-middle"><p class="tableblock">初期値</p></th>
@@ -4134,12 +4167,52 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( \mbox{ 1人�
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力（不明。JIS C 9213　か？）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（？位まで）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">1160</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>また、プログラムの入力項目を以下に示す。</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">表 18. 電気ケトルの入力パラメータ</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-top"><p class="tableblock">変数名</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">説明</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">変数の型</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">初期値</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">単位</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">ユーザー入力の可否</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(P_{ Elc, kttl, boil, rtd }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">定格消費電力</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">flot</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">125</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">可</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(NumberOfPeople\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">世帯人数</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">人</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
 </tbody>
 </table>
@@ -4163,7 +4236,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>WORDには3人世帯はないので、仮に数式を追加している。</p>
+<p><a href="https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx">省エネ基準参考資料_家電・調理.docx</a> には3人世帯はないので、仮に数式を追加している。</p>
 </div>
 </div>
 </div>
@@ -4194,20 +4267,6 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </div>
 <div class="sect5">
 <h6 id="_3_6_2_沸き上げの消費電力量"><a class="link" href="#_3_6_2_沸き上げの消費電力量">3.6.2. 沸き上げの消費電力量</a></h6>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【要調整】
-電気ケトルの定格消費電力からの推定は、電気ケトルの容量によって正確に評価できなくなる恐れがある。
-0.8、1.0、1.2Lタイプのものを同じ評価式では1.2Lが不利になる（人数補正はするが、ベースの消費電力は同じであるため）。
-<a href="https://www.t-fal.co.jp/sp/products/CE/kettles/" class="bare">https://www.t-fal.co.jp/sp/products/CE/kettles/</a></p>
-</div>
-<div class="paragraph">
-<p>WORDに記載されているもう一つの評価方法、（水の沸騰熱量と機器効率の掛け算）の方が良いのだろうか？
-機器効率はカタログに載っていない事から、本方式の方がユーザーフレンドリーではある。</p>
-</div>
-</div>
-</div>
 <div class="stemblock">
 <div class="content">
 \[E_{ Elc, kttl, boil } = P_{ Elc, kttl, boil, rtd } \times 0.1\]
@@ -4233,7 +4292,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <div class="sect5">
 <h6 id="_3_6_3_時刻別の沸き上げ回数"><a class="link" href="#_3_6_3_時刻別の沸き上げ回数">3.6.3. 時刻別の沸き上げ回数</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 18. 4人世帯</caption>
+<caption class="title">表 19. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -4394,7 +4453,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 19. 3人世帯</caption>
+<caption class="title">表 20. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -4555,7 +4614,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 20. 2人世帯</caption>
+<caption class="title">表 21. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -4716,7 +4775,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 21. 1人世帯</caption>
+<caption class="title">表 22. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -4988,7 +5047,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <div class="sect5">
 <h6 id="_3_7_3_時刻別の調理時間"><a class="link" href="#_3_7_3_時刻別の調理時間">3.7.3. 時刻別の調理時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 22. 4人世帯</caption>
+<caption class="title">表 23. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -5149,7 +5208,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 23. 3人世帯</caption>
+<caption class="title">表 24. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -5310,7 +5369,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 24. 2人世帯</caption>
+<caption class="title">表 25. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -5471,7 +5530,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 25. 1人世帯</caption>
+<caption class="title">表 26. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -5840,7 +5899,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <div class="sect5">
 <h6 id="_3_8_3_時刻別の動作時間"><a class="link" href="#_3_8_3_時刻別の動作時間">3.8.3. 時刻別の動作時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 26. 4人世帯</caption>
+<caption class="title">表 27. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -6084,7 +6143,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 27. 3人世帯</caption>
+<caption class="title">表 28. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -6328,7 +6387,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 28. 2人世帯</caption>
+<caption class="title">表 29. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -6572,7 +6631,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 29. 1人世帯</caption>
+<caption class="title">表 30. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -6928,7 +6987,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <div class="sect5">
 <h6 id="_3_9_3_時刻別の使用時間"><a class="link" href="#_3_9_3_時刻別の使用時間">3.9.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 30. 4人世帯</caption>
+<caption class="title">表 31. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -7089,7 +7148,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 31. 3人世帯</caption>
+<caption class="title">表 32. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -7250,7 +7309,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 32. 2人世帯</caption>
+<caption class="title">表 33. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -7411,7 +7470,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 33. 1人世帯</caption>
+<caption class="title">表 34. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -7743,7 +7802,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 <div class="sect5">
 <h6 id="_3_10_3_時刻別の動作時間"><a class="link" href="#_3_10_3_時刻別の動作時間">3.10.3. 時刻別の動作時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 34. 4人世帯</caption>
+<caption class="title">表 35. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -7987,7 +8046,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 35. 3人世帯</caption>
+<caption class="title">表 36. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -8231,7 +8290,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 36. 2人世帯</caption>
+<caption class="title">表 37. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -8475,7 +8534,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 37. 1人世帯</caption>
+<caption class="title">表 38. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -8897,7 +8956,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 38. 4人世帯</caption>
+<caption class="title">表 39. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9141,7 +9200,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 39. 3人世帯</caption>
+<caption class="title">表 40. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9385,7 +9444,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 40. 2人世帯</caption>
+<caption class="title">表 41. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9629,7 +9688,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 41. 1人世帯</caption>
+<caption class="title">表 42. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9985,7 +10044,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <div class="sect5">
 <h6 id="_3_12_3_時刻別の使用時間"><a class="link" href="#_3_12_3_時刻別の使用時間">3.12.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 42. 4人世帯</caption>
+<caption class="title">表 43. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10146,7 +10205,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 43. 3人世帯</caption>
+<caption class="title">表 44. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10307,7 +10366,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 44. 2人世帯</caption>
+<caption class="title">表 45. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10468,7 +10527,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 45. 1人世帯</caption>
+<caption class="title">表 46. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10741,7 +10800,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <div class="sect5">
 <h6 id="_3_13_3_時刻別の使用時間"><a class="link" href="#_3_13_3_時刻別の使用時間">3.13.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 46. 4人世帯</caption>
+<caption class="title">表 47. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10902,7 +10961,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 47. 3人世帯</caption>
+<caption class="title">表 48. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11063,7 +11122,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 48. 2人世帯</caption>
+<caption class="title">表 49. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11224,7 +11283,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 49. 1人世帯</caption>
+<caption class="title">表 50. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11561,7 +11620,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 50. 4人世帯</caption>
+<caption class="title">表 51. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -11805,7 +11864,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 51. 3人世帯</caption>
+<caption class="title">表 52. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12049,7 +12108,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 52. 2人世帯</caption>
+<caption class="title">表 53. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12293,7 +12352,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 53. 1人世帯</caption>
+<caption class="title">表 54. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12656,7 +12715,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 54. 4人世帯</caption>
+<caption class="title">表 55. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -12817,7 +12876,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 55. 3人世帯</caption>
+<caption class="title">表 56. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -12978,7 +13037,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 56. 2人世帯</caption>
+<caption class="title">表 57. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13139,7 +13198,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 57. 1人世帯</caption>
+<caption class="title">表 58. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13417,7 +13476,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 <div class="sect5">
 <h6 id="_3_16_3_時刻別の使用時間"><a class="link" href="#_3_16_3_時刻別の使用時間">3.16.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 58. 4人世帯</caption>
+<caption class="title">表 59. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13578,7 +13637,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 59. 3人世帯</caption>
+<caption class="title">表 60. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13739,7 +13798,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 60. 2人世帯</caption>
+<caption class="title">表 61. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13900,7 +13959,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 61. 1人世帯</caption>
+<caption class="title">表 62. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
