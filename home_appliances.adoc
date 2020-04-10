@@ -234,21 +234,21 @@ E_{ Elc, HEAs, d, t }
 
 |stem:[P_{ Elc, dfrst, rtd }]
 |除霜用電熱装置の定格消費電力
-|flot
+|float
 |150
 |W
 |否
 
 |stem:[C_{ dfrst }]
 |除霜用電熱装置の消費電力量の評価係数
-|flot
+|float
 |0.9
 |-
 |否
 
 |stem:[E_{ Elc, rfrg, annual, JIS }]
 |JISに準拠して測定された年間消費電力量
-|flot
+|float
 |330.0
 |kWh
 |可
@@ -475,29 +475,29 @@ E_{  Elc, rfrg, annual, JIS } & (JIS_{ year } = 1999)　\\
 
 |stem:[P_{ Elc, TV_{ LED }, view, rtd }]
 |稼働時の定格消費電力
-|flot
+|float
 |125
 |W
 |可
 
 |stem:[P_{ Elc, TV_{ LED }, standby, rtd }]
 |待機時の定格消費電力
-|flot
+|float
 |0.15
 |W
 |可
 
 |stem:[t_{ TV_{ LED }, view, d, t }]
 |1年間の全時間の視聴時間
-|flot
-|要素数が8760の配列
+|要素数が8760のflaot型配列
+|4人世帯のスケジュール
 |h
 |否
 
 |stem:[t_{ TV_{ LED }, standby, d, t }]
 |1年間の全時間の待機時間
-|flot
-|要素数が8760の配列
+|要素数が8760のflaot型配列
+|4人世帯のスケジュール
 |W
 |否
 
@@ -804,6 +804,10 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 +
 ただし、これは計算モデルの作成者が解決する問題であり、プログラム作成者側が行う作業でない。
 
+. 暖房スケジュールが全て1
++
+冷蔵庫の様にスケジュールは不要でないか？
+
 ====
 
 自立循環型住宅への設計ガイドラインにおける最重要家電は「”温水”暖房便座」であるあが、ここで扱う便座は「暖房便座」である。 + 
@@ -866,22 +870,22 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 
 |stem:[P_{ Elc, toilet-seat-heater, rtd }]
 |暖房時の定格消費電力
-|flot
+|float
 |45
 |W
 |否
 
 |stem:[\theta_{ ave, d}]
 |平均外気温度
-|flot
+|float
 |11.23
 |℃
 |否
 
 |stem:[t_{ toilet-sheat-heater, d, t }]
 |1年間の全時間の暖房時間
-|flot
-|要素数が8760の配列
+|要素数が8760のflaot型配列
+|4人世帯のスケジュール
 |h
 |否
 
@@ -1174,15 +1178,15 @@ E_{ Elc, toilet-seat-heater, d } = -20.01 \times \theta_{ toilet, ave, d } + 922
 
 |stem:[E_{ Elc, washer, wash, rtd }]
 |標準コースの選択の定格消費電力量
-|flot
+|float
 |51
 |Wh
 |可
 
-|stem:[t_{ TV_{ LED }, view, d, t }]
-|1年間の全時間の選択回数
-|flot
-|要素数が8760の配列
+|stem:[tm_{ TV_{ LED }, view, d, t }]
+|1年間の全時間の洗濯回数
+|要素数が8760のflaot型配列
+|4人世帯のスケジュール
 |回
 |否
 
@@ -1457,10 +1461,17 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 
 |stem:[P_{ Elc, kttl, boil, rtd }]
 |定格消費電力
-|flot
+|float
 |125
 |W
 |可
+
+|stem:[tm_{ toilet-sheat-heater, d, t }]
+|1年間の全時間の沸上回数
+|要素数が8760のflaot型配列
+|4人世帯のスケジュール
+|回
+|否
 
 |stem:[NumberOfPeople]
 |世帯人数
@@ -1680,7 +1691,21 @@ E_{ Elc, kttl, boil } = P_{ Elc, kttl, boil, rtd } \times 0.1
 
 <<<
 ===== 3.7． 電子レンジ
-入力項目と入力条件を以下に示す。
+
+====
+
+【メモ：電子レンジの課題】
+
+. 設置場所による評価は行えない。
+
+. 複数台の評価時は同一機種しか評価できない。
+
+====
+
+最重要家電ではないため、デフォルト値で計算する。
+よって、ユーザー入力項目と入力条件はなし。
+
+////
 
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
@@ -1705,13 +1730,43 @@ E_{ Elc, kttl, boil } = P_{ Elc, kttl, boil, rtd } \times 0.1
 |V1
 |調理時の定格消費電力量
 |値
-|小数（1位まで）
+|小数（？位まで）
 |1450
 |W
 |表示しない
 
 |===
 
+////
+
+また、プログラムの入力項目を以下に示す。
+
+.電子レンジの入力パラメータ
+[cols="<3,<4,^1,>1,^1,^2", stripes=hover]
+|===
+
+^h|変数名
+^h|説明
+^h|変数の型
+^h|初期値
+^h|単位
+^h|ユーザー入力の可否
+
+|stem:[P_{ Elc, microwave, cook, rtd }]
+|調理時の定格消費電力
+|float
+|1450
+|W
+|可
+
+|stem:[t_{ microwave, cook, d, t }]
+|1年間の全時間の調理時間
+|要素数が8760のfloat型配列　
+|4人世帯のスケジュール
+|h
+|否
+
+|===
 
 ====== 3.7.1. 時刻別消費電力量
 
