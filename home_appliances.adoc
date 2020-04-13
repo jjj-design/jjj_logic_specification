@@ -1968,17 +1968,33 @@ P_{ Elc, microwave, cook } = 0.9373 \times P_{ Elc, microwave, cook, rtd }
 ===== 3.8． 電気炊飯器
 
 ====
-【課題】炊飯号数の決め方と初期値をどうするか？保温には定格値は無いのか？
+
+【メモ：電気炊飯器の課題】
+
+. 設置場所による評価は行えない。
+
+. 複数台の評価時は同一機種しか評価できない。
+
+. 炊飯合数の決め方と初期値をどうするかが未確定
+
+. 保温に定格値を求めていない。
++
+link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] では、保温の消費電力が要求されており、定格値は要求されていない。 +
+恐らく、 link:https://www.enecho.meti.go.jp/category/saving_and_new/saving/summary/pdf/top_runner/19toprunner_zyasuihanki.pdf[ジャー炊飯器のエネルギー消費性能の向上に関するエネルギー消費機器等製造事業者等の判断の基準等] の値をさしているのではないか？
+
+
 ====
 
+最重要家電ではないため、デフォルト値で計算する。
+よって、ユーザー入力項目と入力条件はなし。
 
-入力項目と入力条件を以下に示す。
 
+////
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
 ^h|識別子
-^h|項目
+^h|項目（値の根拠）
 ^h|入力値の種別
 ^h|値
 ^h|初期値
@@ -2013,7 +2029,7 @@ P_{ Elc, microwave, cook } = 0.9373 \times P_{ Elc, microwave, cook, rtd }
 |V2
 |保温の消費電力量
 |値
-|小数（1位まで）
+|小数（？位まで）
 |15.1
 |Wh
 |表示しない
@@ -2029,10 +2045,69 @@ P_{ Elc, microwave, cook } = 0.9373 \times P_{ Elc, microwave, cook, rtd }
 |V3
 |炊飯号数
 |値
-|小数（1位まで）
+|小数（？位まで）
 |未確定
 |合
 |表示しない
+
+|===
+
+////
+
+また、プログラムの入力項目を以下に示す。
+
+.電気炊飯器の入力パラメータ
+[cols="<3,<4,^1,>1,^1,^2", stripes=hover]
+|===
+
+^h|変数名
+^h|説明
+^h|変数の型
+^h|初期値
+^h|単位
+^h|ユーザー入力の可否
+
+|stem:[t_{ rice-cooker, cook }]
+|炊飯1回あたりの時間
+|float
+|\frac{ 54.19 }{ 60 }
+|h
+|否
+
+|stem:[P_{ Elc, rice-cooker, rtd }]
+|定格消費電力
+|float
+|1210
+|W
+|否
+
+|stem:[N_{ cup-of-rice }]
+|炊飯号数
+|float
+|不明
+|合
+|否
+
+|stem:[P_{ Elc, rice-cooker, keep }]
+|保温時の消費電力
+|float
+|15.1
+|W
+|否
+
+|stem:[t_{ rice-cooker, cook, d, t }]
+|1年間の全時間の炊飯時間
+|要素数が8760のfloat型配列　
+|4人世帯のスケジュール
+|h
+|否
+
+|stem:[t_{ rice-cooker, keep, d, t }]
+|1年間の全時間の保温時間
+|要素数が8760のfloat型配列　
+|4人世帯のスケジュール
+|h
+|否
 
 |===
 
