@@ -7705,68 +7705,80 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>【メモ】参考文献ではCDラジカセとMDコンポを1つの節で解説しているが、スケジュールは別管理となっており、実質的に別機器として評価いているため、章を分ける</p>
+<p>【メモ：CDラジカセの課題】</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>設置場所による評価は行えない。</p>
+</li>
+<li>
+<p>複数台の評価時は同一機種しか評価できない。</p>
+</li>
+<li>
+<p><a href="https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx">省エネ基準参考資料_家電・調理.docx</a> では、CDラジカセとMDコンポを1つの節で解説しているが、スケジュールは別管理となっており、実質的に別機器として評価しているため、別機器とする。</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>入力項目と入力条件を以下に示す。</p>
+<p>最重要家電ではないため、デフォルト値で計算する。
+よって、ユーザー入力項目と入力条件はなし。</p>
+</div>
+<div class="paragraph">
+<p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">表 38. CDラジカセの入力パラメータ</caption>
 <colgroup>
-<col style="width: 6.25%;">
-<col style="width: 31.25%;">
-<col style="width: 12.5%;">
-<col style="width: 18.75%;">
-<col style="width: 12.5%;">
-<col style="width: 6.25%;">
-<col style="width: 12.5%;">
+<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 16.6668%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">識別子</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">入力値の種別</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">値</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">初期値</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">表示条件</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">変数名</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">説明</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">変数の型</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">初期値</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">単位</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">ユーザー入力の可否</p></th>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力の入力の有無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(P_{ Elc, audio_{ CD-radio-cassette }, rtd }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">定格消費電力</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">28</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">28</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(P_{ Elc, audio_{ CD-radio-cassette }, standby, rtd }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">待機時の定格消費電力</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.2</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">待機時の定格消費電力の入力の有無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ audio_{ CD-radio-cassette }, listening, d, t }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の聴取時間</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">V2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">待機時の定格消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">0.2</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ audio_{ CD-radio-cassette }, standby, d, t }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の待機時間</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
 </tbody>
 </table>
@@ -7869,7 +7881,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 <div class="sect5">
 <h6 id="_3_10_3_時刻別の動作時間"><a class="link" href="#_3_10_3_時刻別の動作時間">3.10.3. 時刻別の動作時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 38. 4人世帯</caption>
+<caption class="title">表 39. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -8113,7 +8125,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 39. 3人世帯</caption>
+<caption class="title">表 40. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -8357,7 +8369,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 40. 2人世帯</caption>
+<caption class="title">表 41. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -8601,7 +8613,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 41. 1人世帯</caption>
+<caption class="title">表 42. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9023,7 +9035,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 42. 4人世帯</caption>
+<caption class="title">表 43. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9267,7 +9279,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 43. 3人世帯</caption>
+<caption class="title">表 44. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9511,7 +9523,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 44. 2人世帯</caption>
+<caption class="title">表 45. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9755,7 +9767,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 45. 1人世帯</caption>
+<caption class="title">表 46. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -10111,7 +10123,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <div class="sect5">
 <h6 id="_3_12_3_時刻別の使用時間"><a class="link" href="#_3_12_3_時刻別の使用時間">3.12.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 46. 4人世帯</caption>
+<caption class="title">表 47. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10272,7 +10284,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 47. 3人世帯</caption>
+<caption class="title">表 48. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10433,7 +10445,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 48. 2人世帯</caption>
+<caption class="title">表 49. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10594,7 +10606,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 49. 1人世帯</caption>
+<caption class="title">表 50. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10867,7 +10879,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <div class="sect5">
 <h6 id="_3_13_3_時刻別の使用時間"><a class="link" href="#_3_13_3_時刻別の使用時間">3.13.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 50. 4人世帯</caption>
+<caption class="title">表 51. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11028,7 +11040,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 51. 3人世帯</caption>
+<caption class="title">表 52. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11189,7 +11201,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 52. 2人世帯</caption>
+<caption class="title">表 53. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11350,7 +11362,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 53. 1人世帯</caption>
+<caption class="title">表 54. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11687,7 +11699,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 54. 4人世帯</caption>
+<caption class="title">表 55. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -11931,7 +11943,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 55. 3人世帯</caption>
+<caption class="title">表 56. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12175,7 +12187,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 56. 2人世帯</caption>
+<caption class="title">表 57. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12419,7 +12431,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 57. 1人世帯</caption>
+<caption class="title">表 58. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12782,7 +12794,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 58. 4人世帯</caption>
+<caption class="title">表 59. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -12943,7 +12955,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 59. 3人世帯</caption>
+<caption class="title">表 60. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13104,7 +13116,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 60. 2人世帯</caption>
+<caption class="title">表 61. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13265,7 +13277,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 61. 1人世帯</caption>
+<caption class="title">表 62. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13543,7 +13555,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 <div class="sect5">
 <h6 id="_3_16_3_時刻別の使用時間"><a class="link" href="#_3_16_3_時刻別の使用時間">3.16.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 62. 4人世帯</caption>
+<caption class="title">表 63. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13704,7 +13716,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 63. 3人世帯</caption>
+<caption class="title">表 64. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13865,7 +13877,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 64. 2人世帯</caption>
+<caption class="title">表 65. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -14026,7 +14038,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 65. 1人世帯</caption>
+<caption class="title">表 66. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
