@@ -3026,22 +3026,32 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } = P_{ Elc, audio_{ CD-radio-cass
 ===== 3.11． MDコンポ
 
 ====
-【メモ】CDラジカセと分けた
+
+【メモ：MDコンポの課題】
+
+. 設置場所による評価は行えない。
+
+. 複数台の評価時は同一機種しか評価できない。
+
+. link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] では、CDラジカセとMDコンポを1つの節で解説しているが、スケジュールは別管理となっており、実質的に別機器として評価しているため、別機器とする。
+
 ====
 
-入力項目と入力条件を以下に示す。
+最重要家電ではないため、デフォルト値で計算する。
+よって、ユーザー入力項目と入力条件はなし。
+
+////
 
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
 ^h|識別子
-^h|項目
+^h|項目（値の根拠）
 ^h|入力値の種別
 ^h|値
 ^h|初期値
 ^h|単位
 ^h|表示条件
-
 
 |C1
 |定格消費電力の入力の有無
@@ -3076,6 +3086,52 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } = P_{ Elc, audio_{ CD-radio-cass
 |表示しない
 
 |===
+
+////
+
+また、プログラムの入力項目を以下に示す。
+
+.MDコンポの入力パラメータ
+[cols="<3,<4,^1,>1,^1,^2", stripes=hover]
+|===
+
+^h|変数名
+^h|説明
+^h|変数の型
+^h|初期値
+^h|単位
+^h|ユーザー入力の可否
+
+|stem:[P_{ Elc, audio_{ MicroSystem-with-MD }, rtd }]
+|定格消費電力
+|float
+|28
+|W
+|否
+
+|stem:[P_{ Elc, audio_{ MicroSystem-with-MD }, standby, rtd }]
+|待機時の定格消費電力
+|float
+|0.2
+|W
+|否
+
+|stem:[t_{ audio_{ MicroSystem-with-MD }, listening, d, t }]
+|1年間の全時間の聴取時間
+|要素数が8760のfloat型配列　
+|4人世帯のスケジュール
+|h
+|否
+
+|stem:[t_{ audio_{ MicroSystem-with-MD }, standby, d, t }]
+|1年間の全時間の待機時間
+|要素数が8760のfloat型配列　
+|4人世帯のスケジュール
+|h
+|否
+
+|===
+
 
 
 ====== 3.11.1. 時刻別消費電力量
@@ -3336,19 +3392,29 @@ P_{ Elc, audio_{  MicroSystem-with-MD }, standby } = P_{ Elc, audio_{  MicroSyst
 <<<
 ===== 3.12． 掃除機
 
-入力項目と入力条件を以下に示す。
+====
+
+【メモ：掃除機の課題】
+
+. 複数台の評価時は同一機種しか評価できない。
+
+====
+
+最重要家電ではないため、デフォルト値で計算する。
+よって、ユーザー入力項目と入力条件はなし。
+
+////
 
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
 ^h|識別子
-^h|項目
+^h|項目（値の根拠）
 ^h|入力値の種別
 ^h|値
 ^h|初期値
 ^h|単位
 ^h|表示条件
-
 
 |C1
 |定格消費電力の入力の有無
@@ -3361,13 +3427,43 @@ P_{ Elc, audio_{  MicroSystem-with-MD }, standby } = P_{ Elc, audio_{  MicroSyst
 |V1
 |定格消費電力
 |値
-|小数（1位まで）
+|小数（？位まで）
 |1000
 |W
 |表示しない
 
 |===
 
+////
+
+また、プログラムの入力項目を以下に示す。
+
+.掃除機の入力パラメータ
+[cols="<3,<4,^1,>1,^1,^2", stripes=hover]
+|===
+
+^h|変数名
+^h|説明
+^h|変数の型
+^h|初期値
+^h|単位
+^h|ユーザー入力の可否
+
+|stem:[P_{ Elc, cleaner, rtd }]
+|定格消費電力
+|float
+|1000
+|W
+|否
+
+|stem:[t_{ cleaner, oprt, d, t }]
+|1年間の全時間の使用時間
+|要素数が8760のfloat型配列　
+|4人世帯のスケジュール
+|h
+|否
+
+|===
 
 
 ====== 3.12.1. 時刻別消費電力量
@@ -3389,7 +3485,7 @@ E_{ Elc, cleaner, d, t } =  P_{ Elc, cleaner, oprt } \times t_{ cleaner, oprt, d
 |stem:[ P_{ Elc, cleaner } ] 
 |：使用時の消費電力,W
 
-|stem:[ t_{ cleaner, d, t } ] 
+|stem:[ t_{ cleaner, oprt, d, t } ] 
 |：日付 stem:[ d ] の時刻 stem:[ t ] における使用時間,h
 
 |stem:[ 10^{ -3 } ]
