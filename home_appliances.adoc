@@ -3665,19 +3665,30 @@ P_{ Elc, cleaner, oprt } =　1.0355 \times P_{ Elc, cleaner, rtd }
 
 <<<
 ===== 3.13． アイロン
-入力項目と入力条件を以下に示す。
+
+====
+
+【メモ：アイロンの課題】
+
+. 複数台の評価時は同一機種しか評価できない。
+
+====
+
+最重要家電ではないため、デフォルト値で計算する。
+よって、ユーザー入力項目と入力条件はなし。
+
+////
 
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
 ^h|識別子
-^h|項目
+^h|項目（値の根拠）
 ^h|入力値の種別
 ^h|値
 ^h|初期値
 ^h|単位
 ^h|表示条件
-
 
 |C1
 |定格消費電力の入力の有無
@@ -3690,12 +3701,45 @@ P_{ Elc, cleaner, oprt } =　1.0355 \times P_{ Elc, cleaner, rtd }
 |V1
 |定格消費電力
 |値
-|小数（1位まで）
+|小数（？位まで）
 |1200
 |W
 |表示しない
 
 |===
+
+////
+
+また、プログラムの入力項目を以下に示す。
+
+.アイロンの入力パラメータ
+[cols="<3,<4,^1,>1,^1,^2", stripes=hover]
+|===
+
+^h|変数名
+^h|説明
+^h|変数の型
+^h|初期値
+^h|単位
+^h|ユーザー入力の可否
+
+|stem:[P_{ Elc, iron, rtd }]
+|定格消費電力
+|float
+|1200
+|W
+|否
+
+|stem:[t_{ iron, oprt, d, t }]
+|1年間の全時間の使用時間
+|要素数が8760のfloat型配列　
+|4人世帯のスケジュール
+|h
+|否
+
+|===
+
+
 
 ====== 3.13.1. 時刻別消費電力量
 
@@ -3703,7 +3747,7 @@ P_{ Elc, cleaner, oprt } =　1.0355 \times P_{ Elc, cleaner, rtd }
 
 [stem]
 ++++
-E_{ Elc, iron, d, t } =  P_{ Elc, iron } \times t_{ iron, d, t } \times 10^{ -3 }
+E_{ Elc, iron, d, t } =  P_{ Elc, iron, oprt } \times t_{ iron, oprt, d, t } \times 10^{ -3 }
 ++++
 
 
@@ -3713,10 +3757,10 @@ E_{ Elc, iron, d, t } =  P_{ Elc, iron } \times t_{ iron, d, t } \times 10^{ -3 
 |stem:[ E_{ Elc, iron, d, t } ] 
 |：日付 stem:[ d ] の時刻 stem:[ t ] における消費電力量,kWh
 
-|stem:[ P_{ Elc, iron } ] 
+|stem:[ P_{ Elc, iron, oprt } ] 
 |：使用時の消費電力,W
 
-|stem:[ t_{ iron, d, t } ] 
+|stem:[ t_{ iron, oprt, d, t } ] 
 |：日付 stem:[ d ] の時刻 stem:[ t ] における使用時間,h
 
 |stem:[ 10^{ -3 } ]
@@ -3733,7 +3777,7 @@ E_{ Elc, iron, d, t } =  P_{ Elc, iron } \times t_{ iron, d, t } \times 10^{ -3 
 
 [stem]
 ++++
-P_{ Elc, iron } =　0.53 \times P_{ Elc, iron, rtd }
+P_{ Elc, iron, oprt } =　0.53 \times P_{ Elc, iron, rtd }
 ++++
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]

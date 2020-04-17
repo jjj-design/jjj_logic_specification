@@ -10798,46 +10798,61 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 <div class="sect4">
 <h5 id="_3_13_アイロン"><a class="link" href="#_3_13_アイロン">3.13． アイロン</a></h5>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p>入力項目と入力条件を以下に示す。</p>
+<p>【メモ：アイロンの課題】</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>複数台の評価時は同一機種しか評価できない。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>最重要家電ではないため、デフォルト値で計算する。
+よって、ユーザー入力項目と入力条件はなし。</p>
+</div>
+<div class="paragraph">
+<p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">表 53. アイロンの入力パラメータ</caption>
 <colgroup>
-<col style="width: 6.25%;">
-<col style="width: 31.25%;">
-<col style="width: 12.5%;">
-<col style="width: 18.75%;">
-<col style="width: 12.5%;">
-<col style="width: 6.25%;">
-<col style="width: 12.5%;">
+<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 16.6668%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">識別子</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">入力値の種別</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">値</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">初期値</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">表示条件</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">変数名</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">説明</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">変数の型</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">初期値</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">単位</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">ユーザー入力の可否</p></th>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力の入力の有無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(P_{ Elc, iron, rtd }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">定格消費電力</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1200</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">1200</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ iron, oprt, d, t }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の使用時間</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
 </tbody>
 </table>
@@ -10848,7 +10863,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 <div class="stemblock">
 <div class="content">
-\[E_{ Elc, iron, d, t } =  P_{ Elc, iron } \times t_{ iron, d, t } \times 10^{ -3 }\]
+\[E_{ Elc, iron, d, t } =  P_{ Elc, iron, oprt } \times t_{ iron, oprt, d, t } \times 10^{ -3 }\]
 </div>
 </div>
 <table class="tableblock frame-none grid-none stripes-none stretch">
@@ -10862,11 +10877,11 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における消費電力量,kWh</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, iron } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, iron, oprt } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：使用時の消費電力,W</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ iron, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( t_{ iron, oprt, d, t } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における使用時間,h</p></td>
 </tr>
 <tr>
@@ -10887,7 +10902,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 <div class="stemblock">
 <div class="content">
-\[P_{ Elc, iron } =　0.53 \times P_{ Elc, iron, rtd }\]
+\[P_{ Elc, iron, oprt } =　0.53 \times P_{ Elc, iron, rtd }\]
 </div>
 </div>
 <table class="tableblock frame-none grid-none stripes-none stretch">
@@ -10906,7 +10921,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <div class="sect5">
 <h6 id="_3_13_3_時刻別の使用時間"><a class="link" href="#_3_13_3_時刻別の使用時間">3.13.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 53. 4人世帯</caption>
+<caption class="title">表 54. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11067,7 +11082,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 54. 3人世帯</caption>
+<caption class="title">表 55. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11228,7 +11243,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 55. 2人世帯</caption>
+<caption class="title">表 56. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11389,7 +11404,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 56. 1人世帯</caption>
+<caption class="title">表 57. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11726,7 +11741,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 57. 4人世帯</caption>
+<caption class="title">表 58. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -11970,7 +11985,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 58. 3人世帯</caption>
+<caption class="title">表 59. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12214,7 +12229,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 59. 2人世帯</caption>
+<caption class="title">表 60. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12458,7 +12473,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 60. 1人世帯</caption>
+<caption class="title">表 61. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12821,7 +12836,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 61. 4人世帯</caption>
+<caption class="title">表 62. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -12982,7 +12997,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 62. 3人世帯</caption>
+<caption class="title">表 63. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13143,7 +13158,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 63. 2人世帯</caption>
+<caption class="title">表 64. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13304,7 +13319,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 64. 1人世帯</caption>
+<caption class="title">表 65. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13582,7 +13597,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 <div class="sect5">
 <h6 id="_3_16_3_時刻別の使用時間"><a class="link" href="#_3_16_3_時刻別の使用時間">3.16.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 65. 4人世帯</caption>
+<caption class="title">表 66. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13743,7 +13758,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 66. 3人世帯</caption>
+<caption class="title">表 67. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13904,7 +13919,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 67. 2人世帯</caption>
+<caption class="title">表 68. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -14065,7 +14080,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 68. 1人世帯</caption>
+<caption class="title">表 69. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
