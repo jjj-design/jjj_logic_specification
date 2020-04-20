@@ -11572,69 +11572,80 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>評価式に、定格値が入ってこないので、入力項目には必要ないのではないか。
-WORDの機器表にも待機時消費電力の項目は無い。</p>
+<p>【メモ：PCゲーム機の課題】</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>複数台の評価時は同一機種しか評価できない。</p>
+</li>
+<li>
+<p><a href="https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx">省エネ基準参考資料_家電・調理.docx</a> では、実測値を用いているためカタログベースの評価ができない。</p>
+<div class="paragraph">
+<p>実測値の測定条件も不明であるため、ユーザーが入力できるようにするためのハードルが高い。</p>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>入力項目と入力条件を以下に示す。</p>
+<p>最重要家電ではないため、デフォルト値で計算する。
+よって、ユーザー入力項目と入力条件はなし。</p>
+</div>
+<div class="paragraph">
+<p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">表 58. PCゲーム機の入力パラメータ</caption>
 <colgroup>
-<col style="width: 6.25%;">
-<col style="width: 31.25%;">
-<col style="width: 12.5%;">
-<col style="width: 18.75%;">
-<col style="width: 12.5%;">
-<col style="width: 6.25%;">
-<col style="width: 12.5%;">
+<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 8.3333%;">
+<col style="width: 16.6668%;">
 </colgroup>
 <tbody>
 <tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">識別子</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">項目</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">入力値の種別</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">値</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">初期値</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">表示条件</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">変数名</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">説明</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">変数の型</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">初期値</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">単位</p></th>
+<th class="tableblock halign-center valign-top"><p class="tableblock">ユーザー入力の可否</p></th>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">稼働時の消費電力（実測値）の入力の有無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(P_{ Elc, game, standby, measured }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">待機時の消費電力（実測値）</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0.3</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">稼働時の消費電力（実測値）</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">95.7</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(P_{ Elc, game, play, measured }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">稼働時の消費電力（実測値）</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">95.7</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">待機時の消費電力（実測値）の入力の有無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br></p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に表示</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ game, standby, d, t }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の待機時間</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">V2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">待機時の消費電力（実測値）</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（1位まで）</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">0.3</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">表示しない</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ game, play, d, t }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の稼働時間</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
 </tbody>
 </table>
@@ -11690,6 +11701,13 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 <div class="paragraph">
 <p>待機とはPCゲームの電源を「切」した状態である。</p>
 </div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>算出式というよりは定数だが、今後の修正を見込んで他の家電と揃えている。</p>
+</div>
+</div>
+</div>
 <div class="stemblock">
 <div class="content">
 \[P_{ Elc, game, standby } =　0.3\]
@@ -11712,6 +11730,13 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 <h6 id="_3_14_2_2_稼働時の消費電力"><a class="link" href="#_3_14_2_2_稼働時の消費電力">3.14.2.2. 稼働時の消費電力</a></h6>
 <div class="paragraph">
 <p>稼働とはPCゲームの電源を「入」した状態である。</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>算出式というよりは定数だが、今後の修正を見込んで他の家電と揃えている。</p>
+</div>
+</div>
 </div>
 <div class="stemblock">
 <div class="content">
@@ -11736,12 +11761,12 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>スケジュールがあるのは4人世帯のみ</p>
+<p><a href="https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx">省エネ基準参考資料_家電・調理.docx</a> にスケジュールがあるのは4人世帯のみ、その他は0のスケジュールを追加した。</p>
 </div>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 58. 4人世帯</caption>
+<caption class="title">表 59. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -11985,7 +12010,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 59. 3人世帯</caption>
+<caption class="title">表 60. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12229,7 +12254,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 60. 2人世帯</caption>
+<caption class="title">表 61. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12473,7 +12498,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 61. 1人世帯</caption>
+<caption class="title">表 62. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12836,7 +12861,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 62. 4人世帯</caption>
+<caption class="title">表 63. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -12997,7 +13022,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 63. 3人世帯</caption>
+<caption class="title">表 64. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13158,7 +13183,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 64. 2人世帯</caption>
+<caption class="title">表 65. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13319,7 +13344,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 65. 1人世帯</caption>
+<caption class="title">表 66. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13597,7 +13622,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 <div class="sect5">
 <h6 id="_3_16_3_時刻別の使用時間"><a class="link" href="#_3_16_3_時刻別の使用時間">3.16.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 66. 4人世帯</caption>
+<caption class="title">表 67. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13758,7 +13783,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 67. 3人世帯</caption>
+<caption class="title">表 68. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13919,7 +13944,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 68. 2人世帯</caption>
+<caption class="title">表 69. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -14080,7 +14105,7 @@ WORDの機器表にも待機時消費電力の項目は無い。</p>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 69. 1人世帯</caption>
+<caption class="title">表 70. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
