@@ -706,7 +706,7 @@ n_p = \left\{ \begin{array}{ll}
 <p>A.1 家電による消費電力量</p>
 </div>
 <div class="paragraph">
-<p>日付 \( d \) の時刻 \( t \) における1時間当たりの居住人数が \( p \) 人における家電の消費電力 \( E_{E, AP, p, d, t}\) は、居住人数及び生活スケジュールに依存し、表A.1に掲げる値を用いるものとする。日付 \( d \) における生活スケジュールは第十一章「その他」第三節「生活スケジュール」に定める。</p>
+<p>日付 \( d \) の時刻 \( t \) における1時間当たりの居住人数が \( p \) 人における家電の消費電力 \( E_{E, AP, p, d, t} \) は、居住人数及び生活スケジュールに依存し、表A.1に掲げる値を用いるものとする。日付 \( d \) における生活スケジュールは第十一章「その他」第三節「生活スケジュール」に定める。</p>
 </div>
 </div>
 </div>
@@ -728,13 +728,13 @@ n_p = \left\{ \begin{array}{ll}
 <li>
 <p>入力値の測定条件を定める規格・告示の有無</p>
 <div class="paragraph">
-<p>製造会社の独自規格は認められないので、デフォルト値以外を入力したい場合にはこの課題をクリアする必要がある。</p>
+<p>デフォルト値以外を入力したい場合には規格・告示が必要がある。</p>
 </div>
 </li>
 <li>
-<p>カタログや製品ラベルでの入力値の表示の有無</p>
+<p>入力値の取得方法の有無</p>
 <div class="paragraph">
-<p>プログラム使用者が入力値を容易に取得できる環境を整える必要がある。実際の作業を行うのは製造業者になるが、義務ではない評価方法について協力が得られるだろうか？</p>
+<p>プログラム使用者が入力値を容易に取得できる環境を整える必要がある。実際に環境を整えるのは製造業者になるが、義務ではない評価方法について協力が得られるだろうか？</p>
 </div>
 </li>
 </ol>
@@ -747,7 +747,7 @@ n_p = \left\{ \begin{array}{ll}
 <li>
 <p>プログラムの構成</p>
 <div class="paragraph">
-<p>家電の評価方法と家電の使用スケジュールは全く異なる理論になる。家電は家電単体で評価方法が定まるが、家電の使用スケジュールは世帯構成や住まい方に依存するため、家電自体は無関係である。家電によって世帯構成や住まい方が決まるのではない。スケジュールは家電の上位概念（家電が設置されていようと評価する・しないの権限を持つ）である。</p>
+<p>家電の評価方法と家電の使用スケジュールは全く異なる理論になる。家電は家電単体で評価方法が定まるが、家電の使用スケジュールは世帯構成や住まい方に依存するため、家電自体は無関係である。家電によって世帯構成や住まい方が決まるのではない。スケジュールは家電の上位概念（家電が設置されていようと評価する・しないの権限を持つ）である。解決するには評価方法の全体像を考えられ、かつ決定できる人が必要になる。</p>
 </div>
 </li>
 </ol>
@@ -777,7 +777,7 @@ n_p = \left\{ \begin{array}{ll}
 </div>
 </li>
 <li>
-<p>家電の任意設置・利用の課題</p>
+<p>任意の家電評価の課題</p>
 <div class="paragraph">
 <p>現時点では家電の評価はスケジュールに依存するので、ユーザーが任意の家電を評価することや、既に評価できる家電の数や設置場所を変更することはできない。</p>
 </div>
@@ -1228,6 +1228,9 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 <p>計算モデル作成者に確認する。</p>
 </div>
 </li>
+<li>
+<p>仮想居住人数が小数の場合に、世帯人数 \( NumberOfPeople\) はどの値をとるべきか？</p>
+</li>
 </ol>
 </div>
 </div>
@@ -1328,7 +1331,7 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ TV_{ LED }, view, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の視聴時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のflaot型配列</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -1336,7 +1339,7 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ TV_{ LED }, standby, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の待機時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のflaot型配列</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -1344,7 +1347,7 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(NumberOfPeople\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">世帯人数</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">仮想居住人数に最も近い整数？</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">人</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -2543,7 +2546,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( NumberOfPeop
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ toilet-sheat-heater, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の暖房時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のflaot型配列</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -3388,7 +3391,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( NumberOfPeop
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(tm_{ TV_{ LED }, view, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の洗濯回数</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のflaot型配列</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">回</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -4133,6 +4136,9 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( NumberOfPeop
 では、1人世帯と2人世帯で補正項が追加されている。3人世帯と4人世帯は不明である。</p>
 </div>
 </li>
+<li>
+<p>仮想居住人数が小数の場合に、世帯人数 \( NumberOfPeople\) はどの値をとるべきか？</p>
+</li>
 </ol>
 </div>
 </div>
@@ -4216,7 +4222,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( NumberOfPeop
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(tm_{ toilet-sheat-heater, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の沸上回数</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のflaot型配列</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">回</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -4224,7 +4230,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } &amp; ( NumberOfPeop
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(NumberOfPeople\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">世帯人数</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">仮想居住人数に最も近い整数？</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">人</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -5009,7 +5015,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ microwave, cook, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の調理時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -5816,7 +5822,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ rice-cooker, cook, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の炊飯時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -5824,7 +5830,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ rice-cooker, keep, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の保温時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -6983,7 +6989,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ PC, oprt, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の使用時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -7768,7 +7774,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ audio_{ CD-radio-cassette }, listening, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の聴取時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -7776,7 +7782,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ audio_{ CD-radio-cassette }, standby, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の待機時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -8927,7 +8933,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ audio_{ MicroSystem-with-MD }, listening, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の聴取時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -8935,7 +8941,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ audio_{ MicroSystem-with-MD }, standby, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の待機時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -10079,7 +10085,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ cleaner, oprt, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の使用時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -10850,7 +10856,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ iron, oprt, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の使用時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -11635,7 +11641,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ game, standby, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の待機時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -11643,7 +11649,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ game, play, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の稼働時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -12798,7 +12804,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ desk-lamp, oprt, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の点灯時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -13540,6 +13546,9 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <p><a href="https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx">省エネ基準参考資料_家電・調理.docx</a> では、ヘアドライヤー（A15）は　§2.3 家電の稼働スケジュール において洗面所にしか設置されておらず複数台を想定していない。また、使用時間は15分間隔スケジュールで指定できるため消費電力で補正する必要は無いように思われる。さらに、補正項も1人世帯が2/3、2人世帯が1/2と人数が多いほど、小さくなるとされているので、人数が多いと15分当たりの消費電力量が減る傾向にある理由が不明である（順番待ちがあるから急いでブローしている？それなら消費電力はターボモード等でえ増えるのではないか？）。</p>
 </div>
 </li>
+<li>
+<p>仮想居住人数が小数の場合に、世帯人数 \( NumberOfPeople\) はどの値をとるべきか？</p>
+</li>
 </ol>
 </div>
 </div>
@@ -13582,7 +13591,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ dryer, oprt, d, t }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1年間の全時間の使用時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">要素数が8760のfloat型配列　</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4人世帯のスケジュール</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し。仮想居住人数に応じて必要になる世帯人数のスケジュール</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -13590,7 +13599,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(NumberOfPeople\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">世帯人数</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">仮想居住人数に最も近い整数？</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">人</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
