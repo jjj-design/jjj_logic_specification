@@ -555,10 +555,10 @@ E_{ Elc, TV_{ LED }, d, t } = ( P_{ Elc, TV_{ LED }, standby } \times t_{ TV_{ L
 ++++
 P_{ Elc, TV_{ LED }, standby } =
 \begin{cases}
-P_{ Elc, TV_{ LED }, standby, rtd }  & ( \mbox{ 4人世帯 } ) \\
-P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 3 }{ 3 } & ( \mbox{ 3人世帯 } ) \\
-P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } & ( \mbox{ 2人世帯 } ) \\
-P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } & ( \mbox{ 1人世帯 } )
+P_{ Elc, TV_{ LED }, standby, rtd }  & ( NumberOfPeople= 4 ) \\
+P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 3 }{ 3 } & ( NumberOfPeople = 3 ) \\
+P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 2 ) \\
+P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 1 )
 \end{cases}
 ++++
 
@@ -585,10 +585,10 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 ++++
 P_{ Elc, TV_{ LED }, view } =
 \begin{cases}
-0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  & ( \mbox{ 4人世帯 } ) \\
-0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 3 }{ 3 } & ( \mbox{ 3人世帯 } ) \\
-0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 2 }{ 3 } & ( \mbox{ 2人世帯 } ) \\
-0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 1 }{ 3 } & ( \mbox{ 1人世帯 } )
+0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  & ( NumberOfPeople = 4 ) \\
+0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 3 }{ 3 } & ( NumberOfPeople = 3 ) \\
+0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 2 ) \\
+0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 1 )
 \end{cases}
 ++++
 
@@ -1493,10 +1493,10 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 ++++
 E_{ Elc, kttl, d, t } =  
 \begin{cases}
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } & (\mbox{ 4人世帯 }) \\
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 3 }{ 3 } & (\mbox{ 3人世帯 }) \\
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 2 }{ 3 } & (\mbox{ 2人世帯 }) \\
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 1 }{ 3 } & (\mbox{ 1人世帯 })
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } & ( NumberOfPeople = 4 ) \\
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 3 }{ 3 } & ( NumberOfPeople = 3 ) \\
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 2 ) \\
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 1)
 \end{cases}
 ++++
 
@@ -4310,19 +4310,30 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 
 <<<
 ===== 3.15． スタンド
-入力項目と入力条件を以下に示す。
+
+====
+
+【メモ：スタンドの課題】
+
+. 複数台の評価時は同一機種しか評価できない。
+
+====
+
+最重要家電ではないため、デフォルト値で計算する。
+よって、ユーザー入力項目と入力条件はなし。
+
+////
 
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
 ^h|識別子
-^h|項目
+^h|項目（値の根拠）
 ^h|入力値の種別
 ^h|値
 ^h|初期値
 ^h|単位
 ^h|表示条件
-
 
 |C1
 |定格消費電力の入力の有無
@@ -4335,10 +4346,41 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |V1
 |定格消費電力
 |値
-|小数（1位まで）
+|小数（？位まで）
 |20
 |W
 |表示しない
+
+|===
+
+////
+
+また、プログラムの入力項目を以下に示す。
+
+.スタンドの入力パラメータ
+[cols="<3,<4,^1,>1,^1,^2", stripes=hover]
+|===
+
+^h|変数名
+^h|説明
+^h|変数の型
+^h|初期値
+^h|単位
+^h|ユーザー入力の可否
+
+|stem:[P_{ Elc, desk-lamp, rtd }]
+|定格消費電力
+|float
+|20
+|W
+|否
+
+|stem:[t_{ desk-lamp, oprt, d, t }]
+|1年間の全時間の点灯時間
+|要素数が8760のfloat型配列　
+|4人世帯のスケジュール
+|h
+|否
 
 |===
 
@@ -4545,19 +4587,34 @@ P_{ Elc, desk-lamp, oprt } =　1.07 \times P_{ Elc, desk-lamp, rtd }
 
 <<<
 ===== 3.16． ヘアドライヤー
-入力項目と入力条件を以下に示す。
+
+====
+
+【メモ：ヘアドライヤーの課題】
+
+. 複数台の評価時は同一機種しか評価できない。
+
+. ヘアドライヤーの消費電力に人数補正が係る理由が不明である。
++
+link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] では、ヘアドライヤー（A15）は　§2.3 家電の稼働スケジュール において洗面所にしか設置されておらず複数台を想定していない。また、使用時間は15分間隔スケジュールで指定できるため消費電力で補正する必要は無いように思われる。さらに、補正項も1人世帯が2/3、2人世帯が1/2と人数が多いほど、小さくなるとされているので、人数が多いと15分当たりの消費電力量が減る傾向にある理由が不明である（順番待ちがあるから急いでブローしている？それなら消費電力はターボモード等でえ増えるのではないか？）。
+
+====
+
+最重要家電ではないため、デフォルト値で計算する。
+よって、ユーザー入力項目と入力条件はなし。
+
+////
 
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
 ^h|識別子
-^h|項目
+^h|項目（値の根拠）
 ^h|入力値の種別
 ^h|値
 ^h|初期値
 ^h|単位
 ^h|表示条件
-
 
 |C1
 |定格消費電力の入力の有無
@@ -4570,12 +4627,51 @@ P_{ Elc, desk-lamp, oprt } =　1.07 \times P_{ Elc, desk-lamp, rtd }
 |V1
 |定格消費電力
 |値
-|小数（1位まで）
+|小数（？位まで）
 |1200
 |W
 |表示しない
 
 |===
+
+////
+
+また、プログラムの入力項目を以下に示す。
+
+.ヘアドライヤーの入力パラメータ
+[cols="<3,<4,^1,>1,^1,^2", stripes=hover]
+|===
+
+^h|変数名
+^h|説明
+^h|変数の型
+^h|初期値
+^h|単位
+^h|ユーザー入力の可否
+
+|stem:[P_{ Elc, dryer, rtd }]
+|定格消費電力
+|float
+|1200
+|W
+|否
+
+|stem:[t_{ dryer, oprt, d, t }]
+|1年間の全時間の使用時間
+|要素数が8760のfloat型配列　
+|4人世帯のスケジュール
+|h
+|否
+
+|stem:[NumberOfPeople]
+|世帯人数
+|Int
+|4
+|人
+|否
+
+|===
+
 
 ====== 3.16.1. 時刻別消費電力量
 
@@ -4583,7 +4679,7 @@ P_{ Elc, desk-lamp, oprt } =　1.07 \times P_{ Elc, desk-lamp, rtd }
 
 [stem]
 ++++
-E_{ Elc, dryer, d, t } =  P_{ Elc, dryer } \times t_{ dryer, d, t } \times 10^{ -3 }
+E_{ Elc, dryer, d, t } =  P_{ Elc, dryer } \times t_{ dryer, oprt, d, t } \times 10^{ -3 }
 ++++
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
@@ -4595,7 +4691,7 @@ E_{ Elc, dryer, d, t } =  P_{ Elc, dryer } \times t_{ dryer, d, t } \times 10^{ 
 |stem:[ P_{ Elc, dryer } ] 
 |：使用時の消費電力,W
 
-|stem:[ t_{ dryer, d, t } ] 
+|stem:[ t_{ dryer, oprt, d, t } ] 
 |：日付 stem:[ d ] の時刻 stem:[ t ] における使用時間,h
 
 |stem:[ 10^{ -3 } ]
@@ -4614,11 +4710,16 @@ E_{ Elc, dryer, d, t } =  P_{ Elc, dryer } \times t_{ dryer, d, t } \times 10^{ 
 ++++
 P_{ Elc, dryer } =　
 \begin{cases}
-0.8974 \times P_{ Elc, dryer, rtd } & ( \mbox{ 4人世帯の場合 } ) \\
-0.8974 \times P_{ Elc, dryer, rtd } \times \frac{ 2 }{ 3 } & ( \mbox{ 2人世帯の場合 } ) \\
-0.8974 \times P_{ Elc, dryer, rtd } \times \frac{ 1 }{ 3 } & ( \mbox{ 1人世帯の場合 } )
+0.8974 \times P_{ Elc, dryer, rtd } & ( NumberOfPeople = 4 ) \\
+0.8974 \times P_{ Elc, dryer, rtd } \times \frac{ 3 }{ 3 } & ( NumberOfPeople = 3 ) \\
+0.8974 \times P_{ Elc, dryer, rtd } \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 2 ) \\
+0.8974 \times P_{ Elc, dryer, rtd } \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 1 )
 \end{cases}
 ++++
+
+====
+link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] は3人世帯はないので、仮に数式を追加している。
+====
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
 |===
