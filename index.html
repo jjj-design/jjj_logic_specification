@@ -960,10 +960,12 @@ E_{ Elc, HEAs, d, t }
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">年間消費電力量（JIS C 9801）</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">年間消費電力量<br>
+（JIS C 9801:1999、JIS C 9801:2006、JIS C 9801-3:2015　2015から枝番が付く）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（？位まで）</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">330.0</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">正数<br>
+（<a href="https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProductSpec.do?pid=307438&amp;ccd=102010">仕様書</a>ベース判断）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">330</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">kWh</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2の場合</p></td>
 </tr>
@@ -973,7 +975,7 @@ E_{ Elc, HEAs, d, t }
 <td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">1)1999<br>
 2)2006<br>
-3)2016</p></td>
+3)2015</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">2)</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2の場合</p></td>
@@ -1005,7 +1007,7 @@ E_{ Elc, HEAs, d, t }
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(P_{ Elc, dfrst, rtd }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">除霜用電熱装置の定格消費電力</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
 <td class="tableblock halign-right valign-top"><p class="tableblock">150</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
@@ -1021,14 +1023,14 @@ E_{ Elc, HEAs, d, t }
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(E_{ Elc, rfrg, annual, JIS }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">JISに準拠して測定された年間消費電力量</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">330.0</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">330</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">kWh</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">可</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(JIS_{ year }\)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">年間消費電力量の測定時に準拠したJIS規格の制定・改正年。 ただし、　\( JIS_{ year } \in \{ 1999, 2006, 2016 \}\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">年間消費電力量の測定時に準拠したJIS規格の制定・改正年。 ただし、　\( JIS_{ year } \in \{ 1999, 2006, 2015 \}\)</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
 <td class="tableblock halign-right valign-top"><p class="tableblock">2006</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">年</p></td>
@@ -1235,9 +1237,6 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 <p>計算モデル作成者に確認する。</p>
 </div>
 </li>
-<li>
-<p>仮想居住人数が小数の場合に、世帯人数 \( NumberOfPeople\) はどの値をとるべきか？</p>
-</li>
 </ol>
 </div>
 </div>
@@ -1278,18 +1277,22 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">稼働時の定格消費電力（不明。恐らく <a href="https://www.enecho.meti.go.jp/category/saving_and_new/saving/enterprise/equipment/pdf/04_tv.pdf">平成３１年３月２９日経済産業省告示第６８号</a> ではないか。）</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">稼働時の定格消費電力<br>
+（不明。恐らく <a href="https://www.enecho.meti.go.jp/category/saving_and_new/saving/enterprise/equipment/pdf/04_tv.pdf">平成３１年３月２９日経済産業省告示第６８号</a> ではないか。）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（？位まで）</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">125.0</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">正数<br>
+（<a href="https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/D_SNZ/lcd-40xb1000-sl_spec.pdf">カタログ</a> ベース判断）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">125</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2の場合</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">V2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">待機時の定格消費電力（不明。恐らく <a href="https://www.enecho.meti.go.jp/category/saving_and_new/saving/enterprise/equipment/pdf/04_tv.pdf">平成３１年３月２９日経済産業省告示第６８号</a> ではないか。</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">待機時の定格消費電力<br>
+（不明。恐らく <a href="https://www.enecho.meti.go.jp/category/saving_and_new/saving/enterprise/equipment/pdf/04_tv.pdf">平成３１年３月２９日経済産業省告示第６８号</a> ではないか。</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（？位まで）</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数<br>
+（1位まで。<a href="https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/D_SNZ/lcd-40xb1000-sl_spec.pdf">カタログ</a> ベース判断）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">0.15</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2の場合</p></td>
@@ -1321,7 +1324,7 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(P_{ Elc, TV_{ LED }, view, rtd }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">稼働時の定格消費電力</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
 <td class="tableblock halign-right valign-top"><p class="tableblock">125</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">可</p></td>
@@ -1354,7 +1357,7 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(NumberOfPeople\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">世帯人数</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">仮想居住人数に最も近い整数？</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">スケジュールと同じ値</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">人</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -1455,6 +1458,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 \begin{cases}
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  &amp; ( NumberOfPeople = 4 ) \\
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 3 }{ 3 } &amp; ( NumberOfPeople = 3 ) \\
+.
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 1 }{ 3 } &amp; ( NumberOfPeople = 2 ) \\
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeople = 1 )
 \end{cases}\]
@@ -2495,7 +2499,8 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 <li>
 <p>暖房スケジュールが全て1</p>
 <div class="paragraph">
-<p>冷蔵庫の様にスケジュールは不要でないか？</p>
+<p>冷蔵庫の様にスケジュールは不要でないか？　現時点では
+<a href="https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx">省エネ基準参考資料_家電・調理.docx</a>　に従っている。</p>
 </div>
 </li>
 </ol>
@@ -3355,9 +3360,11 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">標準コースの定格消費電力量（JIS C 9811）</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">標準コースの定格消費電力量<br>
+（不明。JIS C 9606:1993 電気洗濯機が関連規格と思われるが、消費電力「量」の記述はない。<a href="https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/D_MENT_DOC/maw-70bp_a.pdf">製品カタログ例1</a> <a href="https://panasonic.jp/p-db/contents/manualdl/1428410837463.pdf">製品カタログ例2</a> にも消費電力量の記載はない。<a href="https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx">省エネ基準参考資料_家電・調理.docx</a> 2.1 家電の対象機種選定方法　表1には標準コースの消費電力量が記載されているため、昔はカタログに記載されていたのではないか。）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（？位まで）</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">正数<br>
+（カタログベース判断）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">51</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">Wh</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2</p></td>
@@ -3389,7 +3396,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(E_{ Elc, washer, wash, rtd }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">標準コースの選択の定格消費電力量</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
 <td class="tableblock halign-right valign-top"><p class="tableblock">51</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Wh</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">可</p></td>
@@ -3458,7 +3465,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, washer, wash, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：標準コースの洗濯の定格消費電力量,Wh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：標準コースの洗濯の定格消費電力量（=51 ユーザー未入力時）,Wh</p></td>
 </tr>
 </tbody>
 </table>
@@ -4143,9 +4150,6 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 では、1人世帯と2人世帯で補正項が追加されている。3人世帯と4人世帯は不明である。2人世帯（1/3）よりも1人世帯（2/3）の方が補正値が大きい理由はなぜか？</p>
 </div>
 </li>
-<li>
-<p>仮想居住人数が小数の場合に、世帯人数 \( NumberOfPeople\) はどの値をとるべきか？</p>
-</li>
 </ol>
 </div>
 </div>
@@ -4186,9 +4190,11 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力（不明。JIS C 9213　か？）</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力<br>
+（JIS C 9213:1988　か？ JIS C 9213の制定年は1972のため間にいくつかの改定はあった模様だが、情報なし。）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（？位まで）</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">正数<br>
+（JIS C 9213:1988には消費電力の桁数に関する記述は見当たらない。1. 適用範囲で 1.5 kW の記述がある事からW単位では小数点は考慮されていないと思われる。<a href="https://www.t-fal.co.jp/consumer-services/instructions-for-use/kettle/aprecia_plus_630.pdf">製品カタログの例</a> では1250Wと正数となっている。）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">1160</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2</p></td>
@@ -4220,8 +4226,8 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(P_{ Elc, kttl, boil, rtd }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">定格消費電力</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">125</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1160</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">W</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">可</p></td>
 </tr>
@@ -4237,7 +4243,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(NumberOfPeople\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">世帯人数</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">仮想居住人数に最も近い整数？</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">スケジュールと同じ値</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">人</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -4307,11 +4313,11 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, kttl, boil, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力（=1160 ユーザー未入力時）,W</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：沸き上げ時間(1回の沸き上げ時間6分),h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：沸き上げ時間（1回の沸き上げ時間6分）,h</p></td>
 </tr>
 </tbody>
 </table>
@@ -5084,7 +5090,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, microwave, cook, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：調理時の定格消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：調理時の定格消費電力（=1450）,W</p></td>
 </tr>
 </tbody>
 </table>
@@ -5754,10 +5760,10 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <p>複数台の評価時は同一機種しか評価できない。</p>
 </li>
 <li>
-<p>炊飯合数の決め方と初期値をどうするかが未確定</p>
+<p>炊飯合数の決め方と初期値をどうするかが未確定である。</p>
 </li>
 <li>
-<p>保温に定格値を求めていない。</p>
+<p>保温時の消費電力量の根拠が不明である。</p>
 <div class="paragraph">
 <p><a href="https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx">省エネ基準参考資料_家電・調理.docx</a> では、保温の消費電力が要求されており、定格値は要求されていない。<br>
 恐らく、 <a href="https://www.enecho.meti.go.jp/category/saving_and_new/saving/summary/pdf/top_runner/19toprunner_zyasuihanki.pdf">ジャー炊飯器のエネルギー消費性能の向上に関するエネルギー消費機器等製造事業者等の判断の基準等</a> の値をさしているのではないか？</p>
@@ -5797,7 +5803,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(t_{ rice-cooker, cook }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">炊飯1回あたりの時間</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">\frac{ 54.19 }{ 60 }</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">\( \frac{ 54.19 }{ 60 } \)</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">h</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -5813,16 +5819,16 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(N_{ cup-of-rice }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">炊飯号数</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">不明</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3（根拠が見当たらないので暫定的に決めている。）</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">合</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(P_{ Elc, rice-cooker, keep }\)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">保温時の消費電力</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(E_{ Elc, rice-cooker, keep }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">保温時の消費電力量</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
 <td class="tableblock halign-right valign-top"><p class="tableblock">15.1</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">W</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Wh</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
 <tr>
@@ -5898,7 +5904,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </div>
 <div class="stemblock">
 <div class="content">
-\[P_{ Elc, rice-cooker, cook } = \frac { E_{ Elc, rice-cooker, cook } } { t_{ Elc, rice-cooker, cook } }\]
+\[P_{ Elc, rice-cooker, cook } = \frac { E_{ Elc, rice-cooker, cook } } { t_{ rice-cooker, cook } }\]
 </div>
 </div>
 <div class="stemblock">
@@ -5922,11 +5928,11 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, rice-cooker, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力（=1210）,W</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( N_{ cup-of-rice } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：炊飯合数,合</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：炊飯合数（=3　根拠なし。暫定値）,合</p></td>
 </tr>
 </tbody>
 </table>
@@ -5949,7 +5955,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, rice-cooker, keep } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：電気炊飯器の保温の消費電力量,Wh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：電気炊飯器の保温の消費電力量（15.1）,Wh</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
@@ -7059,7 +7065,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, PC, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力（=97）,W</p></td>
 </tr>
 </tbody>
 </table>
@@ -7863,7 +7869,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, audio_{ CD-radio-cassette }, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力（=28）,W</p></td>
 </tr>
 </tbody>
 </table>
@@ -7886,7 +7892,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, audio_{ CD-radio-cassette }, standby, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：定格待機消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：定格待機消費電力（=0.2）,W</p></td>
 </tr>
 </tbody>
 </table>
@@ -9022,7 +9028,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, audio_{ MicroSystem-with-MD }, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力（=28）,W</p></td>
 </tr>
 </tbody>
 </table>
@@ -9045,7 +9051,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, audio_{  MicroSystem-with-MD }, standby, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：定格待機消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：定格待機消費電力（=0.2）,W</p></td>
 </tr>
 </tbody>
 </table>
@@ -10155,7 +10161,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, cleaner, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力（=1000）,W</p></td>
 </tr>
 </tbody>
 </table>
@@ -10926,7 +10932,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, iron, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力（=1200）,W</p></td>
 </tr>
 </tbody>
 </table>
@@ -11733,7 +11739,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, game, standby } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：待機時の平均消費電力（実測値）,W</p></td>
 </tr>
 </tbody>
@@ -11763,7 +11769,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">95.7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, game, play } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：稼働時の平均消費電力（実測値）,W</p></td>
 </tr>
 </tbody>
@@ -12874,7 +12880,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, desk-lamp, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">:定格消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">:定格消費電力（=20）,W</p></td>
 </tr>
 </tbody>
 </table>
@@ -13553,9 +13559,6 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <p><a href="https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx">省エネ基準参考資料_家電・調理.docx</a> では、ヘアドライヤー（A15）は　§2.3 家電の稼働スケジュール において洗面所にしか設置されておらず複数台を想定していない。また、使用時間は15分間隔スケジュールで指定できるため消費電力で補正する必要は無いように思われる。さらに、補正項も1人世帯が2/3、2人世帯が1/2と人数が多いほど、小さくなるとされているので、人数が多いと15分当たりの消費電力量が減る傾向にある理由が不明である（順番待ちがあるから急いでブローしている？それなら消費電力はターボモード等でえ増えるのではないか？）。</p>
 </div>
 </li>
-<li>
-<p>仮想居住人数が小数の場合に、世帯人数 \( NumberOfPeople\) はどの値をとるべきか？</p>
-</li>
 </ol>
 </div>
 </div>
@@ -13606,7 +13609,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(NumberOfPeople\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">世帯人数</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">仮想居住人数に最も近い整数？</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">スケジュールと同じ値</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">人</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">否</p></td>
 </tr>
@@ -13682,7 +13685,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( P_{ Elc, dryer, rtd } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力,W</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：定格消費電力（=1200）,W</p></td>
 </tr>
 </tbody>
 </table>

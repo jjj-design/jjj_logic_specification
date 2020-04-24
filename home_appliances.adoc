@@ -199,10 +199,12 @@ E_{ Elc, HEAs, d, t }
 |常に
 
 |V1
-|年間消費電力量（JIS C 9801）
+|年間消費電力量 +
+（JIS C 9801:1999、JIS C 9801:2006、JIS C 9801-3:2015　2015から枝番が付く）
 |値
-|小数（？位まで）
-|330.0
+|正数 +
+（link:https://www.mitsubishielectric.co.jp/ldg/wink/ssl/displayProductSpec.do?pid=307438&ccd=102010[仕様書]ベース判断）
+|330
 |kWh
 |C1=2の場合
 
@@ -211,7 +213,7 @@ E_{ Elc, HEAs, d, t }
 |選択肢
 |1)1999 + 
 2)2006 + 
-3)2016
+3)2015
 |2)
 |無
 |C1=2の場合
@@ -233,7 +235,7 @@ E_{ Elc, HEAs, d, t }
 
 |stem:[P_{ Elc, dfrst, rtd }]
 |除霜用電熱装置の定格消費電力
-|float
+|Int
 |150
 |W
 |否
@@ -247,13 +249,13 @@ E_{ Elc, HEAs, d, t }
 
 |stem:[E_{ Elc, rfrg, annual, JIS }]
 |JISに準拠して測定された年間消費電力量
-|float
-|330.0
+|Int
+|330
 |kWh
 |可
 
 |stem:[JIS_{ year }]
-|年間消費電力量の測定時に準拠したJIS規格の制定・改正年。 ただし、　stem:[ JIS_{ year } \in \{ 1999, 2006, 2016 \}]
+|年間消費電力量の測定時に準拠したJIS規格の制定・改正年。 ただし、　stem:[ JIS_{ year } \in \{ 1999, 2006, 2015 \}]
 |Int
 |2006
 |年
@@ -423,8 +425,6 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 +
 計算モデル作成者に確認する。
 
-. 仮想居住人数が小数の場合に、世帯人数 stem:[ NumberOfPeople] はどの値をとるべきか？
-
 ====
 
 自立循環型住宅への設計ガイドラインにおける最重要家電である。 + 
@@ -451,17 +451,21 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |常に
 
 |V1
-|稼働時の定格消費電力（不明。恐らく link:https://www.enecho.meti.go.jp/category/saving_and_new/saving/enterprise/equipment/pdf/04_tv.pdf[平成３１年３月２９日経済産業省告示第６８号] ではないか。）
+|稼働時の定格消費電力 +
+（不明。恐らく link:https://www.enecho.meti.go.jp/category/saving_and_new/saving/enterprise/equipment/pdf/04_tv.pdf[平成３１年３月２９日経済産業省告示第６８号] ではないか。）
 |値
-|小数（？位まで）
-|125.0
+|正数 +
+（link:https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/D_SNZ/lcd-40xb1000-sl_spec.pdf[カタログ] ベース判断）
+|125
 |W
 |C1=2の場合
 
 |V2
-|待機時の定格消費電力（不明。恐らく link:https://www.enecho.meti.go.jp/category/saving_and_new/saving/enterprise/equipment/pdf/04_tv.pdf[平成３１年３月２９日経済産業省告示第６８号] ではないか。
+|待機時の定格消費電力 +
+（不明。恐らく link:https://www.enecho.meti.go.jp/category/saving_and_new/saving/enterprise/equipment/pdf/04_tv.pdf[平成３１年３月２９日経済産業省告示第６８号] ではないか。
 |値
-|小数（？位まで）
+|小数 +
+（1位まで。link:https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/D_SNZ/lcd-40xb1000-sl_spec.pdf[カタログ] ベース判断）
 |0.15
 |W
 |C1=2の場合
@@ -483,7 +487,7 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 
 |stem:[P_{ Elc, TV_{ LED }, view, rtd }]
 |稼働時の定格消費電力
-|float
+|Int
 |125
 |W
 |可
@@ -512,7 +516,7 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |stem:[NumberOfPeople]
 |世帯人数
 |Int
-|仮想居住人数に最も近い整数？
+|スケジュールと同じ値
 |人
 |否
 
@@ -595,6 +599,7 @@ P_{ Elc, TV_{ LED }, view } =
 \begin{cases}
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  & ( NumberOfPeople = 4 ) \\
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 3 }{ 3 } & ( NumberOfPeople = 3 ) \\
+.
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 2 ) \\
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 1 )
 \end{cases}
@@ -814,7 +819,8 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 
 . 暖房スケジュールが全て1
 +
-冷蔵庫の様にスケジュールは不要でないか？
+冷蔵庫の様にスケジュールは不要でないか？　現時点では
+link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx]　に従っている。
 
 ====
 
@@ -1161,9 +1167,11 @@ E_{ Elc, toilet-seat-heater, d } = -20.01 \times \theta_{ toilet, ave, d } + 922
 |常に表示
 
 |V1
-|標準コースの定格消費電力量（JIS C 9811）
+|標準コースの定格消費電力量 +
+（不明。JIS C 9606:1993 電気洗濯機が関連規格と思われるが、消費電力「量」の記述はない。link:https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/D_MENT_DOC/maw-70bp_a.pdf[製品カタログ例1] link:https://panasonic.jp/p-db/contents/manualdl/1428410837463.pdf[製品カタログ例2] にも消費電力量の記載はない。link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] 2.1 家電の対象機種選定方法　表1には標準コースの消費電力量が記載されているため、昔はカタログに記載されていたのではないか。）
 |値
-|小数（？位まで）
+|正数 +
+（カタログベース判断）
 |51
 |Wh
 |C1=2
@@ -1186,7 +1194,7 @@ E_{ Elc, toilet-seat-heater, d } = -20.01 \times \theta_{ toilet, ave, d } + 922
 
 |stem:[E_{ Elc, washer, wash, rtd }]
 |標準コースの選択の定格消費電力量
-|float
+|Int
 |51
 |Wh
 |可
@@ -1243,7 +1251,7 @@ E_{ Elc, washer, wash } =　\min (0, 1.3503 \times E_{ Elc, washer, wash, rtd } 
 |===
 
 |stem:[ E_{ Elc, washer, wash, rtd } ] 
-|：標準コースの洗濯の定格消費電力量,Wh
+|：標準コースの洗濯の定格消費電力量（=51 ユーザー未入力時）,Wh
 
 |===
 
@@ -1419,8 +1427,6 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx]
 では、1人世帯と2人世帯で補正項が追加されている。3人世帯と4人世帯は不明である。2人世帯（1/3）よりも1人世帯（2/3）の方が補正値が大きい理由はなぜか？
 
-. 仮想居住人数が小数の場合に、世帯人数 stem:[ NumberOfPeople] はどの値をとるべきか？
-
 ====
 
 自立循環型住宅への設計ガイドラインにおける重要家電である。 + 
@@ -1448,14 +1454,18 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |常に表示
 
 |V1
-|定格消費電力（不明。JIS C 9213　か？）
+|定格消費電力 +
+（JIS C 9213:1988　か？ JIS C 9213の制定年は1972のため間にいくつかの改定はあった模様だが、情報なし。）
 |値
-|小数（？位まで）
+|正数 +
+（JIS C 9213:1988には消費電力の桁数に関する記述は見当たらない。1. 適用範囲で 1.5 kW の記述がある事からW単位では小数点は考慮されていないと思われる。link:https://www.t-fal.co.jp/consumer-services/instructions-for-use/kettle/aprecia_plus_630.pdf[製品カタログの例] では1250Wと正数となっている。）
 |1160
 |W
 |C1=2
 
 |===
+
+
 
 また、プログラムの入力項目を以下に示す。
 
@@ -1472,8 +1482,8 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 
 |stem:[P_{ Elc, kttl, boil, rtd }]
 |定格消費電力
-|float
-|125
+|Int
+|1160
 |W
 |可
 
@@ -1487,7 +1497,7 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |stem:[NumberOfPeople]
 |世帯人数
 |Int
-|仮想居住人数に最も近い整数？
+|スケジュールと同じ値
 |人
 |否
 
@@ -1544,10 +1554,10 @@ E_{ Elc, kttl, boil } = P_{ Elc, kttl, boil, rtd } \times 0.1
 |===
 
 |stem:[ P_{ Elc, kttl, boil, rtd } ]
-|：定格消費電力,W
+|：定格消費電力（=1160 ユーザー未入力時）,W
 
 |0.1
-|：沸き上げ時間(1回の沸き上げ時間6分),h
+|：沸き上げ時間（1回の沸き上げ時間6分）,h
 
 |===
 
@@ -1820,7 +1830,7 @@ P_{ Elc, microwave, cook } = 0.9373 \times P_{ Elc, microwave, cook, rtd }
 |===
 
 |stem:[ P_{ Elc, microwave, cook, rtd } ]
-|：調理時の定格消費電力,W
+|：調理時の定格消費電力（=1450）,W
 
 |===
 
@@ -1986,9 +1996,9 @@ P_{ Elc, microwave, cook } = 0.9373 \times P_{ Elc, microwave, cook, rtd }
 
 . 複数台の評価時は同一機種しか評価できない。
 
-. 炊飯合数の決め方と初期値をどうするかが未確定
+. 炊飯合数の決め方と初期値をどうするかが未確定である。
 
-. 保温に定格値を求めていない。
+. 保温時の消費電力量の根拠が不明である。
 +
 link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] では、保温の消費電力が要求されており、定格値は要求されていない。 +
 恐らく、 link:https://www.enecho.meti.go.jp/category/saving_and_new/saving/summary/pdf/top_runner/19toprunner_zyasuihanki.pdf[ジャー炊飯器のエネルギー消費性能の向上に関するエネルギー消費機器等製造事業者等の判断の基準等] の値をさしているのではないか？
@@ -2081,7 +2091,7 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |stem:[t_{ rice-cooker, cook }]
 |炊飯1回あたりの時間
 |float
-|\frac{ 54.19 }{ 60 }
+|stem:[ \frac{ 54.19 }{ 60 } ]
 |h
 |否
 
@@ -2095,15 +2105,15 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |stem:[N_{ cup-of-rice }]
 |炊飯号数
 |float
-|不明
+|3（根拠が見当たらないので暫定的に決めている。）
 |合
 |否
 
-|stem:[P_{ Elc, rice-cooker, keep }]
-|保温時の消費電力
+|stem:[E_{ Elc, rice-cooker, keep }]
+|保温時の消費電力量
 |float
 |15.1
-|W
+|Wh
 |否
 
 |stem:[t_{ rice-cooker, cook, d, t }]
@@ -2165,7 +2175,7 @@ E_{ Elc, rice-cooker, d, t } = ( P_{ Elc, rice-cooker, cook } \times t_{ rice-co
 
 [stem]
 ++++
-P_{ Elc, rice-cooker, cook } = \frac { E_{ Elc, rice-cooker, cook } } { t_{ Elc, rice-cooker, cook } }
+P_{ Elc, rice-cooker, cook } = \frac { E_{ Elc, rice-cooker, cook } } { t_{ rice-cooker, cook } }
 ++++
 
 [stem]
@@ -2185,10 +2195,10 @@ E_{ Elc, rice-cooker, cook } = 0.029 \times P_{ Elc, rice-cooker, rtd } + ( 32.4
 |：炊飯1回あたりの時間( = stem:[ \frac{ 54.19 }{ 60 } ]),h
 
 |stem:[ P_{ Elc, rice-cooker, rtd } ] 
-|：定格消費電力,W
+|：定格消費電力（=1210）,W
 
 |stem:[ N_{ cup-of-rice } ] 
-|：炊飯合数,合
+|：炊飯合数（=3　根拠なし。暫定値）,合
 
 |===
 
@@ -2206,7 +2216,7 @@ P_{ Elc, rice-cooker, keep } = \frac { E_{ Elc, rice-cooker, keep } } { 1 }
 |===
 
 |stem:[ E_{ Elc, rice-cooker, keep } ] 
-|：電気炊飯器の保温の消費電力量,Wh
+|：電気炊飯器の保温の消費電力量（15.1）,Wh
 
 |1
 |：1時間(消費電力量を消費電力に換算するための値),h
@@ -2515,7 +2525,7 @@ P_{ Elc, PC, oprt } =　1.0871 \times P_{ Elc, PC, rtd } + 2.2719
 |===
 
 |stem:[ P_{ Elc, PC, rtd } ] 
-|：定格消費電力,W
+|：定格消費電力（=97）,W
 
 |===
 
@@ -2834,7 +2844,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, listening } =　0.4 \times P_{ Elc, audio_
 |===
 
 |stem:[ P_{ Elc, audio_{ CD-radio-cassette }, rtd } ] 
-|：定格消費電力,W
+|：定格消費電力（=28）,W
 
 |===
 
@@ -2851,7 +2861,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } = P_{ Elc, audio_{ CD-radio-cass
 |===
 
 |stem:[ P_{ Elc, audio_{ CD-radio-cassette }, standby, rtd } ] 
-|：定格待機消費電力,W
+|：定格待機消費電力（=0.2）,W
 
 |===
 
@@ -3198,7 +3208,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, listening } =　0.4 \times P_{ Elc, audi
 |===
 
 |stem:[ P_{ Elc, audio_{ MicroSystem-with-MD }, rtd } ] 
-|：定格消費電力,W
+|：定格消費電力（=28）,W
 
 |===
 
@@ -3215,7 +3225,7 @@ P_{ Elc, audio_{  MicroSystem-with-MD }, standby } = P_{ Elc, audio_{  MicroSyst
 |===
 
 |stem:[ P_{ Elc, audio_{  MicroSystem-with-MD }, standby, rtd } ] 
-|：定格待機消費電力,W
+|：定格待機消費電力（=0.2）,W
 
 |===
 
@@ -3520,7 +3530,7 @@ P_{ Elc, cleaner, oprt } =　1.0355 \times P_{ Elc, cleaner, rtd }
 |===
 
 |stem:[ P_{ Elc, cleaner, rtd } ] 
-|：定格消費電力,W
+|：定格消費電力（=1000）,W
 
 |===
 
@@ -3795,7 +3805,7 @@ P_{ Elc, iron, oprt } =　0.53 \times P_{ Elc, iron, rtd }
 |===
 
 |stem:[ P_{ Elc, iron, rtd } ] 
-|：定格消費電力,W
+|：定格消費電力（=1200）,W
 
 |===
 
@@ -4112,7 +4122,7 @@ P_{ Elc, game, standby } =　0.3
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
 |===
 
-|0.3
+|stem:[ P_{ Elc, game, standby } ]
 |：待機時の平均消費電力（実測値）,W
 
 |===
@@ -4133,7 +4143,7 @@ P_{ Elc, game, play } =　95.7
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
 |===
 
-|95.7
+|stem:[ P_{ Elc, game, play } ]
 |：稼働時の平均消費電力（実測値）,W
 
 |===
@@ -4439,7 +4449,7 @@ P_{ Elc, desk-lamp, oprt } =　1.07 \times P_{ Elc, desk-lamp, rtd }
 |===
 
 |stem:[ P_{ Elc, desk-lamp, rtd } ] 
-|:定格消費電力,W
+|:定格消費電力（=20）,W
 
 |===
 
@@ -4609,8 +4619,6 @@ P_{ Elc, desk-lamp, oprt } =　1.07 \times P_{ Elc, desk-lamp, rtd }
 +
 link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] では、ヘアドライヤー（A15）は　§2.3 家電の稼働スケジュール において洗面所にしか設置されておらず複数台を想定していない。また、使用時間は15分間隔スケジュールで指定できるため消費電力で補正する必要は無いように思われる。さらに、補正項も1人世帯が2/3、2人世帯が1/2と人数が多いほど、小さくなるとされているので、人数が多いと15分当たりの消費電力量が減る傾向にある理由が不明である（順番待ちがあるから急いでブローしている？それなら消費電力はターボモード等でえ増えるのではないか？）。
 
-. 仮想居住人数が小数の場合に、世帯人数 stem:[ NumberOfPeople] はどの値をとるべきか？
-
 ====
 
 最重要家電ではないため、デフォルト値で計算する。
@@ -4679,7 +4687,7 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |stem:[NumberOfPeople]
 |世帯人数
 |Int
-|仮想居住人数に最も近い整数？
+|スケジュールと同じ値
 |人
 |否
 
@@ -4738,7 +4746,7 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |===
 
 |stem:[ P_{ Elc, dryer, rtd } ] 
-|：定格消費電力,W
+|：定格消費電力（=1200）,W
 
 |===
 
