@@ -19,6 +19,7 @@
 :xrefstyle: short
 :eqnums: AMS
 :table-stripes: even
+:stylesheet: adoc-github.css
 
 = 自立循環差分仕様書
 
