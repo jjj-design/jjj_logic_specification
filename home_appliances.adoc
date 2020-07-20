@@ -26,6 +26,9 @@ A.1 家電による消費電力量
 <<<
 ==== 3. 変更内容
 
+以下に列記する機器を家電として扱い、消費電力量を評価する。 +
+「液晶テレビ」と「便座」は有無を問い、それ以外の機器でユーザー入力表があるものは画面上にインターフェースを用意し、ないものは画面上には何も出さずにデフォルト値で計算する。
+
 ====
 
 【メモ：家電全体の課題】
@@ -173,7 +176,6 @@ E_{ Elc, HEAs, d, t }
 
 ====
 
-自立循環型住宅への設計ガイドラインにおける最重要家電である。 + 
 ユーザー入力項目と入力条件を以下に示す。
 
 .冷蔵庫のユーザー入力
@@ -187,7 +189,6 @@ E_{ Elc, HEAs, d, t }
 ^h|初期値
 ^h|単位
 ^h|入力条件
-
 
 |C1
 |年間消費電力量の入力の有無
@@ -427,9 +428,9 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 
 ====
 
-自立循環型住宅への設計ガイドラインにおける最重要家電である。 + 
 ユーザー入力項目と入力条件を以下に示す。
 
+.液晶テレビのユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -442,13 +443,22 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 ^h|入力条件
 
 |C1
+|液晶テレビの有無
+|選択肢
+|1)設置しない +
+2)設置する
+|1)
+|無
+|常に
+
+|C2
 |定格消費電力の入力の有無
 |選択肢
 |1)入力しない +
 2)入力する
 |1)
 |無
-|常に
+|C1=2の場合
 
 |V1
 |稼働時の定格消費電力 +
@@ -458,7 +468,7 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 （link:https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/D_SNZ/lcd-40xb1000-sl_spec.pdf[カタログ] ベース判断）
 |125
 |W
-|C1=2の場合
+|C2=2の場合
 
 |V2
 |待機時の定格消費電力 +
@@ -468,7 +478,7 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 （1位まで。link:https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/D_SNZ/lcd-40xb1000-sl_spec.pdf[カタログ] ベース判断）
 |0.15
 |W
-|C1=2の場合
+|C2=2の場合
 
 |===
 
@@ -484,6 +494,13 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 ^h|初期値
 ^h|単位
 ^h|ユーザー入力の可否
+
+|stem:[HAExists]
+|対象家電が存在する
+|Boolean
+|False
+|True/False
+|可
 
 |stem:[P_{ Elc, TV_{ LED }, view, rtd }]
 |稼働時の定格消費電力
@@ -528,12 +545,19 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 
 [stem]
 ++++
-E_{ Elc, TV_{ LED }, d, t } = ( P_{ Elc, TV_{ LED }, standby } \times t_{ TV_{ LED }, standby, d, t } + P_{ Elc, TV_{ LED }, view } \times t_{ TV_{ LED }, view, d, t }  ) \times 10^{ -3 }
+E_{ Elc, TV_{ LED }, d, t } = 
+\begin{cases}
+( P_{ Elc, TV_{ LED }, standby } \times t_{ TV_{ LED }, standby, d, t } + P_{ Elc, TV_{ LED }, view } \times t_{ TV_{ LED }, view, d, t }  ) \times 10^{ -3 } & , HAExists = \mbox{True} \\
+0 & , HAExists = \mbox{False}
+\end{cases}
 ++++
 
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
 |===
+
+|stem:[ HAExists ] 
+|：対象家電が存在する,True/False
 
 |stem:[ E_{ Elc, TV_{ LED }, d, t } ] 
 |：日付 stem:[ d ] の時刻 stem:[ t ] における消費電力量,kWh
@@ -831,31 +855,43 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx]
 のデフォルト値で計算する。
 
-// 以下は入力値の根拠が確定するまで、無効とする。
 
-////
 ユーザー入力項目と入力条件を以下に示す。
 
+.便座のユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
 ^h|識別子
-^h|項目
+^h|項目（値の根拠）
 ^h|入力値の種別
 ^h|値
 ^h|初期値
 ^h|単位
-^h|表示条件
-
+^h|入力条件
 
 |C1
+|暖房便座の有無
+|選択肢
+|1)設置しない +
+2)設置する
+|1)
+|無
+|常に
+
+|===
+
+// 以下は入力値の根拠が確定するまで、無効とする。
+
+////
+|C2
 |定格消費電力の入力の有無（測定条件：https://www.enecho.meti.go.jp/category/saving_and_new/saving/summary/pdf/top_runner/16toprunner_denkibenza.pdf）
 |選択肢
 |1)入力しない +
 2)入力する
 |1)
 |無
-|常に表示
+|C1=2の場合
 
 |V1
 |定格消費電力
@@ -863,10 +899,9 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |小数（？位まで）
 |45
 |W
-|C1=2
-
-|===
+|C2=2の場合
 ////
+
 
 
 また、プログラムの入力項目を以下に示す。
@@ -881,6 +916,13 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 ^h|初期値
 ^h|単位
 ^h|ユーザー入力の可否
+
+|stem:[HAExists]
+|対象家電が存在する
+|Boolean
+|False
+|True/False
+|可
 
 |stem:[P_{ Elc, toilet-seat-heater, rtd }]
 |暖房時の定格消費電力
@@ -911,12 +953,19 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 
 [stem]
 ++++
-E_{ Elc, toilet-seat-heater, d, t } =  P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ -3 }
+E_{ Elc, toilet-seat-heater, d, t } =  
+\begin{cases}
+P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ -3 } & , HAExists = \mbox{True} \\
+0 & , HAExists = \mbox{False}
+\end{cases}
 ++++
 
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
 |===
+
+|stem:[ HAExists ] 
+|：対象家電が存在する,True/False
 
 |stem:[ E_{ Elc, toilet-seat-heater, d, t } ] 
 |：日付 stem:[ d ] の時刻 stem:[ t ] における消費電力量,kWh
@@ -1144,7 +1193,7 @@ E_{ Elc, toilet-seat-heater, d } = -20.01 \times \theta_{ toilet, ave, d } + 922
 自立循環型住宅への設計ガイドラインにおける最重要家電である。 + 
 ユーザー入力項目と入力条件を以下に示す。
 
-
+.洗濯機のユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -1432,6 +1481,7 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 自立循環型住宅への設計ガイドラインにおける重要家電である。 + 
 ユーザー入力項目と入力条件を以下に示す。
 
+.電気ケトルのユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -1723,11 +1773,12 @@ E_{ Elc, kttl, boil } = P_{ Elc, kttl, boil, rtd } \times 0.1
 
 ====
 
-最重要家電ではないため、デフォルト値で計算する。
+デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。
 
 ////
 
+.電子レンジのユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -2006,11 +2057,13 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 
 ====
 
-最重要家電ではないため、デフォルト値で計算する。
+デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。
 
 
 ////
+
+.電気炊飯器のユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -2413,11 +2466,12 @@ P_{ Elc, rice-cooker, keep } = \frac { E_{ Elc, rice-cooker, keep } } { 1 }
 
 ====
 
-最重要家電ではないため、デフォルト値で計算する。
+デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。
 
 ////
 
+.パソコン（デスクトップ）のユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -2693,11 +2747,12 @@ P_{ Elc, PC, oprt } =　1.0871 \times P_{ Elc, PC, rtd } + 2.2719
 
 ====
 
-最重要家電ではないため、デフォルト値で計算する。
+デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。
 
 ////
 
+.CDラジカセのユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -3058,11 +3113,12 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } = P_{ Elc, audio_{ CD-radio-cass
 
 ====
 
-最重要家電ではないため、デフォルト値で計算する。
+デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。
 
 ////
 
+.MDコンポのユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -3421,11 +3477,12 @@ P_{ Elc, audio_{  MicroSystem-with-MD }, standby } = P_{ Elc, audio_{  MicroSyst
 
 ====
 
-最重要家電ではないため、デフォルト値で計算する。
+デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。
 
 ////
 
+.掃除機のユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -3695,11 +3752,12 @@ P_{ Elc, cleaner, oprt } =　1.0355 \times P_{ Elc, cleaner, rtd }
 
 ====
 
-最重要家電ではないため、デフォルト値で計算する。
+デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。
 
 ////
 
+.アイロンのユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -3973,11 +4031,12 @@ P_{ Elc, iron, oprt } =　0.53 \times P_{ Elc, iron, rtd }
 
 ====
 
-最重要家電ではないため、デフォルト値で計算する。
+デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。
 
 ////
 
+.PCゲーム機のユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -4340,11 +4399,12 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 
 ====
 
-最重要家電ではないため、デフォルト値で計算する。
+デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。
 
 ////
 
+.スタンドのユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 
@@ -4621,11 +4681,12 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 
 ====
 
-最重要家電ではないため、デフォルト値で計算する。
+デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。
 
 ////
 
+.ヘアドライヤーのユーザー入力
 [cols="^.^1,<.^5,^.^2,<.^3,^.^2,^.^1,^.^2", stripes=hover]
 |===
 

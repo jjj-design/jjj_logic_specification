@@ -714,6 +714,10 @@ n_p = \left\{ \begin{array}{ll}
 </div>
 <div class="sect3">
 <h4 id="_3_変更内容_3"><a class="link" href="#_3_変更内容_3">3. 変更内容</a></h4>
+<div class="paragraph">
+<p>以下に列記する機器を家電として扱い、消費電力量を評価する。<br>
+「液晶テレビ」と「便座」は有無を問い、それ以外の機器でユーザー入力表があるものは画面上にインターフェースを用意し、ないものは画面上には何も出さずにデフォルト値で計算する。</p>
+</div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -924,8 +928,7 @@ E_{ Elc, HEAs, d, t }
 </div>
 </div>
 <div class="paragraph">
-<p>自立循環型住宅への設計ガイドラインにおける最重要家電である。<br>
-ユーザー入力項目と入力条件を以下に示す。</p>
+<p>ユーザー入力項目と入力条件を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 1. 冷蔵庫のユーザー入力</caption>
@@ -1242,10 +1245,10 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 </div>
 </div>
 <div class="paragraph">
-<p>自立循環型住宅への設計ガイドラインにおける最重要家電である。<br>
-ユーザー入力項目と入力条件を以下に示す。</p>
+<p>ユーザー入力項目と入力条件を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">表 3. 液晶テレビのユーザー入力</caption>
 <colgroup>
 <col style="width: 6.25%;">
 <col style="width: 31.25%;">
@@ -1267,13 +1270,23 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">液晶テレビの有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)設置しない<br>
+2)設置する</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">定格消費電力の入力の有無</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">1)入力しない<br>
 2)入力する</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">常に</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2の場合</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
@@ -1284,7 +1297,7 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 （<a href="https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/D_SNZ/lcd-40xb1000-sl_spec.pdf">カタログ</a> ベース判断）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">125</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2の場合</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C2=2の場合</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">V2</p></td>
@@ -1295,7 +1308,7 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 （1位まで。<a href="https://dl.mitsubishielectric.co.jp/dl/ldg/wink/ssl/wink_doc/m_contents/wink/D_SNZ/lcd-40xb1000-sl_spec.pdf">カタログ</a> ベース判断）</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">0.15</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2の場合</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C2=2の場合</p></td>
 </tr>
 </tbody>
 </table>
@@ -1303,7 +1316,7 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 3. 液晶テレビの入力パラメータ</caption>
+<caption class="title">表 4. 液晶テレビの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -1320,6 +1333,14 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 <th class="tableblock halign-center valign-top"><p class="tableblock">初期値</p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock">単位</p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock">ユーザー入力の可否</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(HAExists\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">対象家電が存在する</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">True/False</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">可</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(P_{ Elc, TV_{ LED }, view, rtd }\)</p></td>
@@ -1370,7 +1391,11 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 </div>
 <div class="stemblock">
 <div class="content">
-\[E_{ Elc, TV_{ LED }, d, t } = ( P_{ Elc, TV_{ LED }, standby } \times t_{ TV_{ LED }, standby, d, t } + P_{ Elc, TV_{ LED }, view } \times t_{ TV_{ LED }, view, d, t }  ) \times 10^{ -3 }\]
+\[E_{ Elc, TV_{ LED }, d, t } =
+\begin{cases}
+( P_{ Elc, TV_{ LED }, standby } \times t_{ TV_{ LED }, standby, d, t } + P_{ Elc, TV_{ LED }, view } \times t_{ TV_{ LED }, view, d, t }  ) \times 10^{ -3 } &amp; , HAExists = \mbox{True} \\
+0 &amp; , HAExists = \mbox{False}
+\end{cases}\]
 </div>
 </div>
 <table class="tableblock frame-none grid-none stripes-none stretch">
@@ -1379,6 +1404,10 @@ E_{  Elc, rfrg, annual, JIS } &amp; (JIS_{ year } = 1999)　\\
 <col style="width: 72.7273%;">
 </colgroup>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( HAExists \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：対象家電が存在する,True/False</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, TV_{ LED }, d, t } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における消費電力量,kWh</p></td>
@@ -1497,7 +1526,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 4. 4人世帯</caption>
+<caption class="title">表 5. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -1741,7 +1770,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 5. 3人世帯</caption>
+<caption class="title">表 6. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -1985,7 +2014,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 6. 2人世帯</caption>
+<caption class="title">表 7. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -2229,7 +2258,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 7. 1人世帯</caption>
+<caption class="title">表 8. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -2517,10 +2546,46 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 のデフォルト値で計算する。</p>
 </div>
 <div class="paragraph">
+<p>ユーザー入力項目と入力条件を以下に示す。</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">表 9. 便座のユーザー入力</caption>
+<colgroup>
+<col style="width: 6.25%;">
+<col style="width: 31.25%;">
+<col style="width: 12.5%;">
+<col style="width: 18.75%;">
+<col style="width: 12.5%;">
+<col style="width: 6.25%;">
+<col style="width: 12.5%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">識別子</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">項目（値の根拠）</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">入力値の種別</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">初期値</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
+<th class="tableblock halign-center valign-middle"><p class="tableblock">入力条件</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">暖房便座の有無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)設置しない<br>
+2)設置する</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">常に</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 8. 便座の入力パラメータ</caption>
+<caption class="title">表 10. 便座の入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -2537,6 +2602,14 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 <th class="tableblock halign-center valign-top"><p class="tableblock">初期値</p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock">単位</p></th>
 <th class="tableblock halign-center valign-top"><p class="tableblock">ユーザー入力の可否</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(HAExists\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">対象家電が存在する</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">True/False</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">可</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(P_{ Elc, toilet-seat-heater, rtd }\)</p></td>
@@ -2571,7 +2644,11 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 </div>
 <div class="stemblock">
 <div class="content">
-\[E_{ Elc, toilet-seat-heater, d, t } =  P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ -3 }\]
+\[E_{ Elc, toilet-seat-heater, d, t } =
+\begin{cases}
+P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ -3 } &amp; , HAExists = \mbox{True} \\
+0 &amp; , HAExists = \mbox{False}
+\end{cases}\]
 </div>
 </div>
 <table class="tableblock frame-none grid-none stripes-none stretch">
@@ -2580,6 +2657,10 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 <col style="width: 72.7273%;">
 </colgroup>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( HAExists \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：対象家電が存在する,True/False</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( E_{ Elc, toilet-seat-heater, d, t } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における消費電力量,kWh</p></td>
@@ -2662,7 +2743,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 <div class="sect5">
 <h6 id="_3_4_3_時刻別の便座暖房時間"><a class="link" href="#_3_4_3_時刻別の便座暖房時間">3.4.3. 時刻別の便座暖房時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 9. 4人世帯</caption>
+<caption class="title">表 11. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -2823,7 +2904,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 10. 3人世帯</caption>
+<caption class="title">表 12. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -2984,7 +3065,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 11. 2人世帯</caption>
+<caption class="title">表 13. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -3145,7 +3226,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 12. 1人世帯</caption>
+<caption class="title">表 14. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -3329,6 +3410,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 ユーザー入力項目と入力条件を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">表 15. 洗濯機のユーザー入力</caption>
 <colgroup>
 <col style="width: 6.25%;">
 <col style="width: 31.25%;">
@@ -3375,7 +3457,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 13. 洗濯機の入力パラメータ</caption>
+<caption class="title">表 16. 洗濯機の入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -3473,7 +3555,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 <div class="sect5">
 <h6 id="_3_5_3_時刻別の洗濯回数"><a class="link" href="#_3_5_3_時刻別の洗濯回数">3.5.3. 時刻別の洗濯回数</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 14. 4人世帯</caption>
+<caption class="title">表 17. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -3634,7 +3716,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 15. 3人世帯</caption>
+<caption class="title">表 18. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -3795,7 +3877,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 16. 2人世帯</caption>
+<caption class="title">表 19. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -3956,7 +4038,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 17. 1人世帯</caption>
+<caption class="title">表 20. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -4159,6 +4241,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 ユーザー入力項目と入力条件を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
+<caption class="title">表 21. 電気ケトルのユーザー入力</caption>
 <colgroup>
 <col style="width: 6.25%;">
 <col style="width: 31.25%;">
@@ -4205,7 +4288,7 @@ P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } &amp; ( NumberOfPeop
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 18. 電気ケトルの入力パラメータ</caption>
+<caption class="title">表 22. 電気ケトルの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -4325,7 +4408,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <div class="sect5">
 <h6 id="_3_6_3_時刻別の沸き上げ回数"><a class="link" href="#_3_6_3_時刻別の沸き上げ回数">3.6.3. 時刻別の沸き上げ回数</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 19. 4人世帯</caption>
+<caption class="title">表 23. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -4486,7 +4569,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 20. 3人世帯</caption>
+<caption class="title">表 24. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -4647,7 +4730,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 21. 2人世帯</caption>
+<caption class="title">表 25. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -4808,7 +4891,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 22. 1人世帯</caption>
+<caption class="title">表 26. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -4991,14 +5074,14 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </div>
 </div>
 <div class="paragraph">
-<p>最重要家電ではないため、デフォルト値で計算する。
+<p>デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。</p>
 </div>
 <div class="paragraph">
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 23. 電子レンジの入力パラメータ</caption>
+<caption class="title">表 27. 電子レンジの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -5098,7 +5181,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <div class="sect5">
 <h6 id="_3_7_3_時刻別の調理時間"><a class="link" href="#_3_7_3_時刻別の調理時間">3.7.3. 時刻別の調理時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 24. 4人世帯</caption>
+<caption class="title">表 28. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -5259,7 +5342,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 25. 3人世帯</caption>
+<caption class="title">表 29. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -5420,7 +5503,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 26. 2人世帯</caption>
+<caption class="title">表 30. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -5581,7 +5664,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 27. 1人世帯</caption>
+<caption class="title">表 31. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -5774,14 +5857,14 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </div>
 </div>
 <div class="paragraph">
-<p>最重要家電ではないため、デフォルト値で計算する。
+<p>デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。</p>
 </div>
 <div class="paragraph">
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 28. 電気炊飯器の入力パラメータ</caption>
+<caption class="title">表 32. 電気炊飯器の入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -5967,7 +6050,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <div class="sect5">
 <h6 id="_3_8_3_時刻別の動作時間"><a class="link" href="#_3_8_3_時刻別の動作時間">3.8.3. 時刻別の動作時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 29. 4人世帯</caption>
+<caption class="title">表 33. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -6211,7 +6294,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 30. 3人世帯</caption>
+<caption class="title">表 34. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -6455,7 +6538,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 31. 2人世帯</caption>
+<caption class="title">表 35. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -6699,7 +6782,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 32. 1人世帯</caption>
+<caption class="title">表 36. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -6965,14 +7048,14 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </div>
 </div>
 <div class="paragraph">
-<p>最重要家電ではないため、デフォルト値で計算する。
+<p>デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。</p>
 </div>
 <div class="paragraph">
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 33. パソコン（デスクトップ）の入力パラメータ</caption>
+<caption class="title">表 37. パソコン（デスクトップ）の入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -7073,7 +7156,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 <div class="sect5">
 <h6 id="_3_9_3_時刻別の使用時間"><a class="link" href="#_3_9_3_時刻別の使用時間">3.9.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 34. 4人世帯</caption>
+<caption class="title">表 38. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -7234,7 +7317,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 35. 3人世帯</caption>
+<caption class="title">表 39. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -7395,7 +7478,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 36. 2人世帯</caption>
+<caption class="title">表 40. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -7556,7 +7639,7 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 37. 1人世帯</caption>
+<caption class="title">表 41. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -7742,14 +7825,14 @@ E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \fr
 </div>
 </div>
 <div class="paragraph">
-<p>最重要家電ではないため、デフォルト値で計算する。
+<p>デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。</p>
 </div>
 <div class="paragraph">
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 38. CDラジカセの入力パラメータ</caption>
+<caption class="title">表 42. CDラジカセの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -7900,7 +7983,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 <div class="sect5">
 <h6 id="_3_10_3_時刻別の動作時間"><a class="link" href="#_3_10_3_時刻別の動作時間">3.10.3. 時刻別の動作時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 39. 4人世帯</caption>
+<caption class="title">表 43. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -8144,7 +8227,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 40. 3人世帯</caption>
+<caption class="title">表 44. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -8388,7 +8471,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 41. 2人世帯</caption>
+<caption class="title">表 45. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -8632,7 +8715,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 42. 1人世帯</caption>
+<caption class="title">表 46. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -8901,14 +8984,14 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </div>
 </div>
 <div class="paragraph">
-<p>最重要家電ではないため、デフォルト値で計算する。
+<p>デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。</p>
 </div>
 <div class="paragraph">
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 43. MDコンポの入力パラメータ</caption>
+<caption class="title">表 47. MDコンポの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -9066,7 +9149,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 44. 4人世帯</caption>
+<caption class="title">表 48. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9310,7 +9393,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 45. 3人世帯</caption>
+<caption class="title">表 49. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9554,7 +9637,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 46. 2人世帯</caption>
+<caption class="title">表 50. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9798,7 +9881,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 47. 1人世帯</caption>
+<caption class="title">表 51. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -10061,14 +10144,14 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 </div>
 <div class="paragraph">
-<p>最重要家電ではないため、デフォルト値で計算する。
+<p>デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。</p>
 </div>
 <div class="paragraph">
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 48. 掃除機の入力パラメータ</caption>
+<caption class="title">表 52. 掃除機の入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -10169,7 +10252,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <div class="sect5">
 <h6 id="_3_12_3_時刻別の使用時間"><a class="link" href="#_3_12_3_時刻別の使用時間">3.12.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 49. 4人世帯</caption>
+<caption class="title">表 53. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10330,7 +10413,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 50. 3人世帯</caption>
+<caption class="title">表 54. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10491,7 +10574,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 51. 2人世帯</caption>
+<caption class="title">表 55. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10652,7 +10735,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 52. 1人世帯</caption>
+<caption class="title">表 56. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10832,14 +10915,14 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 </div>
 <div class="paragraph">
-<p>最重要家電ではないため、デフォルト値で計算する。
+<p>デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。</p>
 </div>
 <div class="paragraph">
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 53. アイロンの入力パラメータ</caption>
+<caption class="title">表 57. アイロンの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -10940,7 +11023,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <div class="sect5">
 <h6 id="_3_13_3_時刻別の使用時間"><a class="link" href="#_3_13_3_時刻別の使用時間">3.13.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 54. 4人世帯</caption>
+<caption class="title">表 58. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11101,7 +11184,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 55. 3人世帯</caption>
+<caption class="title">表 59. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11262,7 +11345,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 56. 2人世帯</caption>
+<caption class="title">表 60. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11423,7 +11506,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 57. 1人世帯</caption>
+<caption class="title">表 61. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -11609,14 +11692,14 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 </div>
 <div class="paragraph">
-<p>最重要家電ではないため、デフォルト値で計算する。
+<p>デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。</p>
 </div>
 <div class="paragraph">
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 58. PCゲーム機の入力パラメータ</caption>
+<caption class="title">表 62. PCゲーム機の入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -11785,7 +11868,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 59. 4人世帯</caption>
+<caption class="title">表 63. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12029,7 +12112,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 60. 3人世帯</caption>
+<caption class="title">表 64. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12273,7 +12356,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 61. 2人世帯</caption>
+<caption class="title">表 65. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12517,7 +12600,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 62. 1人世帯</caption>
+<caption class="title">表 66. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12780,14 +12863,14 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 </div>
 <div class="paragraph">
-<p>最重要家電ではないため、デフォルト値で計算する。
+<p>デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。</p>
 </div>
 <div class="paragraph">
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 63. スタンドの入力パラメータ</caption>
+<caption class="title">表 67. スタンドの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -12895,7 +12978,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 64. 4人世帯</caption>
+<caption class="title">表 68. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13056,7 +13139,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 65. 3人世帯</caption>
+<caption class="title">表 69. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13217,7 +13300,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 66. 2人世帯</caption>
+<caption class="title">表 70. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13378,7 +13461,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 67. 1人世帯</caption>
+<caption class="title">表 71. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13564,14 +13647,14 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 </div>
 <div class="paragraph">
-<p>最重要家電ではないため、デフォルト値で計算する。
+<p>デフォルト値で計算する。
 よって、ユーザー入力項目と入力条件はなし。</p>
 </div>
 <div class="paragraph">
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 68. ヘアドライヤーの入力パラメータ</caption>
+<caption class="title">表 72. ヘアドライヤーの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -13693,7 +13776,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <div class="sect5">
 <h6 id="_3_16_3_時刻別の使用時間"><a class="link" href="#_3_16_3_時刻別の使用時間">3.16.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 69. 4人世帯</caption>
+<caption class="title">表 73. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13854,7 +13937,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 70. 3人世帯</caption>
+<caption class="title">表 74. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -14015,7 +14098,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 71. 2人世帯</caption>
+<caption class="title">表 75. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -14176,7 +14259,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 72. 1人世帯</caption>
+<caption class="title">表 76. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
