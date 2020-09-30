@@ -30,6 +30,10 @@ include::home_number_of_occupants.adoc[]
 
 include::heating_operation_mode.adoc[]
 
+== 機械換気設備タブ
+
+include::ventilation_sfp.adoc[]
+
 == 家電タブ
 
 include::home_appliances.adoc[]
