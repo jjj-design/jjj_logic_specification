@@ -2933,12 +2933,12 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } = P_{ Elc, audio_{ CD-radio-cass
 2+^h|休日在宅
 2+^h|休日外出
 
-^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
+^h|聴取
 
 | 0:00 -  1:00|       1|       0|       1|       0|       1|       0
 | 1:00 -  2:00|       1|       0|       1|       0|       1|       0
@@ -2976,12 +2976,12 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } = P_{ Elc, audio_{ CD-radio-cass
 2+^h|休日在宅
 2+^h|休日外出
 
-^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
+^h|聴取
 
 | 0:00 -  1:00|       1|       0|       1|       0|       1|       0
 | 1:00 -  2:00|       1|       0|       1|       0|       1|       0
@@ -3019,12 +3019,12 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } = P_{ Elc, audio_{ CD-radio-cass
 2+^h|休日在宅
 2+^h|休日外出
 
-^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
+^h|聴取
 
 | 0:00 -  1:00|       1|       0|       1|       0|       1|       0
 | 1:00 -  2:00|       1|       0|       1|       0|       1|       0
@@ -3062,12 +3062,12 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } = P_{ Elc, audio_{ CD-radio-cass
 2+^h|休日在宅
 2+^h|休日外出
 
-^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
+^h|聴取
 
 | 0:00 -  1:00|       1|       0|       1|       0|       1|       0
 | 1:00 -  2:00|       1|       0|       1|       0|       1|       0
@@ -3301,12 +3301,12 @@ P_{ Elc, audio_{  MicroSystem-with-MD }, standby } = P_{ Elc, audio_{  MicroSyst
 2+^h|休日在宅
 2+^h|休日外出
 
-^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
+^h|聴取
 
 | 0:00 -  1:00|       1|       0|       1|       0|       1|       0
 | 1:00 -  2:00|       1|       0|       1|       0|       1|       0
@@ -3344,12 +3344,12 @@ P_{ Elc, audio_{  MicroSystem-with-MD }, standby } = P_{ Elc, audio_{  MicroSyst
 2+^h|休日在宅
 2+^h|休日外出
 
-^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
+^h|聴取
 
 | 0:00 -  1:00|       1|       0|       1|       0|       1|       0
 | 1:00 -  2:00|       1|       0|       1|       0|       1|       0
@@ -3387,12 +3387,12 @@ P_{ Elc, audio_{  MicroSystem-with-MD }, standby } = P_{ Elc, audio_{  MicroSyst
 2+^h|休日在宅
 2+^h|休日外出
 
-^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
+^h|聴取
 
 | 0:00 -  1:00|       0|       0|       0|       0|       0|       0
 | 1:00 -  2:00|       0|       0|       0|       0|       0|       0
@@ -3430,12 +3430,12 @@ P_{ Elc, audio_{  MicroSystem-with-MD }, standby } = P_{ Elc, audio_{  MicroSyst
 2+^h|休日在宅
 2+^h|休日外出
 
-^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
 ^h|聴取
 ^h|待機
+^h|聴取
 
 | 0:00 -  1:00|       0|       0|       0|       0|       0|       0
 | 1:00 -  2:00|       0|       0|       0|       0|       0|       0
