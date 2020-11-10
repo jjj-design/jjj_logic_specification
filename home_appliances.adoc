@@ -623,7 +623,6 @@ P_{ Elc, TV_{ LED }, view } =
 \begin{cases}
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  & ( NumberOfPeople = 4 ) \\
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 3 }{ 3 } & ( NumberOfPeople = 3 ) \\
-.
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 2 ) \\
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 1 )
 \end{cases}
