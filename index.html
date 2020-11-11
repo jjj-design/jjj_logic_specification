@@ -1242,13 +1242,13 @@ f_{ SFP }  &amp; , HeatingSeason_{ d } = \mbox{True}
 <ol class="arabic">
 <li>
 <p>以前のメールで本プログラムに給排気口面積の追加方法を検討するとあったが、パラメーターには給排気口の面積は無いが高さ情報には「給気口」が判断基準として採用されている（第2種、第3種のみ）ので、基本情報のC値に給排気口の面積は既に含まれているのではないか？</p>
-</li>
-<li>
-<p>基本情報のC値に給排気口の面積が含まれていない場合はどのように追加するか？</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>C値に加算する形として均一に配置する</p>
+<p>基本情報のC値に給排気口の面積が含まれていない場合はどのように追加するか？</p>
+<div class="paragraph">
+<p>C値に加算する形として均一に配置する？</p>
+</div>
 <div class="paragraph">
 <p>居住者が多い室（ＬＤＫ）などに給排気口を多く設置するのがセオリーだが、本プログラムが間取りを扱えない以上、これが現実的といえる。</p>
 </div>
@@ -1277,14 +1277,24 @@ f_{ SFP }  &amp; , HeatingSeason_{ d } = \mbox{True}
 </li>
 <li>
 <p>第一種の場合は、壁と床の取り合い部分からしか空気が流入出しないがよいのか？</p>
-<div class="paragraph">
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
 <p>実際には窓枠などが支配的と考えられるため、高さ方向に均等に割り付けるのが良いのではないか？階高さを入力して5分割（0,.25,0.5,.75,1.0)するなど。</p>
+</li>
+<li>
+<p>現場の事は分からないが、実際には防湿シートや窓枠性能の向上のおかげで取り合い部分の漏気が支配的なのだろうか…</p>
+</li>
+</ol>
 </div>
 </li>
 <li>
 <p>相当隙間面積の計算式の意味は？</p>
 <div class="paragraph">
-<p>恐らく、取り合い部分に住宅のC値を割り付けて、それ以外は給（排）気量をもとに算出している？？？？ cm^2/h の0.7倍は何を意味しているのか？</p>
+<p>恐らく、取り合い部分に住宅のC値を割り付けて、それ以外は給（排）気量をもとに算出している？？？？</p>
+</div>
+<div class="paragraph">
+<p>換気量m<sup>3</sup>/h の0.7倍は何を意味しているのか？</p>
 </div>
 <div class="stemblock">
 <div class="content">
@@ -1325,10 +1335,23 @@ f_{ SFP }  &amp; , HeatingSeason_{ d } = \mbox{True}
 \\
 Q_{vnt}
 \times
+0.7
+\times
 \frac
-{0.7}
+{ 1 }
 { 10000 }
-&amp; , \mbox{第二種、第三種}
+&amp; , \mbox{平屋の第二種、第三種}
+\\
+\frac
+{ Q_{vnt} }
+{ 2 }
+\times
+0.7
+\times
+\frac
+{ 1 }
+{ 10000 }
+&amp; , \mbox{二階建ての第二種、第三種}
 \end{cases}\]
 </div>
 </div>
@@ -1384,10 +1407,14 @@ Q_{vnt}
 0
 &amp; , \mbox{第一種}
 \\
-Q_{vnt}
+\frac
+{ Q_{vnt} }
+{ 2 }
+\times
+0.7
 \times
 \frac
-{0.7}
+{ 1 }
 { 10000 }
 &amp; , \mbox{第二種、第三種}
 \end{cases}
@@ -1412,9 +1439,23 @@ Q_{vnt}
 </li>
 </ol>
 </div>
-. 空気密度は乾燥空気でよいのか？
+. 開口部（給排気口）の隙間特性値nは使用しないのか？
 +
-個人的には問題ないが。いつも湿り空気ではないのはなぜだろうと思っている。（雑談レベルの質問）
+[stem]
+<div class="paragraph">
+<p>Q =
+a
+\times
+\Delta p^
+{
+    \frac
+    { 1 }
+    { n }
+}</p>
+</div>
+. （雑談レベルの質問）空気密度は乾燥空気でよいのか？
++
+個人的には問題ないが、いつも湿り空気ではないのはなぜだろうと思っている。
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
