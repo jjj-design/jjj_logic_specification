@@ -516,15 +516,29 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |W
 |可
 
-|stem:[t_{ TV_{ LED }, view, d, t }]
-|1年間の全時間の視聴時間
+|stem:[t_{ TV_{ LED }, lv, view, d, t }]
+|居間に設置されたテレビの1年間の全時間の視聴時間
 |要素数が8760のflaot型配列
 |無し。仮想居住人数に応じて必要になる世帯人数のスケジュール
 |h
 |否
 
-|stem:[t_{ TV_{ LED }, standby, d, t }]
-|1年間の全時間の待機時間
+|stem:[t_{ TV_{ LED }, lv, standby, d, t }]
+|居間に設置されたテレビの1年間の全時間の待機時間
+|要素数が8760のflaot型配列
+|無し。仮想居住人数に応じて必要になる世帯人数のスケジュール
+|W
+|否
+
+|stem:[t_{ TV_{ LED }, nlv, view, d, t }]
+|居間以外に設置されたテレビの1年間の全時間の視聴時間
+|要素数が8760のflaot型配列
+|無し。仮想居住人数に応じて必要になる世帯人数のスケジュール
+|h
+|否
+
+|stem:[t_{ TV_{ LED }, nlv, standby, d, t }]
+|居間に設置されたテレビの1年間の全時間の待機時間
 |要素数が8760のflaot型配列
 |無し。仮想居住人数に応じて必要になる世帯人数のスケジュール
 |W
@@ -547,8 +561,33 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 ++++
 E_{ Elc, TV_{ LED }, d, t } = 
 \begin{cases}
-( P_{ Elc, TV_{ LED }, standby } \times t_{ TV_{ LED }, standby, d, t } + P_{ Elc, TV_{ LED }, view } \times t_{ TV_{ LED }, view, d, t }  ) \times 10^{ -3 } & , HAExists = \mbox{True} \\
-0 & , HAExists = \mbox{False}
+\{
+    (
+        P_{ Elc, TV_{ LED }, lv, standby }
+        \times
+        t_{ TV_{ LED }, lv, standby, d, t }
+        +
+        P_{ Elc, TV_{ LED }, lv, view }
+        \times
+        t_{ TV_{ LED }, lv, view, d, t }
+    ) 
+    +
+    (
+        P_{ Elc, TV_{ LED }, nlv, standby }
+        \times
+        t_{ TV_{ LED }, nlv, standby, d, t }
+        +
+        P_{ Elc, TV_{ LED }, nlv, view }
+        \times
+        t_{ TV_{ LED }, nlv, view, d, t }
+    ) 
+\}
+ \times
+ 10^{ -3 }
+& , HAExists = \mbox{True}
+\\
+0
+& , HAExists = \mbox{False}
 \end{cases}
 ++++
 
@@ -562,17 +601,29 @@ E_{ Elc, TV_{ LED }, d, t } =
 |stem:[ E_{ Elc, TV_{ LED }, d, t } ] 
 |：日付 stem:[ d ] の時刻 stem:[ t ] における消費電力量,kWh
 
-|stem:[ P_{ Elc, TV_{ LED }, standby } ] 
-|：待機時の消費電力,W
+|stem:[ P_{ Elc, TV_{ LED }, lv, standby } ] 
+|：居間に設置されたテレビの待機時の消費電力,W
 
-|stem:[ t_{ TV_{ LED }, standby, d, t } ] 
-|：日付 stem:[ d ] の時刻 stem:[ t ] における待機時間,h
+|stem:[ t_{ TV_{ LED }, lv, standby, d, t } ] 
+|：居間に設置されたテレビの日付 stem:[ d ] の時刻 stem:[ t ] における待機時間,h
 
-|stem:[ P_{ Elc, TV_{ LED }, view } ] 
-|：視聴時の消費電力,W
+|stem:[ P_{ Elc, TV_{ LED }, lv, view } ] 
+|：居間に設置されたテレビの視聴時の消費電力,W
 
-|stem:[ t_{ TV_{ LED }, view, d, t } ] 
-|：日付 stem:[ d ] の時刻 stem:[ t ] における視聴時間,h
+|stem:[ t_{ TV_{ LED }, lv, view, d, t } ] 
+|：居間に設置されたテレビの日付 stem:[ d ] の時刻 stem:[ t ] における視聴時間,h
+
+|stem:[ P_{ Elc, TV_{ LED }, nlv, standby } ] 
+|：居間以外に設置されたテレビの待機時の消費電力,W
+
+|stem:[ t_{ TV_{ LED }, standby, nlv, d, t } ] 
+|：居間以外に設置されたテレビの日付 stem:[ d ] の時刻 stem:[ t ] における待機時間,h
+
+|stem:[ P_{ Elc, TV_{ LED }, nlv, view } ] 
+|：居間以外に設置されたテレビの視聴時の消費電力,W
+
+|stem:[ t_{ TV_{ LED }, nlv, view, d, t } ] 
+|：居間以外に設置されたテレビの日付 stem:[ d ] の時刻 stem:[ t ] における視聴時間,h
 
 |stem:[ 10^{ -3 } ]
 |：単位換算,Wh -> kWh
@@ -589,19 +640,24 @@ E_{ Elc, TV_{ LED }, d, t } =
 
 [stem]
 ++++
-P_{ Elc, TV_{ LED }, standby } =
+P_{ Elc, TV_{ LED }, lv, standby } =
 \begin{cases}
 P_{ Elc, TV_{ LED }, standby, rtd }  & ( NumberOfPeople= 4 ) \\
 P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 3 }{ 3 } & ( NumberOfPeople = 3 ) \\
-P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 2 ) \\
-P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 1 )
+P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 2 ) \\
+P_{ Elc, TV_{ LED }, standby, rtd }  \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 1 )
 \end{cases}
 ++++
 
-====
-link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] は3人世帯はないので、仮に数式を追加している。
-====
-
+[stem]
+++++
+P_{ Elc, TV_{ LED }, nlv, standby } =
+P_{ Elc, TV_{ LED }, lv, standby }
+\times
+\frac
+{ 0.367 }
+{ 0.15 } 
+++++
 
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
@@ -613,24 +669,36 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |===
 
 
+====
+link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] には3人世帯はないので、仮に数式を追加している。
+====
+
+
 ====== 3.3.2.2. 視聴時の消費電力
 
 視聴とは液晶テレビが映像を出力している状態である。
 
 [stem]
 ++++
-P_{ Elc, TV_{ LED }, view } =
+P_{ Elc, TV_{ LED }, lv, view } =
 \begin{cases}
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  & ( NumberOfPeople = 4 ) \\
 0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 3 }{ 3 } & ( NumberOfPeople = 3 ) \\
-0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 2 ) \\
-0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 1 )
+0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 2 ) \\
+0.8579 \times P_{ Elc, TV_{ LED }, view, rtd }  \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 1 )
 \end{cases}
 ++++
 
-====
-link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] は3人世帯はないので、仮に数式を追加している。
-====
+[stem]
+++++
+P_{ Elc, TV_{ LED }, nlv, view } =
+P_{ Elc, TV_{ LED }, lv, view }
+\times
+\frac
+{ 63 }
+{ 125 } 
+++++
+
 
 [cols="<.<3,<.<8", frame=none, grid=none, stripes=none]
 |===
@@ -641,14 +709,21 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |===
 
 
+====
+link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] には3人世帯はないので、仮に数式を追加している。
+====
+
+
 ====== 3.3.3. 時刻別の動作時間
 
 ====
 【メモ】
 
-link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] では、4人世帯は居間と洋室1にそれぞれテレビが設置されているが、合算値とする。
+link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] では、4人世帯は居間と洋室1にそれぞれテレビが設置されているので、洋室1の消費電力は既定値の比率から求め、スケジュールはそれぞれ参照する。
 
 ====
+
+====== 3.3.3.1. 居間に設置されたテレビの時刻別の動作時間
 
 .4人世帯
 [cols="^2,>1,>1,>1,>1,>1,>1", stripes=hover]
@@ -823,6 +898,181 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 
 |===
 
+
+====== 3.3.3.2. 居間以外に設置されたテレビの時刻別の動作時間
+
+.4人世帯
+[cols="^2,>1,>1,>1,>1,>1,>1", stripes=hover]
+|===
+
+.2+^.^h|時刻
+2+^h|平日
+2+^h|休日在宅
+2+^h|休日外出
+
+^h|待機
+^h|視聴
+^h|待機
+^h|視聴
+^h|待機
+^h|視聴
+
+| 0:00 -  1:00|       2|       0|       2|       0|       2|       0
+| 1:00 -  2:00|       2|       0|       2|       0|       2|       0
+| 2:00 -  3:00|       2|       0|       2|       0|       2|       0
+| 3:00 -  4:00|       2|       0|       2|       0|       2|       0
+| 4:00 -  5:00|       2|       0|       2|       0|       2|       0
+| 5:00 -  6:00|       2|       0|       2|       0|       2|       0
+| 6:00 -  7:00|       2|       0|       2|       0|       2|       0
+| 7:00 -  8:00|       1|       1|       2|       0|       1|       1
+| 8:00 -  9:00|       1|       1|       1|       1|       1|       1
+| 9:00 - 10:00|       1|       1|       1|       1|       2|       0
+|10:00 - 11:00|       2|       0|       1|       1|       2|       0
+|11:00 - 12:00|       2|       0|       1|       1|       2|       0
+|12:00 - 13:00|       1|       1|       1|       1|       2|       0
+|13:00 - 14:00|       2|       0|       2|       0|       2|       0
+|14:00 - 15:00|       2|       0|       2|       0|       2|       0
+|15:00 - 16:00|       2|       0|       2|       0|       2|       0
+|16:00 - 17:00|       2|       0|    0.25|    1.75|       2|       0
+|17:00 - 18:00|       1|       1|       0|       2|       2|       0
+|18:00 - 19:00|       0|       2|       0|       2|       2|       0
+|19:00 - 20:00|       1|       1|       1|       1|       2|       0
+|20:00 - 21:00|       1|       1|       1|       1|       0|       2
+|21:00 - 22:00|       1|       1|       1|       1|    0.25|    1.75
+|22:00 - 23:00|     1.5|     0.5|       1|       1|       2|       0
+|23:00 -  0:00|       2|       0|       2|       0|       2|       0
+
+|===
+
+
+.3人世帯
+[cols="^2,>1,>1,>1,>1,>1,>1", stripes=hover]
+|===
+
+.2+^.^h|時刻
+2+^h|平日
+2+^h|休日在宅
+2+^h|休日外出
+
+^h|待機
+^h|視聴
+^h|待機
+^h|視聴
+^h|待機
+^h|視聴
+
+| 0:00 -  1:00|       1|       0|       1|       0|       1|       0
+| 1:00 -  2:00|       1|       0|       1|       0|       1|       0
+| 2:00 -  3:00|       1|       0|       1|       0|       1|       0
+| 3:00 -  4:00|       1|       0|       1|       0|       1|       0
+| 4:00 -  5:00|       1|       0|       1|       0|       1|       0
+| 5:00 -  6:00|       1|       0|       1|       0|       1|       0
+| 6:00 -  7:00|       1|       0|       1|       0|       1|       0
+| 7:00 -  8:00|       0|       1|       1|       0|       0|       1
+| 8:00 -  9:00|       0|       1|       0|       1|       0|       1
+| 9:00 - 10:00|       0|       1|       0|       1|       1|       0
+|10:00 - 11:00|       1|       0|       0|       1|       1|       0
+|11:00 - 12:00|       1|       0|       0|       1|       1|       0
+|12:00 - 13:00|       0|       1|       0|       1|       1|       0
+|13:00 - 14:00|       1|       0|       1|       0|       1|       0
+|14:00 - 15:00|       1|       0|       1|       0|       1|       0
+|15:00 - 16:00|       1|       0|       1|       0|       1|       0
+|16:00 - 17:00|       1|       0|    0.25|    0.75|       1|       0
+|17:00 - 18:00|       0|       1|       0|       1|       1|       0
+|18:00 - 19:00|       0|       1|       0|       1|       1|       0
+|19:00 - 20:00|       0|       1|       0|       1|       1|       0
+|20:00 - 21:00|       0|       1|       0|       1|       0|       1
+|21:00 - 22:00|       0|       1|       0|       1|       0|       1
+|22:00 - 23:00|     0.5|     0.5|       0|       1|       1|       0
+|23:00 -  0:00|       1|       0|       1|       0|       1|       0
+
+|===
+
+.2人世帯
+[cols="^2,>1,>1,>1,>1,>1,>1", stripes=hover]
+|===
+
+.2+^.^h|時刻
+2+^h|平日
+2+^h|休日在宅
+2+^h|休日外出
+
+^h|待機
+^h|視聴
+^h|待機
+^h|視聴
+^h|待機
+^h|視聴
+
+| 0:00 -  1:00|       1|       0|       1|       0|       1|       0
+| 1:00 -  2:00|       1|       0|       1|       0|       1|       0
+| 2:00 -  3:00|       1|       0|       1|       0|       1|       0
+| 3:00 -  4:00|       1|       0|       1|       0|       1|       0
+| 4:00 -  5:00|       1|       0|       1|       0|       1|       0
+| 5:00 -  6:00|       1|       0|       1|       0|       1|       0
+| 6:00 -  7:00|       1|       0|       1|       0|       1|       0
+| 7:00 -  8:00|       0|       1|       1|       0|       0|       1
+| 8:00 -  9:00|       0|       1|       0|       1|       0|       1
+| 9:00 - 10:00|       0|       1|       0|       1|       1|       0
+|10:00 - 11:00|       1|       0|       0|       1|       1|       0
+|11:00 - 12:00|       1|       0|       0|       1|       1|       0
+|12:00 - 13:00|       0|       1|       0|       1|       1|       0
+|13:00 - 14:00|       1|       0|       1|       0|       1|       0
+|14:00 - 15:00|       1|       0|       1|       0|       1|       0
+|15:00 - 16:00|       1|       0|       1|       0|       1|       0
+|16:00 - 17:00|       1|       0|    0.25|    0.75|       1|       0
+|17:00 - 18:00|       0|       1|       0|       1|       1|       0
+|18:00 - 19:00|       0|       1|       0|       1|       1|       0
+|19:00 - 20:00|       0|       1|       0|       1|       1|       0
+|20:00 - 21:00|       0|       1|       0|       1|       0|       1
+|21:00 - 22:00|       0|       1|       0|       1|       0|       1
+|22:00 - 23:00|     0.5|     0.5|       0|       1|       1|       0
+|23:00 -  0:00|       1|       0|       1|       0|       1|       0
+
+|===
+
+.1人世帯
+[cols="^2,>1,>1,>1,>1,>1,>1", stripes=hover]
+|===
+
+.2+^.^h|時刻
+2+^h|平日
+2+^h|休日在宅
+2+^h|休日外出
+
+^h|待機
+^h|視聴
+^h|待機
+^h|視聴
+^h|待機
+^h|視聴
+
+| 0:00 -  1:00|       1|       0|       1|       0|       1|       0
+| 1:00 -  2:00|       1|       0|       1|       0|       1|       0
+| 2:00 -  3:00|       1|       0|       1|       0|       1|       0
+| 3:00 -  4:00|       1|       0|       1|       0|       1|       0
+| 4:00 -  5:00|       1|       0|       1|       0|       1|       0
+| 5:00 -  6:00|       1|       0|       1|       0|       1|       0
+| 6:00 -  7:00|       1|       0|       1|       0|       1|       0
+| 7:00 -  8:00|       0|       1|       0|       1|       0|       1
+| 8:00 -  9:00|       0|       1|       0|       1|       0|       1
+| 9:00 - 10:00|       0|       1|       0|       1|       1|       0
+|10:00 - 11:00|       1|       0|       1|       0|       1|       0
+|11:00 - 12:00|       1|       0|       1|       0|       1|       0
+|12:00 - 13:00|       0|       1|       0|       1|       1|       0
+|13:00 - 14:00|       1|       0|       1|       0|       1|       0
+|14:00 - 15:00|       1|       0|       1|       0|       1|       0
+|15:00 - 16:00|       1|       0|       1|       0|       1|       0
+|16:00 - 17:00|       1|       0|       1|       0|       1|       0
+|17:00 - 18:00|       0|       1|       0|       1|       1|       0
+|18:00 - 19:00|       0|       1|       0|       1|       1|       0
+|19:00 - 20:00|       0|       1|       0|       1|       1|       0
+|20:00 - 21:00|       0|       1|       0|       1|       0|       1
+|21:00 - 22:00|       0|       1|       0|       1|       0|       1
+|22:00 - 23:00|     0.5|     0.5|     0.5|     0.5|       1|       0
+|23:00 -  0:00|       1|       0|       1|       0|       1|       0
+
+|===
 
 
 <<<
@@ -1565,8 +1815,8 @@ E_{ Elc, kttl, d, t } =
 \begin{cases}
 E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } & ( NumberOfPeople = 4 ) \\
 E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 3 }{ 3 } & ( NumberOfPeople = 3 ) \\
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 2 ) \\
-E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 1)
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 2 ) \\
+E_{ Elc, kttl, boil } \times tm_{ kttl, boil, d, t } \times 10^{ -3 } \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 1)
 \end{cases}
 ++++
 
@@ -4793,8 +5043,8 @@ P_{ Elc, dryer } =　
 \begin{cases}
 0.8974 \times P_{ Elc, dryer, rtd } & ( NumberOfPeople = 4 ) \\
 0.8974 \times P_{ Elc, dryer, rtd } \times \frac{ 3 }{ 3 } & ( NumberOfPeople = 3 ) \\
-0.8974 \times P_{ Elc, dryer, rtd } \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 2 ) \\
-0.8974 \times P_{ Elc, dryer, rtd } \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 1 )
+0.8974 \times P_{ Elc, dryer, rtd } \times \frac{ 2 }{ 3 } & ( NumberOfPeople = 2 ) \\
+0.8974 \times P_{ Elc, dryer, rtd } \times \frac{ 1 }{ 3 } & ( NumberOfPeople = 1 )
 \end{cases}
 ++++
 
