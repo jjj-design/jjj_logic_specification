@@ -484,6 +484,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_3_3_温度差利用型ハイブリッド換気">3.3． 温度差利用型ハイブリッド換気</a></li>
 </ul>
 </li>
+<li><a href="#_3_3_3_x_収束計算">3.3.3.x 収束計算</a></li>
 <li><a href="#_4_備考_3">4. 備考</a></li>
 <li><a href="#_付属書1_空調期間">付属書1. 空調期間</a></li>
 <li><a href="#_付属書2_温度差利用型ハイブリッド換気の適用の可否の判断">付属書2. 温度差利用型ハイブリッド換気の適用の可否の判断</a>
@@ -833,6 +834,10 @@ n_p = \left\{ \begin{array}{ll}
 <p>暖房期は、当面AE-Sim/Heat　のデータを利用する。</p>
 </div>
 </li>
+<li>
+<p>時刻別で評価したいときは、全館連続運転時は外気温度で良いが、部分間歇運転時は熱負荷計算の戻り値（室内温度）が必要になるため、当面は外気温度参照が落としどころとなる。
+動的な熱負荷計算が実装された際に再協議する。</p>
+</li>
 </ol>
 </div>
 </div>
@@ -898,7 +903,7 @@ n_p = \left\{ \begin{array}{ll}
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(f_{ SFP }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">比消費電力</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">fat</p></td>
 <td class="tableblock halign-right valign-top"><p class="tableblock">0.3</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">W/(m<sup>3</sup>/h)</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">可</p></td>
@@ -983,6 +988,10 @@ n_p = \left\{ \begin{array}{ll}
 <div class="paragraph">
 <p>暖房期は、当面AE-Sim/Heat　のデータを利用する。</p>
 </div>
+</li>
+<li>
+<p>時刻別で評価したいときは、全館連続運転時は外気温度で良いが、部分間歇運転時は熱負荷計算の戻り値（室内温度）が必要になるため、当面は外気温度参照が落としどころとなる。
+動的な熱負荷計算が実装された際に再協議する。</p>
 </li>
 </ol>
 </div>
@@ -1483,14 +1492,17 @@ a
     \frac
     { 1 }
     { n }
-}
-  <br></p>
+}</p>
 </div>
-<div class="paragraph">
-<p>+
++
 【この項目は間違い】上記式は隙間に対する式であり、開口部（動圧メイン）の評価には使用しない。
-使用するのであれば、外皮の開口相当面積になる。</p>
-</div>
+使用するのであれば、外皮の開口相当面積になる。
+
+
+. 温度差ハイブリッド換気と第一種熱交換型換気システムの併用について
++
+当面は、併用不可として実装する。（実装してほしいとの意見が有れば、提案者に作成していただく）
+理由は、自然給気端末が温度検知して自動開閉する事が困難と思われるため。
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
@@ -1929,7 +1941,7 @@ F_{ safety, vent }\]
 \[\alpha A_{3FL} =
 \begin{cases}
 0
-&amp; , N_{story} = 2
+&amp; , \mbox{2階建て}
 \\
 \frac
 {
@@ -1941,7 +1953,7 @@ F_{ safety, vent }\]
 \frac
 { 1 }
 { 10^{4} }
-&amp; , N_{story} \geqq 3
+&amp; , \mbox{3階建て以上}
 \end{cases}\]
 </div>
 </div>
@@ -1950,7 +1962,7 @@ F_{ safety, vent }\]
 \[\alpha A_{3CL} =
 \begin{cases}
 0
-&amp; , N_{story} = 2
+&amp; , \mbox{2階建て}
 \\
 \frac
 {
@@ -1962,7 +1974,7 @@ F_{ safety, vent }\]
 \frac
 { 1 }
 { 10^{4} }
-&amp; , N_{story} \geqq 3
+&amp; , \mbox{3階建て以上}
 \end{cases}\]
 </div>
 </div>
@@ -2142,6 +2154,12 @@ A
 <div class="paragraph">
 <p>\(\alpha A = Q_{vent, mech} \times 0.7 \times 10^{-4}\)の式変形をして、換気の基本式に持っていけるか（圧力項が必要ではないか）？</p>
 </div>
+<div class="paragraph">
+<p>ここの 0.7 は基準整備促進事業E7で規定した。</p>
+</div>
+<div class="paragraph">
+<p>本来であれば、換気設備との組み合わせで給排気項のαAは選定されるべきだが、自立のプログラムの入力値として細かすぎるので、本数値を使用した。</p>
+</div>
 </div>
 </div>
 </div>
@@ -2207,7 +2225,7 @@ A
 \[H_{ 3FL } =
 \begin{cases}
 0
-&amp; , N_{ story } = 2
+&amp; , \mbox{2階建て以上}
 \\
 \mbox{3FLから3CLの間で任意の値}
 &amp; , N_{ story } \geqq 3
@@ -2380,12 +2398,12 @@ A
 \[T_{ ava, room, d, t } =
 \frac
 {
-    T_{ main, AC } \times A_{ main } +
-    T_{ occupant, AC } \times A_{ occupant } +
-    T_{ non-occupant, noAC } \times A_{ non-occupant }
+    T_{ MR, d, t } \times A_{ MR } +
+    T_{ OR, d, t } \times A_{ OR } +
+    T_{ NR, d, t } \times A_{ NR }
 }
 {
-    A_{ main } + A_{ occupant } + A_{ non-occupant }
+    A_{ MR } + A_{ OR } + A_{ NR }
 }\]
 </div>
 </div>
@@ -2394,43 +2412,42 @@ A
 </div>
 <div class="stemblock">
 <div class="content">
-\[T_{ x, noAC, d, t } =
-| T_{ room, AC } - T_{ oa, d, t } |
+\[T_{ NR, d, t } =
+( 1 - 0.7 )
 \times
-\frac
-{ 1 - 0.7 }
-{ 10 }\]
+T_{ room, AC }
++
+0.7
+\times
+T_{ oa, d, t }\]
 </div>
-</div>
-<div class="paragraph">
-<p>上の式はなんか違う、</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\[T_{ room, noAC, d, t } = (1-0.7) \times T_{ room, AC } + 0.7 \times T_{ oa, d, t }\]
+\[T_{ MR, d, t } =
+T_{ AC }\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[T_{ OR, d, t } =
+T_{ AC }\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[T_{ AC } =
+20\]
 </div>
 </div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>2020.09.30打ち合わせメモ</p>
+<p>【メモ】</p>
 </div>
 <div class="paragraph">
-<p>T_ac = 20</p>
-</div>
-<div class="paragraph">
-<p>T_op,d,t = 0
-T_nac = 6</p>
-</div>
-<div class="paragraph">
-<p>全館連続</p>
-</div>
-<div class="paragraph">
-<p>T_ac = T_nac</p>
-</div>
-<div class="paragraph">
-<p>それか、
-スケジュールを読み込んで、空調ONの時　T_ac = 20,OFFの時は、案分（OA　0℃、の時は6度）</p>
+<p>本来、全館「連続」運転時は、0.7ではなく、0.95（循環風量に依存する：循環風量が多ければ1に近づく）くらいだが、
+今回は安全側の0.7で処理する。</p>
 </div>
 </div>
 </div>
@@ -2576,6 +2593,38 @@ H_{ \alpha A }
 <div style="page-break-after: always;"></div>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_3_3_3_x_収束計算"><a class="link" href="#_3_3_3_x_収束計算">3.3.3.x 収束計算</a></h4>
+<div class="paragraph">
+<p>隙間風マクロ.xlsm　のGoalSeek　部分の書き起こし</p>
+</div>
+<div class="paragraph">
+<p>繰り返し計算の条件</p>
+</div>
+<div class="paragraph">
+<p>回数条件：(不要)</p>
+</div>
+<div class="paragraph">
+<p>閾値：0.1　m3/h</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="literalblock">
+<div class="content">
+<pre>Call Cells(i, 35).GoalSeek(Goal:=0#, ChangingCell:=Cells(i, 22))</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>この部分のみ、収束計算のjupyterを作成する。基本的な与条件は固定値でよい。</p>
+</div>
+</div>
+</div>
+<div style="page-break-after: always;"></div>
 </div>
 <div class="sect3">
 <h4 id="_4_備考_3"><a class="link" href="#_4_備考_3">4. 備考</a></h4>
@@ -3455,7 +3504,15 @@ P_{ Elc, rfrg, oprt, ave, d } \times 1 \times 10^{ -3 } &amp; (\mbox{ それ以�
 <div class="content">
 \[P_{ Elc, rfrg, oprt, ave, d} =
 \frac
-{ E_{ Elc, rfrg, est, d } }
+{
+    E_{ Elc, rfrg, est, d }
+    -
+    (
+        P_{ Elc, dfrst, rtd } \times C_{ dfrst }
+    )
+    \times
+    2
+}
 { t_{ rfrg, oprt } }\]
 </div>
 </div>

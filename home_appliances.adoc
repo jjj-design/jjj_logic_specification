@@ -307,7 +307,15 @@ P_{ Elc, rfrg, oprt, ave, d } \times 1 \times 10^{ -3 } & (\mbox{ それ以外 }
 ++++
 P_{ Elc, rfrg, oprt, ave, d} = 
 \frac
-{ E_{ Elc, rfrg, est, d } }
+{ 
+    E_{ Elc, rfrg, est, d } 
+    -
+    (
+        P_{ Elc, dfrst, rtd } \times C_{ dfrst }
+    )
+    \times
+    2
+}
 { t_{ rfrg, oprt } } 
 ++++
 
