@@ -2331,7 +2331,7 @@ P_{ Elc, microwave, cook } = 0.9373 \times P_{ Elc, microwave, cook, rtd }
 link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82%E8%80%83%EF%BC%9A%E7%9C%81%E3%82%A8%E3%83%8D%E5%9F%BA%E6%BA%96%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99_%E5%AE%B6%E9%9B%BB%E3%83%BB%E8%AA%BF%E7%90%86.docx[省エネ基準参考資料_家電・調理.docx] では、保温の消費電力が要求されており、定格値は要求されていない。 +
 恐らく、 link:https://www.enecho.meti.go.jp/category/saving_and_new/saving/summary/pdf/top_runner/19toprunner_zyasuihanki.pdf[ジャー炊飯器のエネルギー消費性能の向上に関するエネルギー消費機器等製造事業者等の判断の基準等] の値をさしているのではないか？
 
-
+. 現状、炊き上げの消費電力は固定値（143.30775）となり、定格消費電力、号数、炊飯時間を入力しても結果に反映されない。
 ====
 
 デフォルト値で計算する。
@@ -2503,14 +2503,39 @@ E_{ Elc, rice-cooker, d, t } = ( P_{ Elc, rice-cooker, cook } \times t_{ rice-co
 炊飯とは米を炊く行為である。 +
 炊飯合数に応じた炊飯の消費電力は、定格消費電力と炊飯合数から以下の式より求める。
 
+ただし、当面の間は固定値（143.30775)とする。
+
 [stem]
 ++++
-P_{ Elc, rice-cooker, cook } = \frac { E_{ Elc, rice-cooker, cook } } { t_{ rice-cooker, cook } }
+P_{ Elc, rice-cooker, cook }
+=
+143.30775
 ++++
 
 [stem]
 ++++
-E_{ Elc, rice-cooker, cook } = 0.029 \times P_{ Elc, rice-cooker, rtd } + ( 32.414 \times N_{ cup-of-rice } + 58.745)
+P_{ Elc, rice-cooker, cook }
+=
+\frac
+{ E_{ Elc, rice-cooker, cook } }
+{ t_{ rice-cooker, cook } }
+++++
+
+[stem]
+++++
+E_{ Elc, rice-cooker, cook }
+=
+0.029
+\times
+P_{ Elc, rice-cooker, rtd }
++
+(
+    32.414
+    \times
+    N_{ cup-of-rice }
+    +
+    58.745
+)
 ++++
 
 
@@ -3750,6 +3775,7 @@ P_{ Elc, audio_{  MicroSystem-with-MD }, standby } = P_{ Elc, audio_{  MicroSyst
 【メモ：掃除機の課題】
 
 . 複数台の評価時は同一機種しか評価できない。
+. 現状、掃除機の消費電力は固定値（498.333333333333）となり、定格消費電力を入力しても結果に反映されない。
 
 ====
 
@@ -3853,6 +3879,12 @@ E_{ Elc, cleaner, d, t } =  P_{ Elc, cleaner, oprt } \times t_{ cleaner, oprt, d
 ====== 3.12.2.1. 使用時の消費電力
 
 使用とは掃除機の電源を「入」した状態である。 
+ただし、当面の間、固定値（498.333333333333）とする。
+
+[stem]
+++++
+P_{ Elc, cleaner, oprt } =　498.333333333333
+++++
 
 [stem]
 ++++
@@ -3866,6 +3898,9 @@ P_{ Elc, cleaner, oprt } =　1.0355 \times P_{ Elc, cleaner, rtd }
 |：定格消費電力（=1000）,W
 
 |===
+
+
+
 
 
 ====== 3.12.3. 時刻別の使用時間
