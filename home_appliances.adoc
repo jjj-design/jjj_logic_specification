@@ -1269,7 +1269,7 @@ P_{ Elc, toilet-seat-heater } = \frac{ E_{ Elc, toilet-seat-heater, d } }{ 24 \t
 
 [stem]
 ++++
-E_{ Elc, toilet-seat-heater, d } = -20.01 \times \theta_{ toilet, ave, d } + 922.4 \times \frac{ P_{ Elc, toilet-seat-heater, rtd } }{ 45 }
+E_{ Elc, toilet-seat-heater, d } = -20.1 \times \theta_{ toilet, ave, d } + 922.4 \times \frac{ P_{ Elc, toilet-seat-heater, rtd } }{ 45 }
 ++++
 
 [stem]
