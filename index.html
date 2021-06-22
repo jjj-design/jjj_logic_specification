@@ -485,7 +485,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_3_3_温度差利用型ハイブリッド換気">3.3． 温度差利用型ハイブリッド換気</a></li>
 </ul>
 </li>
-<li><a href="#_3_3_3_x_収束計算">3.3.3.x 収束計算</a></li>
 <li><a href="#_4_備考_3">4. 備考</a></li>
 <li><a href="#_付属書1_空調期間">付属書1. 空調期間</a></li>
 <li><a href="#_付属書2_温度差利用型ハイブリッド換気の適用の可否の判断">付属書2. 温度差利用型ハイブリッド換気の適用の可否の判断</a>
@@ -808,6 +807,18 @@ n_p = \left\{ \begin{array}{ll}
 <td class="tableblock halign-center valign-middle"><p class="tableblock">m<sup>2</sup></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">基本情報タブ</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V3</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">換気種別（第一種、第二種、第三種）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無し</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">基本情報タブ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V4</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">熱交換型換気設備の設置（設置する、設置しない）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無し</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">基本情報タブ</p></td>
+</tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
@@ -855,6 +866,17 @@ n_p = \left\{ \begin{array}{ll}
 <td class="tableblock halign-center valign-middle"><p class="tableblock">0.3</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W/(m<sup>3</sup>・h)</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1=3の場合</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">住宅の気密性能</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（小数点1桁）<br>
+最小 0.1<br>
+最大 99.9</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">2.0</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">cm<sup>2</sup>/m<sup>2</sup></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C1=4の場合</p></td>
 </tr>
 </tbody>
 </table>
@@ -1064,7 +1086,7 @@ C_{ single, d, t}\]
 <div class="sect5">
 <h6 id="_3_1_2_暖房期の判定"><a class="link" href="#_3_1_2_暖房期の判定">3.1.2. 暖房期の判定</a></h6>
 <div class="paragraph">
-<p>片側運転における暖房期は、AE-Sim/Heatの暖房期間とする。</p>
+<p>片側運転時における暖房期は、<a href="#table_付1-1">表 8</a> に定める期間とする。</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -1146,7 +1168,7 @@ f_{ SFP }
 <div class="sect5">
 <h6 id="_3_2_2_暖房期の判定"><a class="link" href="#_3_2_2_暖房期の判定">3.2.2. 暖房期の判定</a></h6>
 <div class="paragraph">
-<p>バイパス運転における暖房期は、AE-Sim/Heatの暖房期間とする。</p>
+<p>バイパス運転時における暖房期は、<a href="#table_付1-1">表 8</a> に定める期間とする。</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -1209,12 +1231,6 @@ f_{ SFP }
 </div>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>夏期・中間期の定義は \(\neq\) 暖房期　とする。</p>
-<div class="paragraph">
-<p>暖房期は、当面AE-Sim/Heat　のデータを利用する。</p>
-</div>
-</li>
 <li>
 <p>壁付け式は対象か不明である。</p>
 <div class="paragraph">
@@ -1346,177 +1362,16 @@ f_{ SFP }
 <div class="paragraph">
 <p>特に意味はない。</p>
 </div>
+</li>
+<li>
+<p>温度差ハイブリッド換気と第一種熱交換型換気システムの併用について</p>
 <div class="paragraph">
-<p>\alpha A1,4は廃止して相当開口面積と設置高さを直接入力する形とする。端末が複数個ある場合には、何らかのルールを求めて代表値（プログラム外：例えば付属書）を入力してもらう。</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{0} =
-\begin{cases}
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 2 }
-\times
-\frac
-{ 1 }
-{ 10000 }
-&amp; , \mbox{平屋}
-\\
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 4 }
-\times
-\frac
-{ 1 }
-{ 10000 }
-&amp; , \mbox{2階建}
-\end{cases}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{1} =
-\begin{cases}
-0
-&amp; , \mbox{第一種}
-\\
-Q_{vnt}
-\times
-0.7
-\times
-\frac
-{ 1 }
-{ 10000 }
-&amp; , \mbox{平屋の第二種、第三種}
-\\
-\frac
-{ Q_{vnt} }
-{ 2 }
-\times
-0.7
-\times
-\frac
-{ 1 }
-{ 10000 }
-&amp; , \mbox{二階建ての第二種、第三種}
-\end{cases}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{2} =
-\begin{cases}
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 2 }
-\times
-\frac
-{ 1 }
-{ 10000 }
-&amp; , \mbox{平屋}
-\\
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 4 }
-\times
-\frac
-{ 1 }
-{ 10000 }
-&amp; , \mbox{2階建}
-\end{cases}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{3} =
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 4 }
-\times
-\frac
-{ 1 }
-{ 10000 }\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{4} =
-\begin{cases}
-0
-&amp; , \mbox{第一種}
-\\
-\frac
-{ Q_{vnt} }
-{ 2 }
-\times
-0.7
-\times
-\frac
-{ 1 }
-{ 10000 }
-&amp; , \mbox{第二種、第三種}
-\end{cases}
-++++  　
-+
-[stem]\]
-</div>
-</div>
-<div class="paragraph">
-<p>\alpha A_{5} =
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 4 }
-\times
-\frac
-{ 1 }
-{ 10000 }</p>
+<p>当面は、併用不可として実装する。（実装してほしいとの意見が有れば、提案者に作成していただく）
+理由は、自然給気端末が温度検知して自動開閉する事が困難と思われるため。</p>
 </div>
 </li>
 </ol>
 </div>
-. 開口部（給排気口）の隙間特性値n使用しないのか？
-+
-n=1.7を代表値とする。
-+
-[stem]
-<div class="paragraph">
-<p>Q =
-a
-\times
-\Delta p^
-{
-    \frac
-    { 1 }
-    { n }
-}</p>
-</div>
-+
-【この項目は間違い】上記式は隙間に対する式であり、開口部（動圧メイン）の評価には使用しない。
-使用するのであれば、外皮の開口相当面積になる。
-
-
-. 温度差ハイブリッド換気と第一種熱交換型換気システムの併用について
-+
-当面は、併用不可として実装する。（実装してほしいとの意見が有れば、提案者に作成していただく）
-理由は、自然給気端末が温度検知して自動開閉する事が困難と思われるため。
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
@@ -1669,7 +1524,15 @@ a
 <td class="tableblock halign-center valign-top"><p class="tableblock">不可</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(C\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(HeatingSeason_{ d }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">d日は暖房期であるかの判断</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し（データベース読み込み）</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">True/False</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">不可</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(C_{ val }\)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C値</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">Double</p></td>
 <td class="tableblock halign-right valign-top"><p class="tableblock">2.0</p></td>
@@ -1689,52 +1552,72 @@ a
 <div class="sect5">
 <h6 id="_3_3_1_比消費電力"><a class="link" href="#_3_3_1_比消費電力">3.3.1. 比消費電力</a></h6>
 <div class="paragraph">
-<p>温度差利用型ハイブリッド換気における比消費電力は、入力された比消費電力に内外温度差による補正係数を掛けることで評価する。</p>
+<p>温度差利用型ハイブリッド換気における比消費電力は、ハイブリッド換気が有効の場合は0、それ以外の場合は入力された値で評価される。</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\[f_{ SFP, d, t } = f_{ SFP } \times C_{ hybrid, temperature, d, t}\]
-</div>
-</div>
-<div class="paragraph">
-<p>内外温度差による補正係数は、暖房期において、内外温度差による換気量が機械換気設備による換気量以上の場合に「0」それ以外の場合は「1」とする。</p>
-</div>
-<div class="paragraph">
-<p>冷暖房期を分けて式はシンプルすした方がよいので、修正する。</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[C_{ hybrid, tempareture, d, t } =
+\[f_{ SFP, hybrid-temperature, d, t } =
 \begin{cases}
-0 &amp; , Q_{ \Delta temperature, d, t } \geqq Q_{ vent, mech } \land HeatingSeason_{d} = \mbox{True} \\
-1 &amp; , \mbox{Others}
+0
+&amp; , EnableHybrid_{ d, t } = \mbox{True}
+\\
+f_{ SFP }
+&amp; , EnableHybrid_{ d, t } = \mbox{False}
 \end{cases}\]
 </div>
 </div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 4.7619%;">
+<col style="width: 95.2381%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( f_{ SFP, hybrid-temperature, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における温度差利用型ハイブリッド換気の比消費電力,W/(m<sup>3</sup>/h)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( EnableHybrid_{ d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における温度差利用型ハイブリッド換気が有効であるかの判断,True/False</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( f_{ SFP }  \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：比消費電力,W/(m<sup>3</sup>/h)</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p>機械換気設備による換気量は、建物の延床面積に平均天井高を掛けた容積に換気回数および安全率を考慮した値とする。</p>
+<p>ハイブリッド換気の有効、無効は以下の式で判断する。</p>
 </div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>【議題】
-延べ床面積ではなく、居室に限定すべきか？
-→
-省エネ基準法に準拠する。</p>
+<p>【メモ】
+機械換気量は省エネ基準と異なり、安全率などは考慮しない。すきま風マクロ.xlsmに準拠する。</p>
 </div>
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[EnableHybrid_{ d, t } =
+\begin{cases}
+True
+&amp; , Q_{ vnt, ntrl, d, t } \geqq Q_{ vnt, mech }
+\\
+False
+&amp; , \mbox{Others}
+\end{cases}\]
 </div>
 </div>
 <div class="stemblock">
 <div class="content">
 \[Q_{ vent, mech } =
-A_{ floor } \times
-H_{ ceil, ave } \times
-N_{ vent } \times
-F_{ safety, vent }\]
+A_{ floor }
+\times
+H_{ ceil, ave }
+\times
+N_{ vent }\]
 </div>
-</div>
-<div class="paragraph">
-<p>ここで、</p>
 </div>
 <table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
@@ -1743,607 +1626,66 @@ F_{ safety, vent }\]
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( f_{ SFP, d, t }  \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における比消費電力,W/(m<sup>3</sup>/h)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( Q_{ vnt, ntrl, d, t }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における自然換気量,m<sup>3</sup>/h</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( f_{ SFP }  \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：比消費電力,W/(m<sup>3</sup>/h)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( C_{ hybrid, temperature, d, t }  \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における温度差利用型ハイブリッド換気の比消費電力の補正係数,-</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( Q_{ \Delta temperature, d, t }  \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における内外温度差による換気量,m<sup>3</sup>/h</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( Q_{ vent, mech }  \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：機械換気設備による換気量,m<sup>3</sup>/h</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( HeatingSeason_{ d }  \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) が暖房期である,True/False</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( Q_{ vnt, mech } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：機械換気量,m<sup>3</sup>/h</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( A_{ floor }  \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：建物の延床面積,m<sup>2</sup></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( H_{ ceil, ave }  \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：建物の平均天井高（=2.5）,m</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( H_{ ceil, ave } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：平均天井高さ(=2.4),m</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( N_{ vent }  \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：換気回数（=0.5）,回/h</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( F_{ safety, vent }  \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：換気量の安全率（=1.1）,-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( N_{ vent } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：換気回数(=0.5),回/h</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>である。</p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="_3_3_2_暖房期の判定"><a class="link" href="#_3_3_2_暖房期の判定">3.3.2. 暖房期の判定</a></h6>
-<div class="paragraph">
-<p>温度差利用型ハイブリッド換気における暖房期は、表9に定める期間とする。</p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="_3_3_3_内外温度差による換気量"><a class="link" href="#_3_3_3_内外温度差による換気量">3.3.3. 内外温度差による換気量</a></h6>
-<div class="paragraph">
-<p>内外温度差による換気量は2階建て以上の建物のみ算出することができる。
-また、3階建てを超える建物は3階建てとみなして計算する。</p>
-</div>
-<div class="paragraph">
-<p>機械換気設備によって生成される内外圧力差は考慮しない。
-機械換気設備のP-Q特性曲線を与えれば計算可能だが、特性曲線の数式化や、収束計算が発散する可能性が高まる。
-特に、定風量制御機能などを有する機種は特性曲線が複雑であり、区分による評価法の入れ替えが必要になるため現実的ではない。（本プログラムは、あくまでエネルギー消費量の検討ツールであるため）</p>
-</div>
-<div class="paragraph">
-<p>現時点で平屋は対象外とする。
-平屋は煙突換気と同時に実装する予定である。</p>
+<p>自然換気量は
+建物を6区画(n=0~5)に分け、それぞれの区画ですきま風を算出し、
+その収支が0となる条件の時の流入空気の合計が自然換気量となる。</p>
 </div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>【メモ】
-すきま風計算マクロ.xlsm　の計算方法を採用する</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect5">
-<h6 id="_3_3_3_x_外皮の相当開口面積"><a class="link" href="#_3_3_3_x_外皮の相当開口面積">3.3.3.x. 外皮の相当開口面積</a></h6>
-<div class="paragraph">
-<p>相当開口面積 \(\alpha A_{1FL}\)、\(\alpha A_{1CL}\)、\(\alpha A_{2FL}\)、\(\alpha A_{2CL}\)、\(\alpha A_{3FL}\)、\(\alpha A_{3CL}\) は以下の式で求める。</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>本来であれば、建具などの隙間特性を入力すべきだが「すきま風計算マクロ.xlsm」では、外皮をひとまとめとして扱うので、開口があると仮定して処理するであれば問題ない。そもそも「相当」なので&#8230;&#8203;</p>
-</div>
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{1FL} =
-\begin{cases}
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 4 }
-\times
-\frac
-{ 1 }
-{ 10^{4} }
-&amp; , N_{story} = 2
-\\
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 6 }
-\times
-\frac
-{ 1 }
-{ 10^{4} }
-&amp; , N_{story} \geqq 3
-\end{cases}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{1CL} =
-\begin{cases}
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 4 }
-\times
-\frac
-{ 1 }
-{ 10^{4} }
-&amp; , N_{story} = 2
-\\
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 6 }
-\times
-\frac
-{ 1 }
-{ 10^{4} }
-&amp; , N_{story} \geqq 3
-\end{cases}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{2FL} =
-\begin{cases}
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 4 }
-\times
-\frac
-{ 1 }
-{ 10^{4} }
-&amp; , N_{story} = 2
-\\
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 6 }
-\times
-\frac
-{ 1 }
-{ 10^{4} }
-&amp; , N_{story} \geqq 3
-\end{cases}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{2CL} =
-\begin{cases}
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 4 }
-\times
-\frac
-{ 1 }
-{ 10^{4} }
-&amp; , N_{story} = 2
-\\
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 6 }
-\times
-\frac
-{ 1 }
-{ 10^{4} }
-&amp; , N_{story} \geqq 3
-\end{cases}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{3FL} =
-\begin{cases}
-0
-&amp; , \mbox{2階建て}
-\\
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 6 }
-\times
-\frac
-{ 1 }
-{ 10^{4} }
-&amp; , \mbox{3階建て以上}
-\end{cases}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{3CL} =
-\begin{cases}
-0
-&amp; , \mbox{2階建て}
-\\
-\frac
-{
-    C \times
-    A_{floor}
-}
-{ 6 }
-\times
-\frac
-{ 1 }
-{ 10^{4} }
-&amp; , \mbox{3階建て以上}
-\end{cases}\]
-</div>
-</div>
-<div class="paragraph">
-<p>ここで、</p>
-</div>
-<table class="tableblock frame-none grid-none stripes-none stretch">
-<colgroup>
-<col style="width: 4.7619%;">
-<col style="width: 95.2381%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \alpha A_{1FL} \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：1階床レベルの相当隙間面積,m<sup>2</sup></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \alpha A_{1CL} \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：1階天井レベルの相当隙間面積,m<sup>2</sup></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \alpha A_{2FL} \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：2階床レベルの相当隙間面積,m<sup>2</sup></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \alpha A_{2CL} \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：2階天井レベルの相当隙間面積,m<sup>2</sup></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \alpha A_{2FL} \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：3階床レベルの相当隙間面積,m<sup>2</sup></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \alpha A_{2CL} \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：3階天井レベルの相当隙間面積,m<sup>2</sup></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( f_{ SFP }  \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：比消費電力,W/(m<sup>3</sup>/h)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( C \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：建物の機密性能,cm<sup>2</sup>/m<sup>2</sup></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( A_{ floor }  \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：建物の延床面積,m<sup>2</sup></p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>である。</p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="_3_3_3_x_換気口の相当開口面積"><a class="link" href="#_3_3_3_x_換気口の相当開口面積">3.3.3.x. 換気口の相当開口面積</a></h6>
-<div class="paragraph">
-<p>換気口の相当開口面積 \(\alpha A_{vnt}\)は入力値を使用する。
-換気口の設置数は各階に1つまでとし、複数ある場合には合計値を用いる。</p>
-</div>
-<div class="paragraph">
-<p>3階建てよりも高い建物の場合は、3階までの値を使用し、4階以上の値は使用しない。
-（要求があれば、その際に考える。）</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{vnt} = （入力値）\]
-</div>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【メモ】
-基本式</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[Q =
-V \times A
-=
-\frac
-{ 1 }
-{ \sqrt{\zeta} }
-\sqrt
-{
-    \frac
-    { 2 \Delta p}
-    { \rho }
-}
-\times
-A
-=
-\alpha A
-\sqrt
-{
-    \frac
-    { 2 \Delta p}
-    { \rho }
-}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha =
-\frac
-{ 1 }
-{ \sqrt{\zeta} }
-\fallingdotseq
-0.65～0.7\]
-</div>
+<p>【課題】
+3階建て以上に対応するために、3階の場合の区画数と高さを決める必要がある。</p>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>ここで、</p>
-</div>
-<table class="tableblock frame-none grid-none stripes-none stretch">
-<colgroup>
-<col style="width: 4.7619%;">
-<col style="width: 95.2381%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \alpha A_{vnt} \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：換気口の相当開口面積,m<sup>2</sup></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( A_{vnt} \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：換気口の有効開口面積,m<sup>2</sup></p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>である。</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【議題】</p>
-</div>
-<div class="paragraph">
-<p>現行の「すきま風計算マクロ.xlsm」では、計算方法が異なる。
-上手く理解できないので、打ち合わせ時に勉強する。
-→
-こちらで任意に計算方法を提案してよい。</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{vnt} =
-\begin{cases}
-0
-&amp; , \mbox{第一種換気}
-\\
-\frac
-{ Q_{vnt,mech}  }
-{ n_{div} }
-\times
-\frac
-{ 0.7}
-{ 10^{4} }
-&amp; , \mbox{Other}
-\end{cases}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[n_{ div } =
-\begin{cases}
-2
-&amp; , N_{ story } = 2
-\\
-3
-&amp; , N_{ story } \geqq 3
-\end{cases}\]
-</div>
-</div>
-<div class="paragraph">
-<p>\(\alpha A = Q_{vent, mech} \times 0.7 \times 10^{-4}\)の式変形をして、換気の基本式に持っていけるか（圧力項が必要ではないか）？</p>
-</div>
-<div class="paragraph">
-<p>ここの 0.7 は基準整備促進事業E7で規定した。</p>
-</div>
-<div class="paragraph">
-<p>本来であれば、換気設備との組み合わせで給排気項のαAは選定されるべきだが、自立のプログラムの入力値として細かすぎるので、本数値を使用した。</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect5">
-<h6 id="_3_3_3_x_相当開口面積の高さ"><a class="link" href="#_3_3_3_x_相当開口面積の高さ">3.3.3.x. 相当開口面積の高さ</a></h6>
-<div class="paragraph">
-<p>相当開口面積の高さは以下とする。</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【議論】
-. すきま風計算マクロ.xlsm では任意入力だが、xFL,xCLは固定値でもよいのではないか？</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>1FLが高さの起点となっているが、床下の評価が入る場合はどうするか？（現段階では無視でよいが、将来的な拡張を考えると考慮しておく必要がある。）</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>固定値とする（天井高さ：2.5m、階間：0.5m、換気口：2.5×0.75＝1.875m）</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[H_{ 1FL } = \mbox{1FLから1CLの間で任意の値}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[H_{ 1CL } = \mbox{1FLから1CLの間で任意の値}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[H_{ vent, 1F } = \mbox{1FLから1CLの間で任意の値}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[H_{ 2FL } = \mbox{2FLから2CLの間で任意の値}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[H_{ 2CL } = \mbox{2FLから2CLの間で任意の値}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[H_{ vent, 2F } = \mbox{2FLから2CLの間で任意の値}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[H_{ 3FL } =
-\begin{cases}
-0
-&amp; , \mbox{2階建て以上}
-\\
-\mbox{3FLから3CLの間で任意の値}
-&amp; , N_{ story } \geqq 3
-\end{cases}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[H_{ 3CL } =
-\begin{cases}
-0
-&amp; , N_{ story } = 2
-\\
-\mbox{3FLから3CLの間で任意の値}
-&amp; , N_{ story } \geqq 3
-\end{cases}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[H_{ vent, 3F } =
-\begin{cases}
-0
-&amp; , N_{ story } = 2
-\\
-\mbox{3FLから3CLの間で任意の値}
-&amp; , N_{ story } \geqq 3
-\end{cases}\]
-</div>
-</div>
-<div class="paragraph">
-<p>ここで、</p>
-</div>
-<table class="tableblock frame-none grid-none stripes-none stretch">
-<colgroup>
-<col style="width: 4.7619%;">
-<col style="width: 95.2381%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( H_{ 1FL } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：相当開口面積(1FL)の1FLからの高さ,m</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( H_{ 1CL } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：相当開口面積(1CL)の1FLからの高さ,m</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( H_{ vent, 1F } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：1Fに設置された換気口の1FLからの高さ,m</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( H_{ 2FL } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：相当開口面積(2FL)の1FLからの高さ,m</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( H_{ 2CL } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：相当開口面積(2CL)の1FLからの高さ,m</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( H_{ vent, 2F } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：2Fに設置された換気口の1FLからの高さ,m</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( H_{ 3FL } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：相当開口面積(3FL)の1FLからの高さ,m</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( H_{ 3CL } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：相当開口面積(3CL)の1FLからの高さ,m</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( H_{ vent, 3F } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：3Fに設置された換気口の1FLからの高さ,m</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>である。</p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="_3_3_3_x_乾燥空気密度"><a class="link" href="#_3_3_3_x_乾燥空気密度">3.3.3.x. 乾燥空気密度</a></h6>
-<div class="paragraph">
-<p>乾燥空気密度は以下の式で求める。</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\rho_{ room, d, t } =
-\frac
-{ 353.25 }
-{ T_{ ave, room, d, t } + 273.15 }\]
-</div>
+<p>外気と、室内空気の空気密度は以下の式で求める。</p>
 </div>
 <div class="stemblock">
 <div class="content">
 \[\rho_{ oa, d, t } =
 \frac
 { 353.25 }
-{ T_{ oa, d, t } + 273.15 }\]
+{
+    T_{ ao, d, t }
+    +
+    273.15
+}\]
 </div>
 </div>
-<div class="paragraph">
-<p>ここで、</p>
+<div class="stemblock">
+<div class="content">
+\[\rho_{ room, d, t } =
+\frac
+{ 353.25 }
+{
+    T_{ room, d, t }
+    +
+    273.15
+}\]
+</div>
 </div>
 <table class="tableblock frame-none grid-none stripes-none stretch">
 <colgroup>
@@ -2352,32 +1694,331 @@ A
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \rho_{ room } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \rho_{ oa, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における外気の乾燥空気密度,kg/m<sup>3</sup></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( T_{ oa, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における外気温度,℃</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \rho_{ room, d, t } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における室内空気の乾燥空気密度,kg/m<sup>3</sup></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( T_{ ave, room, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における室内平均空気温度,℃</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \rho_{ oa } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における外気気の乾燥空気密度,kg/m<sup>3</sup></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( T_{ oa, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における室内平均空気温度,℃</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における室内平均空気温度(=20。現時点では固定値),℃</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>である。</p>
+<p>各区画の相当隙間面積を以下の式で求める。</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>【課題】
+3階建て以上に対応するために、3階の場合の区画数と高さを決める必要がある。</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>区画番号nが0,2,3,5の場合</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\alpha A_{ n } =
+\frac
+{
+    \frac
+    { C_{ val } }
+    { 10^{ 4 } }
+    \times
+    A_{ floor }
+}
+{ 4 }\]
+</div>
+</div>
+<div class="paragraph">
+<p>区画番号nが1,4の場合</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\alpha A_{ n } =
+\begin{cases}
+0
+&amp; , TypeVent = 1
+\\
+\frac
+{
+    \frac
+    {
+        0.7
+        \times
+        Q_{ vent, mech }
+    }
+    { 10^{ 4 } }
+}
+{ 2 }
+&amp; , Others
+\end{cases}\]
+</div>
+</div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 4.7619%;">
+<col style="width: 95.2381%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \alpha A_{ n } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：区画nの相当隙間面積,m<sup>2</sup></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( TypeVent \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：換気種別（1:第一種、2:第二種、3:第三種）,-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( C_{ val } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：建物の気密性能,cm<sup>2</sup>/m<sup>2</sup></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>区画別の内外圧力差を以下の式で求める。</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>【課題】
+3階建て以上に対応するために、3階の場合の区画数と高さを決める必要がある。</p>
+</div>
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta p_{ 0, d, t } =
+\mbox{収束計算時の与条件}\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta p_{ 1, d, t } =
+\Delta p_{ 0, d, t }
+-
+9.8
+\times
+1.6
+\times
+( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta p_{ 2, d, t } =
+\Delta p_{ 0, d, t }
+-
+9.8
+\times
+2.4
+\times
+( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta p_{ 3, d, t } =
+\Delta p_{ 0, d, t }
+-
+9.8
+\times
+2.9
+\times
+( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta p_{ 4, d, t } =
+\Delta p_{ 0, d, t }
+-
+9.8
+\times
+4.5
+\times
+( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta p_{ 5, d, t } =
+\Delta p_{ 0, d, t }
+-
+9.8
+\times
+5.3
+\times
+( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
+</div>
+</div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 4.7619%;">
+<col style="width: 95.2381%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 0, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画0の内外圧力差,Pa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 1, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画1の内外圧力差,Pa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 2, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画2の内外圧力差,Pa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 3, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画3の内外圧力差,Pa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 4, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画4の内外圧力差,Pa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 5, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画5の内外圧力差,Pa</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>区画番号がn(=0~5)の時のすきま風は以下の式で求める。</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>【課題】
+3階建て以上に対応するために、3階の場合の区画数を決める必要がある。</p>
+</div>
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[Q_{ leak, n, d, t } =
+\begin{cases}
+\alpha A_{ n }
+\sqrt{
+    \frac
+    {
+        2
+        \times
+        \Delta p_{ n, d, t }
+    }
+    {
+        \rho_{ d, t }
+    }
+}
+&amp; , \Delta p_{ n, d, t } \geqq 0
+\\
+-1
+\times
+\alpha A_{ n }
+\sqrt{
+    \frac
+    {
+        2
+        \times
+        |\Delta p_{ n, d, t }|
+    }
+    {
+        \rho_{ d, t }
+    }
+}
+&amp; , \Delta p_{ n, d, t } &lt; 0
+\end{cases}\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\rho_{ d, t } =
+\begin{cases}
+\rho_{ oa, d, t}
+&amp; , \Delta p_{ 0, d, t } &gt; 0
+\\
+\rho_{ room, d, t}
+&amp; , \Delta p_{ 0, d, t } \leqq 0
+\end{cases}\]
+</div>
+</div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 4.7619%;">
+<col style="width: 95.2381%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( Q_{ leak, n, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画nのすきま風,m<sup>3</sup>/h</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \rho_{ d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における乾燥空気密度,kg/m<sup>3</sup></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>自然換気量は、すきま風の収支が0となった条件下で
+正の値のすきま風の合計値に、第三種換気の場合は機械換気量を差し引いた値となる。</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[Q_{ vnt, ntrl, d, t } =
+\begin{cases}
+\sum_{ n } \max(0, Q_{ n, leak, d, t})
+-
+Q_{ vnt, mech }
+&amp; , VentType = 3
+\\
+\sum_{ n } \max(0, Q_{ n, leak, d, t})
+&amp;, Others
+\end{cases}\]
+</div>
+</div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 4.7619%;">
+<col style="width: 95.2381%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( Q_{ vnt, ntrl, d, t }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における自然換気量,m<sup>3</sup>/h</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( Q_{ leak, n, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画nのすきま風,m<sup>3</sup>/h</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \rho_{ d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における乾燥空気密度,kg/m<sup>3</sup></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5">
+<h6 id="_3_3_2_暖房期の判定"><a class="link" href="#_3_3_2_暖房期の判定">3.3.2. 暖房期の判定</a></h6>
+<div class="paragraph">
+<p>温度差利用型ハイブリッド換気における暖房期は、<a href="#table_付1-1">表 8</a> に定める期間とする。</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_3_3_3_x_平均室温の検討"><a class="link" href="#_3_3_3_x_平均室温の検討">3.3.3.x. 平均室温の検討</a></h6>
+<h6 id="_3_3_3_平均室温の検討"><a class="link" href="#_3_3_3_平均室温の検討">3.3.3. 平均室温の検討</a></h6>
 <div class="paragraph">
 <p>この項目はアイディアの段階。
-現時点ではメモ書き</p>
+現時点ではメモ書きである。
+検討が進めば、空気密度を算出する際の平均室温が暖房設定温度の固定値ではなく、本方法での算出結果となる。</p>
 </div>
 <div class="paragraph">
 <p>d日t時における平均室温は以下の式より求まる。</p>
@@ -2483,162 +2124,9 @@ T_{ AC }\]
 <div class="paragraph">
 <p>である。</p>
 </div>
-</div>
-<div class="sect5">
-<h6 id="_3_3_3_x_内外圧力差"><a class="link" href="#_3_3_3_x_内外圧力差">3.3.3.x. 内外圧力差</a></h6>
-<div class="stemblock">
-<div class="content">
-\[\Delta p_{ \alpha A, d, t } =
-\Delta p_{ 1FL, d, t } -
-9.8
-\times
-H_{ \alpha A }
-\times
-( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
-</div>
-</div>
-<div class="paragraph">
-<p>1FL（高さ起点）の内外圧力差は
-\(Q_{ \Delta temperature, d, t } = 0\)となるような値を収束計算で求める。
-ただし、第二種換気の場合は機械換気量を加算し、第三種換気の場合は機か換気量を減算する。</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【議論】
-換気口の相当開口面積を換気量から求めなければ、この方式は収束しない気がする。
-→
-こちらで適切に対応し、提案する。</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>ここで、</p>
-</div>
-<table class="tableblock frame-none grid-none stripes-none stretch">
-<colgroup>
-<col style="width: 4.7619%;">
-<col style="width: 95.2381%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ \alpha A, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における相当開口面積の内外圧力差,Pa</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 1FL, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における1FLの内外圧力差,Pa</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>である。</p>
-</div>
-</div>
-<div class="sect5">
-<h6 id="_3_3_3_x_内外温度差による換気量"><a class="link" href="#_3_3_3_x_内外温度差による換気量">3.3.3.x. 内外温度差による換気量</a></h6>
-<div class="stemblock">
-<div class="content">
-\[Q_{ \Delta temperature, d, t } = \sum Q_{ \Delta temperature, \alpha A, d, t }\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[Q_{ \Delta temperature, \alpha A, d, t } =
-\begin{cases}
-{ \rm SING } ( \Delta p_{ \alpha A, d, t } )
-\times
-\alpha A
-\times
-\sqrt
-{
-    \frac
-    { 2 | \Delta p_{ \alpha A, d, t } | }
-    { \rho_{ oa, d, t } }
-}
-\times
-3600
-&amp; , \Delta p &gt; 0
-\\
-0
-&amp; , p = 0
-\\
-{ \rm SING } ( \Delta p_{ \alpha A, d, t } )
-\times
-\alpha A
-\times
-\sqrt
-{
-    \frac
-    { 2 | \Delta p_{ \alpha A, d, t } | }
-    { \rho_{ room, d, t } }
-}
-\times
-3600
-&amp; , \Delta p &lt; 0
-\end{cases}\]
-</div>
-</div>
-<div class="paragraph">
-<p>ここで、</p>
-</div>
-<table class="tableblock frame-none grid-none stripes-none stretch">
-<colgroup>
-<col style="width: 4.7619%;">
-<col style="width: 95.2381%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( Q_{ \Delta temperature, d, t }\)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における内外温度差による換気量,m<sup>3</sup>/h</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( Q_{ \Delta temperature, \alpha A, d, t }\)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における相当開口面積の内外温度差による換気量,m<sup>3</sup>/h</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>\({ \rm SING } ( x )\) はxの符号を返す関数</p>
-</div>
-<div class="paragraph">
-<p>である。</p>
-</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_3_3_3_x_収束計算"><a class="link" href="#_3_3_3_x_収束計算">3.3.3.x 収束計算</a></h4>
-<div class="paragraph">
-<p>隙間風マクロ.xlsm　のGoalSeek　部分の書き起こし</p>
-</div>
-<div class="paragraph">
-<p>繰り返し計算の条件</p>
-</div>
-<div class="paragraph">
-<p>回数条件：(不要)</p>
-</div>
-<div class="paragraph">
-<p>閾値：0.1　m3/h</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="literalblock">
-<div class="content">
-<pre>Call Cells(i, 35).GoalSeek(Goal:=0#, ChangingCell:=Cells(i, 22))</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>この部分のみ、収束計算のjupyterを作成する。基本的な与条件は固定値でよい。</p>
-</div>
-</div>
-</div>
-<div style="page-break-after: always;"></div>
 </div>
 <div class="sect3">
 <h4 id="_4_備考_3"><a class="link" href="#_4_備考_3">4. 備考</a></h4>
@@ -2705,6 +2193,12 @@ H_{ \alpha A }
 </div>
 <div class="paragraph">
 <p>AE-Sim/Heatで採用されている暖房・冷房期間を <a href="#table_付1-1">表 8</a>に示す。</p>
+</div>
+<div class="paragraph">
+<p>建築研究所のHPに掲載されている情報と同じである。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.kenken.go.jp/becc/documents/house/11-6_210401_v01.pdf" class="bare">https://www.kenken.go.jp/becc/documents/house/11-6_210401_v01.pdf</a></p>
 </div>
 <table id="table_付1-1" class="tableblock frame-all grid-all stripes-hover stretch">
 <caption class="title">表 8. AE-Sim/Heatの各地域区分代表都市の暖房・冷房期間</caption>
@@ -2785,9 +2279,6 @@ H_{ \alpha A }
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>暖房・冷房期間はAE-Sim/Heatで採用されている期間を採用している。</p>
-</div>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect3">
