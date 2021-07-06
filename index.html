@@ -854,7 +854,29 @@ n_p = \left\{ \begin{array}{ll}
 <td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">1)常に表示<br>
 2,3)熱交換型換気設備の設置=設置するの場合　かつ　換気設備の方式の選択=ダクト式第一種換気設備 かつ 地域区分=1~7の場合<br>
-3) 地域区分=1~7の場合</p></td>
+4) 地域区分=1~7の場合</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">対象住宅の建物形状</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)2階建て<br>
+2)3階建て以上</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C1=4<br>
+当面は1)のみ選択可能。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C3</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">排気塔を利用する</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">1)True<br>
+2)False</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">2)</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">無し</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C1=4<br>
+当面は2)のみ選択可能。</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
@@ -862,7 +884,7 @@ n_p = \left\{ \begin{array}{ll}
 <td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">小数（小数点2桁）<br>
 最小 0.01<br>
-最大 0.99</p></td>
+最大 99.99</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">0.3</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">W/(m<sup>3</sup>・h)</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1=3の場合</p></td>
@@ -876,6 +898,17 @@ n_p = \left\{ \begin{array}{ll}
 最大 99.9</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">2.0</p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">cm<sup>2</sup>/m<sup>2</sup></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">C1=4の場合</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">V3</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">給排気端末の有効開口面積（合計値）</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（小数点1桁）<br>
+最小 0.1<br>
+最大 9999.9</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">200</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">cm<sup>2</sup></p></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock">C1=4の場合</p></td>
 </tr>
 </tbody>
@@ -920,7 +953,7 @@ n_p = \left\{ \begin{array}{ll}
 <td class="tableblock halign-center valign-top"><p class="tableblock">float</p></td>
 <td class="tableblock halign-right valign-top"><p class="tableblock">0.3</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">W/(m<sup>3</sup>/h)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">可？（省エネ基準プログラムの値をそのまま持ってくる）</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">可（省エネ基準プログラムの値をそのまま持ってくる）</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\(f_{ SFP, bypass }\)</p></td>
@@ -929,6 +962,62 @@ n_p = \left\{ \begin{array}{ll}
 <td class="tableblock halign-right valign-top"><p class="tableblock">0.2</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">W/(m<sup>3</sup>/h)</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">可</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(T_{ oa, d, t }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">d日t時における外気温度</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Double</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し（データベース読み込み）</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">℃</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">不可</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(HeatingSeason_{ d }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">d日は暖房期であるかの判断</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し（データベース読み込み）</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">True/False</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">不可</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(C_{ val }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C値</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Double</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2.0</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">cm<sup>2</sup>/m<sup>2</sup></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">可</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(UseChimney\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">排気塔を利用するかの判断</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Boolean</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">True/False</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">可</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(A_{ floor }\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">延床面積</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Double</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し（省エネ基準プログラムの入力値を参照）</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">m<sup>2</sup></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">不可</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(VentType\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">換気種別（1:第一種、2:第二種、3:第三種）,-</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Int</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し（省エネ基準プログラムの入力値を参照）</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">無し</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">不可</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(Q_{vent}\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">機械換気設備による換気量</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Double</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">無し（省エネ基準プログラムの内部変数を取得する）</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">m<sup>3</sup>/h</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">不可。本当に必要か要調整</p></td>
 </tr>
 </tbody>
 </table>
@@ -1086,7 +1175,7 @@ C_{ single, d, t}\]
 <div class="sect5">
 <h6 id="_3_1_2_暖房期の判定"><a class="link" href="#_3_1_2_暖房期の判定">3.1.2. 暖房期の判定</a></h6>
 <div class="paragraph">
-<p>片側運転時における暖房期は、<a href="#table_付1-1">表 8</a> に定める期間とする。</p>
+<p>片側運転時における暖房期は、<a href="#table_付1-1">表 5</a> に定める期間とする。</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -1168,7 +1257,7 @@ f_{ SFP }
 <div class="sect5">
 <h6 id="_3_2_2_暖房期の判定"><a class="link" href="#_3_2_2_暖房期の判定">3.2.2. 暖房期の判定</a></h6>
 <div class="paragraph">
-<p>バイパス運転時における暖房期は、<a href="#table_付1-1">表 8</a> に定める期間とする。</p>
+<p>バイパス運転時における暖房期は、<a href="#table_付1-1">表 5</a> に定める期間とする。</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -1197,7 +1286,7 @@ f_{ SFP }
 <p>【作業方針】</p>
 </div>
 <div class="paragraph">
-<p>まずは、排気塔なしで実装する。</p>
+<p>まずは、排気塔なしで実装する予定だったが、給排気端末をユーザーの任意入力としたため、内部的には排気塔の処理を先行して実装している（どの時点でその機能を有効とするか？）。</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1272,287 +1361,52 @@ f_{ SFP }
 </div>
 </div>
 </div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【隙間風マクロの課題】</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>以前のメールで本プログラムに給排気口面積の追加方法を検討するとあったが、パラメーターには給排気口の面積は無いが高さ情報には「給気口」が判断基準として採用されている（第2種、第3種のみ）ので、基本情報のC値に給排気口の面積は既に含まれているのではないか？</p>
-<div class="paragraph">
-<p>含まれている。（0.5回/h相当）</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>基本情報のC値に給排気口の面積が含まれていない場合はどのように追加するか？</p>
-<div class="paragraph">
-<p>C値に加算する形として均一に配置する？</p>
-</div>
-<div class="paragraph">
-<p>居住者が多い室（ＬＤＫ）などに給排気口を多く設置するのがセオリーだが、本プログラムが間取りを扱えない以上、これが現実的といえる。</p>
-</div>
-<div class="paragraph">
-<p>しない。</p>
-</div>
-<div class="paragraph">
-<p>ハイブリッド用の端末は給排気の種別はいらない。</p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>複数の給気口や排気口がある場合の設置位置（h=0~5）はどのように判断すべきか？</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>高さ方向の分割位置を増やす？</p>
-</li>
-<li>
-<p>平均値？</p>
-<div class="paragraph">
-<p>プログラム外のルールの代表値で対応する。</p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>3階以上の場合はどう対応するのか？</p>
-<div class="paragraph">
-<p>階数は入力する。（2F、3F以上(実質3Fとみなす)）</p>
-</div>
-<div class="paragraph">
-<p>平屋は現時点では対象外とする。理由は床下換気口を認めると2F、3F建てに認めないのはおかしくなるから。（高さ情報をユーザーが入力できるようになれば話は別になる。）</p>
-</div>
-<div class="paragraph">
-<p>排気塔と同時に実装する。</p>
-</div>
-</li>
-<li>
-<p>第一種の場合は、壁と床の取り合い部分からしか空気が流入出しないがよいのか？</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>実際には窓枠などが支配的と考えられるため、高さ方向に均等に割り付けるのが良いのではないか？階高さを入力して5分割（0,.25,0.5,.75,1.0)するなど。</p>
-<div class="paragraph">
-<p>入力と計算を簡易にするため。</p>
-</div>
-</li>
-<li>
-<p>現場の事は分からないが、実際には防湿シートや窓枠性能の向上のおかげで取り合い部分の漏気が支配的なのだろうか…</p>
-<div class="paragraph">
-<p>YES.　服部さんからの知見</p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>相当隙間面積の計算式の意味は？</p>
-<div class="paragraph">
-<p>恐らく、取り合い部分に住宅のC値を割り付けて、それ以外は給（排）気量をもとに算出している？？？？</p>
-</div>
-<div class="paragraph">
-<p>換気量m<sup>3</sup>/h の0.7倍は何を意味しているのか？</p>
-</div>
-<div class="paragraph">
-<p>特に意味はない。</p>
-</div>
-</li>
-<li>
-<p>温度差ハイブリッド換気と第一種熱交換型換気システムの併用について</p>
-<div class="paragraph">
-<p>当面は、併用不可として実装する。（実装してほしいとの意見が有れば、提案者に作成していただく）
-理由は、自然給気端末が温度検知して自動開閉する事が困難と思われるため。</p>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 4. すきま風計算プログラムの高さ方向の分割位置</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock">番号</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">位置（平屋）</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">位置（2階建て）</p></th>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1階床と外壁の取り合い部分</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1階床と外壁の取り合い部分</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1階給気口（第1種換気の場合はなし）※恐らく排気口も可</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1階給気口（第1種換気の場合はなし）※恐らく排気口も可</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1階天井と外壁の取り合い部分</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1階天井と外壁の取り合い部分</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2階床と外壁の取り合い部分</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2階給気口（第1種換気の場合はなし）※恐らく排気口も可</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2階天井と外壁の取り合い部分</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>ユーザー入力項目と入力条件を以下に示す。</p>
-</div>
-<table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 5. 温度差利用型ハイブリッド換気のユーザー入力</caption>
-<colgroup>
-<col style="width: 6.25%;">
-<col style="width: 31.25%;">
-<col style="width: 12.5%;">
-<col style="width: 18.75%;">
-<col style="width: 12.5%;">
-<col style="width: 6.25%;">
-<col style="width: 12.5%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">識別子</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">項目（値の根拠）</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">入力値の種別</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">値</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">初期値</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">単位</p></th>
-<th class="tableblock halign-center valign-middle"><p class="tableblock">入力条件</p></th>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">温度差利用型ハイブリッド換気の使用の有無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)使用しない<br>
-2)使用する</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">1)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無し。ユーザーが付属書2で選択肢を判断する。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">対象住宅の建物形状</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">選択肢</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">1)2階建て
-2)3階建て以上</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">2)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">無</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">V1</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">地域区分</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">整数 \(n \in \{1,2,3,4,5,6,7\}\)</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">6</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">地域</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">V2</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">C値</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">値</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">小数（小数点2桁）<br>
-最小 0.01<br>
-最大 9.99</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">2.0</p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">cm<sup>2</sup>/m<sup>2</sup></p></td>
-<td class="tableblock halign-center valign-middle"><p class="tableblock">C1=2</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>また、プログラムの入力項目を以下に示す。</p>
-</div>
-<table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 6. 温度差利用型ハイブリッド換気の入力パラメータ</caption>
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 33.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 8.3333%;">
-<col style="width: 16.6668%;">
-</colgroup>
-<tbody>
-<tr>
-<th class="tableblock halign-center valign-top"><p class="tableblock">変数名</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">説明</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">変数の型</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">初期値</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">単位</p></th>
-<th class="tableblock halign-center valign-top"><p class="tableblock">ユーザー入力の可否</p></th>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(Q_{vent}\)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">機械換気設備による換気量</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">無し（省エネ基準プログラムの内部変数を取得する）</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">m<sup>3</sup>/h</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">不可</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(T_{ oa, d, t }\)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">d日t時における外気温度</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">無し（データベース読み込み）</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">℃</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">不可</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(HeatingSeason_{ d }\)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">d日は暖房期であるかの判断</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Boolean</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">無し（データベース読み込み）</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">True/False</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">不可</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(C_{ val }\)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">C値</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">2.0</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">cm<sup>2</sup>/m<sup>2</sup></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">可</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\(A_{ floor }\)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">延床面積</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Double</p></td>
-<td class="tableblock halign-right valign-top"><p class="tableblock">無し（省エネ基準プログラムの入力値を参照）</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">m<sup>2</sup></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">不可</p></td>
-</tr>
-</tbody>
-</table>
 <div class="sect5">
 <h6 id="_3_3_1_比消費電力"><a class="link" href="#_3_3_1_比消費電力">3.3.1. 比消費電力</a></h6>
 <div class="paragraph">
 <p>温度差利用型ハイブリッド換気における比消費電力は、ハイブリッド換気が有効の場合は0、それ以外の場合は入力された値で評価される。</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>【メモ】</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>当面は2階建てのみの対応とするが、
+3階建て以上に対応するためは課題をクリアする必要がある。</p>
+</li>
+<li>
+<p>当初は煙突換気の実装のタイミングで再調整する予定だったが、煙突換気の内部実装は現時点で行っている。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>【課題】</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>3階建て以上に対応させるために調整すべき項目</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>3階部分に割り当てる区分番号とその高さ</p>
+</li>
+<li>
+<p>排気塔を用いる場合の2階部分に該当する区画に給排気端末を設置するか否かの判断</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
 </div>
 <div class="stemblock">
 <div class="content">
@@ -1592,8 +1446,16 @@ f_{ SFP }
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
+<p>【要：相談】
+ハイブリッド換気の有効・無効は、安全率を考慮した省エネ基準プログラムの内部変数の換気量を使用すべきではないか？</p>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
 <p>【メモ】
-機械換気量は省エネ基準と異なり、安全率などは考慮しない。すきま風マクロ.xlsmに準拠する。</p>
+機械換気量は省エネ基準と異なり、安全率などは考慮しない（すきま風マクロ.xlsmに準拠したため）。←本当にこれでよいのか確認する。</p>
 </div>
 </div>
 </div>
@@ -1601,10 +1463,10 @@ f_{ SFP }
 <div class="content">
 \[EnableHybrid_{ d, t } =
 \begin{cases}
-True
+\mbox{True}
 &amp; , Q_{ vnt, ntrl, d, t } \geqq Q_{ vnt, mech }
 \\
-False
+\mbox{False}
 &amp; , \mbox{Others}
 \end{cases}\]
 </div>
@@ -1649,118 +1511,20 @@ N_{ vent }\]
 </table>
 <div class="paragraph">
 <p>自然換気量は
-建物を6区画(n=0~5)に分け、それぞれの区画ですきま風を算出し、
-その収支が0となる条件の時の流入空気の合計が自然換気量となる。</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【課題】
-3階建て以上に対応するために、3階の場合の区画数と高さを決める必要がある。</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>外気と、室内空気の空気密度は以下の式で求める。</p>
+建物を6区画(n=0~5)に分け、各区画のすきま風を算出し、
+その収支が0となる条件の時の流入空気（正の隙間風）の合計である。ただし、第三種換気の場合はその値から機械換気量を差し引いた値とする。</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\[\rho_{ oa, d, t } =
-\frac
-{ 353.25 }
-{
-    T_{ ao, d, t }
-    +
-    273.15
-}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\rho_{ room, d, t } =
-\frac
-{ 353.25 }
-{
-    T_{ room, d, t }
-    +
-    273.15
-}\]
-</div>
-</div>
-<table class="tableblock frame-none grid-none stripes-none stretch">
-<colgroup>
-<col style="width: 4.7619%;">
-<col style="width: 95.2381%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \rho_{ oa, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における外気の乾燥空気密度,kg/m<sup>3</sup></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( T_{ oa, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における外気温度,℃</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \rho_{ room, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における室内空気の乾燥空気密度,kg/m<sup>3</sup></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( T_{ ave, room, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における室内平均空気温度(=20。現時点では固定値),℃</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>各区画の相当隙間面積を以下の式で求める。</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【課題】
-3階建て以上に対応するために、3階の場合の区画数と高さを決める必要がある。</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>区画番号nが0,2,3,5の場合</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{ n } =
-\frac
-{
-    \frac
-    { C_{ val } }
-    { 10^{ 4 } }
-    \times
-    A_{ floor }
-}
-{ 4 }\]
-</div>
-</div>
-<div class="paragraph">
-<p>区画番号nが1,4の場合</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\alpha A_{ n } =
+\[Q_{ vnt, ntrl, d, t } =
 \begin{cases}
-0
-&amp; , TypeVent = 1
+\sum_{ n } \max(0, Q_{ n, leak, d, t})
+-
+Q_{ vnt, mech }
+&amp; , VentType = 3
 \\
-\frac
-{
-    \frac
-    {
-        0.7
-        \times
-        Q_{ vent, mech }
-    }
-    { 10^{ 4 } }
-}
-{ 2 }
-&amp; , Others
+\sum_{ n } \max(0, Q_{ n, leak, d, t})
+&amp;, Others
 \end{cases}\]
 </div>
 </div>
@@ -1771,138 +1535,17 @@ N_{ vent }\]
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \alpha A_{ n } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：区画nの相当隙間面積,m<sup>2</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( Q_{ leak, n, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画nのすきま風,m<sup>3</sup>/h</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( TypeVent \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：換気種別（1:第一種、2:第二種、3:第三種）,-</p></td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( C_{ val } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：建物の気密性能,cm<sup>2</sup>/m<sup>2</sup></p></td>
-</tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>区画別の内外圧力差を以下の式で求める。</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【課題】
-3階建て以上に対応するために、3階の場合の区画数と高さを決める必要がある。</p>
-</div>
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\Delta p_{ 0, d, t } =
-\mbox{収束計算時の与条件}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\Delta p_{ 1, d, t } =
-\Delta p_{ 0, d, t }
--
-9.8
-\times
-1.6
-\times
-( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\Delta p_{ 2, d, t } =
-\Delta p_{ 0, d, t }
--
-9.8
-\times
-2.4
-\times
-( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\Delta p_{ 3, d, t } =
-\Delta p_{ 0, d, t }
--
-9.8
-\times
-2.9
-\times
-( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\Delta p_{ 4, d, t } =
-\Delta p_{ 0, d, t }
--
-9.8
-\times
-4.5
-\times
-( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\Delta p_{ 5, d, t } =
-\Delta p_{ 0, d, t }
--
-9.8
-\times
-5.3
-\times
-( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
-</div>
-</div>
-<table class="tableblock frame-none grid-none stripes-none stretch">
-<colgroup>
-<col style="width: 4.7619%;">
-<col style="width: 95.2381%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 0, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画0の内外圧力差,Pa</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 1, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画1の内外圧力差,Pa</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 2, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画2の内外圧力差,Pa</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 3, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画3の内外圧力差,Pa</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 4, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画4の内外圧力差,Pa</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 5, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画5の内外圧力差,Pa</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>区画番号がn(=0~5)の時のすきま風は以下の式で求める。</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【課題】
-3階建て以上に対応するために、3階の場合の区画数を決める必要がある。</p>
-</div>
-</div>
+<p>区画番号がn(=0~5)のすきま風は以下の式で求める。</p>
 </div>
 <div class="stemblock">
 <div class="content">
@@ -1963,27 +1606,52 @@ N_{ vent }\]
 <td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画nのすきま風,m<sup>3</sup>/h</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \alpha A_{ n } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：区画nの相当隙間面積,m<sup>2</sup></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ n, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画nの内外圧力差,Pa</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\( \rho_{ d, t } \)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における乾燥空気密度,kg/m<sup>3</sup></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \rho_{ oa, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における外気の乾燥空気密度,kg/m<sup>3</sup></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \rho_{ room, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における室内空気の乾燥空気密度,kg/m<sup>3</sup></p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>自然換気量は、すきま風の収支が0となった条件下で
-正の値のすきま風の合計値に、第三種換気の場合は機械換気量を差し引いた値となる。</p>
+<p>外気と、室内空気の空気密度は以下の式で求める。</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\[Q_{ vnt, ntrl, d, t } =
-\begin{cases}
-\sum_{ n } \max(0, Q_{ n, leak, d, t})
--
-Q_{ vnt, mech }
-&amp; , VentType = 3
-\\
-\sum_{ n } \max(0, Q_{ n, leak, d, t})
-&amp;, Others
-\end{cases}\]
+\[\rho_{ oa, d, t } =
+\frac
+{ 353.25 }
+{
+    T_{ ao, d, t }
+    +
+    273.15
+}\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\rho_{ room, d, t } =
+\frac
+{ 353.25 }
+{
+    T_{ room, d, t }
+    +
+    273.15
+}\]
 </div>
 </div>
 <table class="tableblock frame-none grid-none stripes-none stretch">
@@ -1993,16 +1661,217 @@ Q_{ vnt, mech }
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( Q_{ vnt, ntrl, d, t }\)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における自然換気量,m<sup>3</sup>/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( T_{ oa, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における外気温度,℃</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( Q_{ leak, n, d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画nのすきま風,m<sup>3</sup>/h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( T_{ ave, room, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における室内平均空気温度(=20。現時点では固定値),℃</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>各区画の相当隙間面積を以下の式で求める。</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>【メモ】</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>給排気端末が該当する区画（1，4）は
+「機械換気量から動的に定める方式」から「ユーザーが任意に指定できる方式」に変更したため、
+現時点ですきま風マクロと異なっている。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>区画番号nが0,2,3,5の場合（躯体の隙間を想定）</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\alpha A_{ n } =
+\frac
+{
+    C_{ val }
+    \times
+    A_{ floor }
+}
+{
+    10^{ 4 }
+}
+\times
+\frac
+{ 1 }
+{ 4 }\]
+</div>
+</div>
+<div class="paragraph">
+<p>区画番号nが1,4の場合（給排気端末を想定）</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\alpha A_{ n } =
+\frac
+{
+    A_{ vnt, sum }
+}
+{
+    10^{ 4 }
+}
+\times
+\frac
+{ 1 }
+{ 2 }\]
+</div>
+</div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 4.7619%;">
+<col style="width: 95.2381%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( C_{ val } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：建物の気密性能,cm<sup>2</sup>/m<sup>2</sup></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">\( \rho_{ d, t } \)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における乾燥空気密度,kg/m<sup>3</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( A_{ vnt, sum } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：給排気端末の有効開口面積（合計）,cm<sup>2</sup></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>区画別の内外圧力差を以下の式で求める。<br>
+排気塔を使用する場合は、給排気端末を想定した区画（n=1,4）の高さが異なる。</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta p_{ 0, d, t } =
+\mbox{収束計算時の引数}\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta p_{ 1, d, t } =
+\begin{cases}
+\Delta p_{ 0, d, t }
+-
+9.8
+\times
+1.6
+\times
+( \rho_{ oa, d, t } - \rho_{ room, d, t} )
+&amp; , UseChimney = \mbox{False}
+\\
+\Delta p_{ 0, d, t }
+-
+9.8
+\times
+-0.25
+\times
+( \rho_{ oa, d, t } - \rho_{ room, d, t} )
+&amp; , UseChimney = \mbox{True}
+\end{cases}\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta p_{ 2, d, t } =
+\Delta p_{ 0, d, t }
+-
+9.8
+\times
+2.4
+\times
+( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta p_{ 3, d, t } =
+\Delta p_{ 0, d, t }
+-
+9.8
+\times
+2.9
+\times
+( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta p_{ 4, d, t } =
+\begin{cases}
+\Delta p_{ 0, d, t }
+-
+9.8
+\times
+4.5
+\times
+( \rho_{ oa, d, t } - \rho_{ room, d, t} )
+&amp; , UseChimney = \mbox{False}
+\\
+\Delta p_{ 0, d, t }
+-
+9.8
+\times
+7.75
+\times
+( \rho_{ oa, d, t } - \rho_{ room, d, t} )
+&amp; , UseChimney = \mbox{True}
+\end{cases}\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta p_{ 5, d, t } =
+\Delta p_{ 0, d, t }
+-
+9.8
+\times
+5.3
+\times
+( \rho_{ oa, d, t } - \rho_{ room, d, t} )\]
+</div>
+</div>
+<table class="tableblock frame-none grid-none stripes-none stretch">
+<colgroup>
+<col style="width: 4.7619%;">
+<col style="width: 95.2381%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 0, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画0の内外圧力差,Pa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 1, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画1の内外圧力差,Pa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 2, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画2の内外圧力差,Pa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 3, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画3の内外圧力差,Pa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 4, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画4の内外圧力差,Pa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( \Delta p_{ 5, d, t } \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：日付 \( d \) の時刻 \( t \) における区画5の内外圧力差,Pa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\( UseChimney \)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">：排気塔を利用する,True/False</p></td>
 </tr>
 </tbody>
 </table>
@@ -2010,43 +1879,34 @@ Q_{ vnt, mech }
 <div class="sect5">
 <h6 id="_3_3_2_暖房期の判定"><a class="link" href="#_3_3_2_暖房期の判定">3.3.2. 暖房期の判定</a></h6>
 <div class="paragraph">
-<p>温度差利用型ハイブリッド換気における暖房期は、<a href="#table_付1-1">表 8</a> に定める期間とする。</p>
+<p>温度差利用型ハイブリッド換気における暖房期は、<a href="#table_付1-1">表 5</a> に定める期間とする。</p>
 </div>
-</div>
-<div class="sect5">
-<h6 id="_3_3_3_平均室温の検討"><a class="link" href="#_3_3_3_平均室温の検討">3.3.3. 平均室温の検討</a></h6>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p>この項目はアイディアの段階。
-現時点ではメモ書きである。
+<p>【コラム】平均室温の検討</p>
+</div>
+<div class="paragraph">
+<p>この項目はアイディアの段階のため現時点ではメモ書きレベルである。
 検討が進めば、空気密度を算出する際の平均室温が暖房設定温度の固定値ではなく、本方法での算出結果となる。</p>
 </div>
 <div class="paragraph">
 <p>d日t時における平均室温は以下の式より求まる。</p>
 </div>
-<div class="exampleblock">
-<div class="content">
 <div class="paragraph">
-<p>【メモ】</p>
+<p>【メモ】
+. 暖房の方法による補正が必要であるが、
+全館連続、全居室連続運転とみなし、一律20℃とする。
+しかし、非居室は全館運転であっても循環風量に依存するとみなし、0.7の温度補正は行う。</p>
 </div>
-<div class="paragraph">
-<p>暖房の方法による補正が必要であるが、</p>
-</div>
-<div class="paragraph">
-<p>全館連続、全居室連続運転とみなし、一律20℃とする。</p>
-</div>
-<div class="paragraph">
-<p>しかし、非居室は全館運転であっても循環風量に依存するとみなし、0.7の温度補正は行う。</p>
-</div>
-<div class="paragraph">
-<p>また、本来であれば日中の日射によるオーバーヒート等も考慮すべきだが、現時点では無視する。</p>
-</div>
-<div class="paragraph">
-<p>自立の成果が利用できるか？</p>
-</div>
-<div class="paragraph">
-<p>負荷を動的に計算できるようになれば、逐次計算する形となるので、この問題は解決するはず。（解が得られるのであれば）</p>
-</div>
-</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>本来であれば日中の日射によるオーバーヒート等も考慮すべきだが、現時点では無視する。
+自立の成果が利用できるか？
+負荷を動的に計算できるようになれば、逐次計算する形となるのでこの問題は解決するはず。（解が得られるのであれば）</p>
+</li>
+</ol>
 </div>
 <div class="stemblock">
 <div class="content">
@@ -2095,16 +1955,9 @@ T_{ AC }\]
 20\]
 </div>
 </div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>【メモ】</p>
-</div>
 <div class="paragraph">
 <p>本来、全館「連続」運転時は、0.7ではなく、0.95（循環風量に依存する：循環風量が多ければ1に近づく）くらいだが、
 今回は安全側の0.7で処理する。</p>
-</div>
-</div>
 </div>
 <div class="paragraph">
 <p>ここで、</p>
@@ -2124,6 +1977,8 @@ T_{ AC }\]
 <div class="paragraph">
 <p>である。</p>
 </div>
+</div>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
@@ -2131,7 +1986,7 @@ T_{ AC }\]
 <div class="sect3">
 <h4 id="_4_備考_3"><a class="link" href="#_4_備考_3">4. 備考</a></h4>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 7. （参考）省エネ基準地域区分の対応</caption>
+<caption class="title">表 4. （参考）省エネ基準地域区分の対応</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2192,7 +2047,7 @@ T_{ AC }\]
 中間期は暖房・冷房期以外の期間とする。</p>
 </div>
 <div class="paragraph">
-<p>AE-Sim/Heatで採用されている暖房・冷房期間を <a href="#table_付1-1">表 8</a>に示す。</p>
+<p>AE-Sim/Heatで採用されている暖房・冷房期間を <a href="#table_付1-1">表 5</a>に示す。</p>
 </div>
 <div class="paragraph">
 <p>建築研究所のHPに掲載されている情報と同じである。</p>
@@ -2201,7 +2056,7 @@ T_{ AC }\]
 <p><a href="https://www.kenken.go.jp/becc/documents/house/11-6_210401_v01.pdf" class="bare">https://www.kenken.go.jp/becc/documents/house/11-6_210401_v01.pdf</a></p>
 </div>
 <table id="table_付1-1" class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 8. AE-Sim/Heatの各地域区分代表都市の暖房・冷房期間</caption>
+<caption class="title">表 5. AE-Sim/Heatの各地域区分代表都市の暖房・冷房期間</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -2298,7 +2153,7 @@ T_{ AC }\]
 地域区分が8の場合は、排気塔が無い場合の温度差利用型ハイブリッド換気は適用できない。</p>
 </div>
 <table id="table_付2-1" class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 9. 地域区分別の排気塔が無い場合の温度差利用型ハイブリッド換気の適用可否</caption>
+<caption class="title">表 6. 地域区分別の排気塔が無い場合の温度差利用型ハイブリッド換気の適用可否</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2343,7 +2198,7 @@ T_{ AC }\]
 <p>計算対象建物の階数が2以上である。</p>
 </div>
 <table id="table_付2-2" class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 10. 建物の形状による適用可否</caption>
+<caption class="title">表 7. 建物の形状による適用可否</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2367,10 +2222,10 @@ T_{ AC }\]
 <div class="sect5">
 <h6 id="_付2_1_3_隙間面積"><a class="link" href="#_付2_1_3_隙間面積">付2.1.3 隙間面積</a></h6>
 <div class="paragraph">
-<p>計算対象建物の隙間面積が<a href="#table_付2-3">表 11</a>を満たしている。</p>
+<p>計算対象建物の隙間面積が<a href="#table_付2-3">表 8</a>を満たしている。</p>
 </div>
 <table id="table_付2-3" class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 11. 躯体の気密性（相当隙間面積）に応じた必要な換気口の有効開口面積（<a href="#bib._1">[1]</a> p.236 表5-2-1）</caption>
+<caption class="title">表 8. 躯体の気密性（相当隙間面積）に応じた必要な換気口の有効開口面積（<a href="#bib._1">[1]</a> p.236 表5-2-1）</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2431,7 +2286,7 @@ T_{ AC }\]
 地域区分が3, 4, 5, 6, 7, 8の場合は、排気塔がある場合の温度差利用型ハイブリッド換気は適用できない。</p>
 </div>
 <table id="table_付2-4" class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 12. 地域区分別の排気塔がある場合の温度差利用型ハイブリッド換気の適用可否</caption>
+<caption class="title">表 9. 地域区分別の排気塔がある場合の温度差利用型ハイブリッド換気の適用可否</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2476,7 +2331,7 @@ T_{ AC }\]
 <p>計算対象建物の階数が1以上である。</p>
 </div>
 <table id="table_付2-5" class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 13. 建物の形状による適用可否</caption>
+<caption class="title">表 10. 建物の形状による適用可否</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2499,10 +2354,10 @@ T_{ AC }\]
 <div class="sect5">
 <h6 id="_付2_2_3_隙間面積"><a class="link" href="#_付2_2_3_隙間面積">付2.2.3 隙間面積</a></h6>
 <div class="paragraph">
-<p>計算対象建物の隙間面積が<a href="#table_付2-6">表 14</a>を満たしている。</p>
+<p>計算対象建物の隙間面積が<a href="#table_付2-6">表 11</a>を満たしている。</p>
 </div>
 <table id="table_付2-6" class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 14. 躯体の気密性（相当隙間面積）に応じた必要な換気口の有効開口面積（<a href="#bib._1">[1]</a> p.236 表5-2-1）</caption>
+<caption class="title">表 11. 躯体の気密性（相当隙間面積）に応じた必要な換気口の有効開口面積（<a href="#bib._1">[1]</a> p.236 表5-2-1）</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2533,10 +2388,10 @@ T_{ AC }\]
 <div class="sect5">
 <h6 id="_付2_2_4_給気口と排気口の合計有効開口面積"><a class="link" href="#_付2_2_4_給気口と排気口の合計有効開口面積">付2.2.4 給気口と排気口の合計有効開口面積</a></h6>
 <div class="paragraph">
-<p>計算対象建物の給気口と排気口の合計有効開口面積が<a href="#table_付2-7">表 15</a>を満たしている。</p>
+<p>計算対象建物の給気口と排気口の合計有効開口面積が<a href="#table_付2-7">表 12</a>を満たしている。</p>
 </div>
 <table id="table_付2-7" class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 15. 床面積当りに必要な給気口と排気口の合計有効開口面積（<a href="#bib._1">[1]</a> p.236　表5-2-2）</caption>
+<caption class="title">表 12. 床面積当りに必要な給気口と排気口の合計有効開口面積（<a href="#bib._1">[1]</a> p.236　表5-2-2）</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 16.6666%;">
@@ -2845,7 +2700,7 @@ E_{ Elc, HEAs, d, t }
 <p>ユーザー入力項目と入力条件を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 16. 冷蔵庫のユーザー入力</caption>
+<caption class="title">表 13. 冷蔵庫のユーザー入力</caption>
 <colgroup>
 <col style="width: 6.25%;">
 <col style="width: 31.25%;">
@@ -2903,7 +2758,7 @@ E_{ Elc, HEAs, d, t }
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 17. 冷蔵庫の入力パラメータ</caption>
+<caption class="title">表 14. 冷蔵庫の入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -3187,7 +3042,7 @@ E_{  Elc, rfrg, annual, JIS }
 <p>ユーザー入力項目と入力条件を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 18. 液晶テレビのユーザー入力</caption>
+<caption class="title">表 15. 液晶テレビのユーザー入力</caption>
 <colgroup>
 <col style="width: 6.25%;">
 <col style="width: 31.25%;">
@@ -3255,7 +3110,7 @@ E_{  Elc, rfrg, annual, JIS }
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 19. 液晶テレビの入力パラメータ</caption>
+<caption class="title">表 16. 液晶テレビの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -3545,7 +3400,7 @@ P_{ Elc, TV_{ LED }, lv, view }
 <div class="sect5">
 <h6 id="_3_3_3_1_居間に設置されたテレビの時刻別の動作時間"><a class="link" href="#_3_3_3_1_居間に設置されたテレビの時刻別の動作時間">3.3.3.1. 居間に設置されたテレビの時刻別の動作時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 20. 4人世帯</caption>
+<caption class="title">表 17. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -3789,7 +3644,7 @@ P_{ Elc, TV_{ LED }, lv, view }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 21. 3人世帯</caption>
+<caption class="title">表 18. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -4033,7 +3888,7 @@ P_{ Elc, TV_{ LED }, lv, view }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 22. 2人世帯</caption>
+<caption class="title">表 19. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -4277,7 +4132,7 @@ P_{ Elc, TV_{ LED }, lv, view }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 23. 1人世帯</caption>
+<caption class="title">表 20. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -4524,7 +4379,7 @@ P_{ Elc, TV_{ LED }, lv, view }
 <div class="sect5">
 <h6 id="_3_3_3_2_居間以外に設置されたテレビの時刻別の動作時間"><a class="link" href="#_3_3_3_2_居間以外に設置されたテレビの時刻別の動作時間">3.3.3.2. 居間以外に設置されたテレビの時刻別の動作時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 24. 4人世帯</caption>
+<caption class="title">表 21. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -4768,7 +4623,7 @@ P_{ Elc, TV_{ LED }, lv, view }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 25. 3人世帯</caption>
+<caption class="title">表 22. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -5012,7 +4867,7 @@ P_{ Elc, TV_{ LED }, lv, view }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 26. 2人世帯</caption>
+<caption class="title">表 23. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -5256,7 +5111,7 @@ P_{ Elc, TV_{ LED }, lv, view }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 27. 1人世帯</caption>
+<caption class="title">表 24. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -5547,7 +5402,7 @@ P_{ Elc, TV_{ LED }, lv, view }
 <p>ユーザー入力項目と入力条件を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 28. 便座のユーザー入力</caption>
+<caption class="title">表 25. 便座のユーザー入力</caption>
 <colgroup>
 <col style="width: 6.25%;">
 <col style="width: 31.25%;">
@@ -5583,7 +5438,7 @@ P_{ Elc, TV_{ LED }, lv, view }
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 29. 便座の入力パラメータ</caption>
+<caption class="title">表 26. 便座の入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -5744,7 +5599,7 @@ P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ 
 <p>4人世帯はトイレが2つあるため、1時間あたりの運転時間が1を超える。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 30. 4人世帯</caption>
+<caption class="title">表 27. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -5908,7 +5763,7 @@ P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ 
 <p>3人世帯はトイレが2つあるため、1時間あたりの運転時間が1を超える。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 31. 3人世帯</caption>
+<caption class="title">表 28. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -6069,7 +5924,7 @@ P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ 
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 32. 2人世帯</caption>
+<caption class="title">表 29. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -6230,7 +6085,7 @@ P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ 
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 33. 1人世帯</caption>
+<caption class="title">表 30. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -6414,7 +6269,7 @@ P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ 
 ユーザー入力項目と入力条件を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 34. 洗濯機のユーザー入力</caption>
+<caption class="title">表 31. 洗濯機のユーザー入力</caption>
 <colgroup>
 <col style="width: 6.25%;">
 <col style="width: 31.25%;">
@@ -6461,7 +6316,7 @@ P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ 
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 35. 洗濯機の入力パラメータ</caption>
+<caption class="title">表 32. 洗濯機の入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -6559,7 +6414,7 @@ P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ 
 <div class="sect5">
 <h6 id="_3_5_3_時刻別の洗濯回数"><a class="link" href="#_3_5_3_時刻別の洗濯回数">3.5.3. 時刻別の洗濯回数</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 36. 4人世帯</caption>
+<caption class="title">表 33. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -6720,7 +6575,7 @@ P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ 
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 37. 3人世帯</caption>
+<caption class="title">表 34. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -6881,7 +6736,7 @@ P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ 
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 38. 2人世帯</caption>
+<caption class="title">表 35. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -7042,7 +6897,7 @@ P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ 
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 39. 1人世帯</caption>
+<caption class="title">表 36. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -7245,7 +7100,7 @@ P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ 
 ユーザー入力項目と入力条件を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 40. 電気ケトルのユーザー入力</caption>
+<caption class="title">表 37. 電気ケトルのユーザー入力</caption>
 <colgroup>
 <col style="width: 6.25%;">
 <col style="width: 31.25%;">
@@ -7302,7 +7157,7 @@ P_{ Elc, toilet-seat-heater } \times t_{ toilet-seat-heater, d, t } \times 10^{ 
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 41. 電気ケトルの入力パラメータ</caption>
+<caption class="title">表 38. 電気ケトルの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -7468,7 +7323,7 @@ tm_{ kttl, boil, d, t }
 <div class="sect5">
 <h6 id="_3_6_3_時刻別の沸き上げ回数"><a class="link" href="#_3_6_3_時刻別の沸き上げ回数">3.6.3. 時刻別の沸き上げ回数</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 42. 4人世帯</caption>
+<caption class="title">表 39. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -7629,7 +7484,7 @@ tm_{ kttl, boil, d, t }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 43. 3人世帯</caption>
+<caption class="title">表 40. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -7790,7 +7645,7 @@ tm_{ kttl, boil, d, t }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 44. 2人世帯</caption>
+<caption class="title">表 41. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -7951,7 +7806,7 @@ tm_{ kttl, boil, d, t }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 45. 1人世帯</caption>
+<caption class="title">表 42. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -8141,7 +7996,7 @@ tm_{ kttl, boil, d, t }
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 46. 電子レンジの入力パラメータ</caption>
+<caption class="title">表 43. 電子レンジの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -8241,7 +8096,7 @@ tm_{ kttl, boil, d, t }
 <div class="sect5">
 <h6 id="_3_7_3_時刻別の調理時間"><a class="link" href="#_3_7_3_時刻別の調理時間">3.7.3. 時刻別の調理時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 47. 4人世帯</caption>
+<caption class="title">表 44. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -8402,7 +8257,7 @@ tm_{ kttl, boil, d, t }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 48. 3人世帯</caption>
+<caption class="title">表 45. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -8563,7 +8418,7 @@ tm_{ kttl, boil, d, t }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 49. 2人世帯</caption>
+<caption class="title">表 46. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -8724,7 +8579,7 @@ tm_{ kttl, boil, d, t }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 50. 1人世帯</caption>
+<caption class="title">表 47. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -8927,7 +8782,7 @@ tm_{ kttl, boil, d, t }
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 51. 電気炊飯器の入力パラメータ</caption>
+<caption class="title">表 48. 電気炊飯器の入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -9139,7 +8994,7 @@ P_{ Elc, rice-cooker, rtd }
 <div class="sect5">
 <h6 id="_3_8_3_時刻別の動作時間"><a class="link" href="#_3_8_3_時刻別の動作時間">3.8.3. 時刻別の動作時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 52. 4人世帯</caption>
+<caption class="title">表 49. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9383,7 +9238,7 @@ P_{ Elc, rice-cooker, rtd }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 53. 3人世帯</caption>
+<caption class="title">表 50. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9627,7 +9482,7 @@ P_{ Elc, rice-cooker, rtd }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 54. 2人世帯</caption>
+<caption class="title">表 51. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -9871,7 +9726,7 @@ P_{ Elc, rice-cooker, rtd }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 55. 1人世帯</caption>
+<caption class="title">表 52. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -10144,7 +9999,7 @@ P_{ Elc, rice-cooker, rtd }
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 56. パソコン（デスクトップ）の入力パラメータ</caption>
+<caption class="title">表 53. パソコン（デスクトップ）の入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -10245,7 +10100,7 @@ P_{ Elc, rice-cooker, rtd }
 <div class="sect5">
 <h6 id="_3_9_3_時刻別の使用時間"><a class="link" href="#_3_9_3_時刻別の使用時間">3.9.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 57. 4人世帯</caption>
+<caption class="title">表 54. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10406,7 +10261,7 @@ P_{ Elc, rice-cooker, rtd }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 58. 3人世帯</caption>
+<caption class="title">表 55. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10567,7 +10422,7 @@ P_{ Elc, rice-cooker, rtd }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 59. 2人世帯</caption>
+<caption class="title">表 56. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10728,7 +10583,7 @@ P_{ Elc, rice-cooker, rtd }
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 60. 1人世帯</caption>
+<caption class="title">表 57. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -10921,7 +10776,7 @@ P_{ Elc, rice-cooker, rtd }
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 61. CDラジカセの入力パラメータ</caption>
+<caption class="title">表 58. CDラジカセの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -11072,7 +10927,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 <div class="sect5">
 <h6 id="_3_10_3_時刻別の動作時間"><a class="link" href="#_3_10_3_時刻別の動作時間">3.10.3. 時刻別の動作時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 62. 4人世帯</caption>
+<caption class="title">表 59. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -11316,7 +11171,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 63. 3人世帯</caption>
+<caption class="title">表 60. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -11560,7 +11415,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 64. 2人世帯</caption>
+<caption class="title">表 61. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -11804,7 +11659,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 65. 1人世帯</caption>
+<caption class="title">表 62. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12080,7 +11935,7 @@ P_{ Elc, audio_{ CD-radio-cassette }, standby } \times t_{ audio_{ CD-radio-cass
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 66. MDコンポの入力パラメータ</caption>
+<caption class="title">表 63. MDコンポの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -12238,7 +12093,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 67. 4人世帯</caption>
+<caption class="title">表 64. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12482,7 +12337,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 68. 3人世帯</caption>
+<caption class="title">表 65. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12726,7 +12581,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 69. 2人世帯</caption>
+<caption class="title">表 66. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -12970,7 +12825,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 70. 1人世帯</caption>
+<caption class="title">表 67. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -13243,7 +13098,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 71. 掃除機の入力パラメータ</caption>
+<caption class="title">表 68. 掃除機の入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -13350,7 +13205,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <div class="sect5">
 <h6 id="_3_12_3_時刻別の使用時間"><a class="link" href="#_3_12_3_時刻別の使用時間">3.12.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 72. 4人世帯</caption>
+<caption class="title">表 69. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13511,7 +13366,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 73. 3人世帯</caption>
+<caption class="title">表 70. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13672,7 +13527,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 74. 2人世帯</caption>
+<caption class="title">表 71. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -13833,7 +13688,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 75. 1人世帯</caption>
+<caption class="title">表 72. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -14020,7 +13875,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 76. アイロンの入力パラメータ</caption>
+<caption class="title">表 73. アイロンの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -14121,7 +13976,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <div class="sect5">
 <h6 id="_3_13_3_時刻別の使用時間"><a class="link" href="#_3_13_3_時刻別の使用時間">3.13.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 77. 4人世帯</caption>
+<caption class="title">表 74. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -14282,7 +14137,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 78. 3人世帯</caption>
+<caption class="title">表 75. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -14443,7 +14298,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 79. 2人世帯</caption>
+<caption class="title">表 76. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -14604,7 +14459,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 80. 1人世帯</caption>
+<caption class="title">表 77. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -14797,7 +14652,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 81. PCゲーム機の入力パラメータ</caption>
+<caption class="title">表 78. PCゲーム機の入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -14966,7 +14821,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 82. 4人世帯</caption>
+<caption class="title">表 79. 4人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -15210,7 +15065,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 83. 3人世帯</caption>
+<caption class="title">表 80. 3人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -15454,7 +15309,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 84. 2人世帯</caption>
+<caption class="title">表 81. 2人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -15698,7 +15553,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 85. 1人世帯</caption>
+<caption class="title">表 82. 1人世帯</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 12.5%;">
@@ -15968,7 +15823,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 86. スタンドの入力パラメータ</caption>
+<caption class="title">表 83. スタンドの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -16076,7 +15931,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </div>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 87. 4人世帯</caption>
+<caption class="title">表 84. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -16237,7 +16092,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 88. 3人世帯</caption>
+<caption class="title">表 85. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -16398,7 +16253,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 89. 2人世帯</caption>
+<caption class="title">表 86. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -16559,7 +16414,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 90. 1人世帯</caption>
+<caption class="title">表 87. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -16752,7 +16607,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <p>また、プログラムの入力項目を以下に示す。</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 91. ヘアドライヤーの入力パラメータ</caption>
+<caption class="title">表 88. ヘアドライヤーの入力パラメータ</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 33.3333%;">
@@ -16874,7 +16729,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 <div class="sect5">
 <h6 id="_3_16_3_時刻別の使用時間"><a class="link" href="#_3_16_3_時刻別の使用時間">3.16.3. 時刻別の使用時間</a></h6>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 92. 4人世帯</caption>
+<caption class="title">表 89. 4人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -17035,7 +16890,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 93. 3人世帯</caption>
+<caption class="title">表 90. 3人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -17196,7 +17051,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 94. 2人世帯</caption>
+<caption class="title">表 91. 2人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
@@ -17357,7 +17212,7 @@ P_{ Elc, audio_{ MicroSystem-with-MD }, standby } \times t_{ audio_{ MicroSystem
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stripes-hover stretch">
-<caption class="title">表 95. 1人世帯</caption>
+<caption class="title">表 92. 1人世帯</caption>
 <colgroup>
 <col style="width: 40%;">
 <col style="width: 20%;">
