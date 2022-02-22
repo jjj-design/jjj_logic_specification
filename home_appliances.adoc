@@ -469,7 +469,7 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |選択肢
 |1)設置しない +
 2)設置する
-|1)
+|2)
 |無
 |常に
 
@@ -1147,7 +1147,7 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |選択肢
 |1)設置しない +
 2)設置する
-|1)
+|2)
 |無
 |常に
 
@@ -1775,7 +1775,7 @@ link:https://github.com/jjj-design/jjj_logic_specification/blob/master/%E5%8F%82
 |選択肢
 |1)設置しない +
 2)設置する
-|1)
+|2)
 |無
 |常に
 
