@@ -5,13 +5,13 @@
 
 ==== 1. 概要
 
-省エネ基準では全般換気設備の比消費電力量は、日付と時刻に依らず一定の値が設定される。
+省エネ基準では全般換気設備の比消費電力は、日付と時刻に依らず一定の値が設定される。
 
-自立循環プログラムでは、
+自立循環プログラムでは
 
-- 換気方式と日付d時刻tに応じて値を変更可能なモード
+- 日付と時刻に応じた可変の値
 
-を用意する。
+で評価できるようにする。
 
 ==== 2. 変更箇所
 
@@ -110,7 +110,7 @@ f_{ SFP } = P \div V_{d}
 |対象住宅の建物形状
 |選択肢
 |1)2階建て +
-2)3階建て以上
+[.line-through]#2)3階建て以上#
 |1)
 |無
 |C1=4 + 
@@ -120,7 +120,7 @@ f_{ SFP } = P \div V_{d}
 |C3
 |排気塔を利用する
 |選択肢
-|1)True +
+|[.line-through]#1)True# +
 2)False
 |2)
 |無し
@@ -139,14 +139,15 @@ f_{ SFP } = P \div V_{d}
 |C1=3の場合
 
 |V2
-|住宅の気密性能
+|相当隙間面積（住宅の気密性能）
 |値
 |小数（小数点1桁） +
 最小 0.1 +
 最大 99.9
 |2.0
 |cm^2^/m^2^
-|C1=4の場合
+|C1=4の場合。「JIS A2201 送風機に
+よる住宅等の気密性能試験法」に従って測定された値　
 
 |V3
 |給排気端末の有効開口面積（合計値）
@@ -201,53 +202,70 @@ f_{ SFP } = P \div V_{d}
 
 |stem:[T_{ oa, d, t }]
 |d日t時における外気温度
-|Double
+|double
 |無し（データベース読み込み）
 |℃
 |不可
 
 |stem:[HeatingSeason_{ d }]
 |d日は暖房期であるかの判断
-|Boolean
+|boolean
 |無し（データベース読み込み）
 |True/False
 |不可
 
 |stem:[C_{ val }]
-|C値
-|Double
+|住宅の相当隙間面積
+|double
 |2.0
 |cm^2^/m^2^
 |可
 
 |stem:[UseChimney]
 |排気塔を利用するかの判断
-|Boolean
+|boolean
 |False
 |True/False
 |可
 
 |stem:[A_{ floor }]
 |延床面積
-|Double
+|double
 |無し（省エネ基準プログラムの入力値を参照）
 |m^2^
 |不可
 
-|stem:[Q_{vent}]
+|stem:[Q_{ vnt, mch }]
 |機械換気設備による換気量
-|Double
+|double
 |無し（省エネ基準プログラムの内部変数を取得する）
 |m^3^/h
-|不可。本当に必要か要調整
+|不可
+
+|stem:[\alpha A_{ SA+EA }]
+|給排気端末の有効開口面積（合計値）
+|double
+|200
+|m^2^
+|可
 
 |===
 
 
 ====== 3.1. 時刻別の比消費電力
+時刻別の比消費電力の値は運転方法によって異なる。
 
 評価対象の運転方法は併用することはできず、排他的に選択される。
 例えば、冬季に温度差利用型ハイブリッド運転を行い、夏季に片側運転を行う事はできない。
+
+====
+
+【メモ：排他的選択】
+
+. 運転方法が併用不可能な理由は、それぞれの補正係数が同時に使用された際の補正方法が確立されていないためである。
+. 季別に完全に独立した運転方法を選択した場合には、本方式で理論上は評価可能である（ただし、事例と普及の保証が必要である）
+
+====
 
 [stem]
 ++++
@@ -257,7 +275,7 @@ f_{ SFP }
 &
 , \mbox{選択しない}
 \\
-f_{ SFP, single, d, t }
+f_{ SFP, one-side, d, t }
 &
 , \mbox{片側運転}
 \\
@@ -282,7 +300,7 @@ f_{ SFP, hybrid-temperature, d, t }
 |stem:[ f_{ SFP }  ]
 |：比消費電力,W/(m^3^/h)
 
-|stem:[ f_{ SFP, single, d, t }  ]
+|stem:[ f_{ SFP, one-side, d, t }  ]
 |：日付 stem:[ d ] の時刻 stem:[ t ] における片側運転機能を有する換気設備の比消費電力,W/(m^3^/h)
 
 |stem:[ f_{ SFP, bypass, d, t }  ]
@@ -300,7 +318,7 @@ f_{ SFP, hybrid-temperature, d, t }
 <<<
 ===== 3.1． 片側運転機能を有する換気設備の比消費電力
 
-片側運転機能は第一種換気設備において、内外温度差が小さく効率的な熱回収が見込めない時期に給気、もしくは排気を停止し、第二（三）種換気として運用する事で、消費電力を抑える運転を行う機能を指す。
+片側運転機能は第一種換気設備において、内外温度差が小さく効率的な熱回収が見込めない時期に、給気もしくは排気を停止し第二（三）種換気として運用する機能である。
 
 省エネルギー基準では夏期の熱交換を評価していないため、ここでは夏期と中間期において片側運転を行う事とする。
 
@@ -309,18 +327,7 @@ f_{ SFP, hybrid-temperature, d, t }
 片側運転の評価方法は、「自立循環型住宅への設計ガイドライン　準寒冷地版」「自立循環型住宅への設計ガイドライン　温暖地版」を参考とした。
 
 
-====
 
-【メモ：片側運転の課題】
-
-. 夏期・中間期の定義は stem:[\neq] 暖房期　とする。
-+
-暖房期は、当面AE-Sim/Heat　のデータを利用する。
-
-. 時刻別で評価したいときは、全館連続運転時は外気温度で良いが、部分間歇運転時は熱負荷計算の戻り値（室内温度）が必要になるため、当面は外気温度参照が落としどころとなる。
-動的な熱負荷計算が実装された際に再協議する。
-
-====
 
 ====== 3.1.1. 時刻別比消費電力
 
@@ -328,11 +335,11 @@ f_{ SFP, hybrid-temperature, d, t }
 
 [stem]
 ++++
-f_{ SFP, single, d, t }
+f_{ SFP, one-side, d, t }
 =
 f_{ SFP }
 \times
-C_{ single, d, t}
+C_{ one-side, d, t}
 ++++
 
 ////
@@ -342,7 +349,7 @@ C_{ single, d, t}
 
 [stem]
 ++++
-C_{ single, d, t }
+C_{ one-side, d, t }
 = 
 \begin{cases}
 0.58
@@ -360,7 +367,7 @@ C_{ single, d, t }
 [cols="<.<1,<.<20", frame=none, grid=none, stripes=none]
 |===
 
-|stem:[ C_{ single, d, t }  ]
+|stem:[ C_{ one-side, d, t }  ]
 |：日付 stem:[ d ] の時刻 stem:[ t ] における片側運転の比消費電力の補正係数,-
 
 |stem:[ HeatingSeason_{ d }  ]
@@ -380,7 +387,7 @@ C_{ single, d, t }
 <<<
 ===== 3.2． バイパス運転機能を有する換気設備の比消費電力
 
-バイパス運転機能は第一種換気設備において、内外温度差が小さく効率的な熱回収が見込めない時期に熱交換素子を迂回する事で圧力損失を提言し消費電力を抑える運転を行う機能を指す。
+バイパス運転機能は第一種換気設備において、内外温度差が小さく効率的な熱回収が見込めない時期に、熱交換素子を迂回する事で圧力損失を低減する機能である。
 
 省エネルギー基準では夏期の熱交換を評価していないため、ここでは夏期と中間期においてバイパス運転を行う事とする。
 
@@ -388,17 +395,6 @@ C_{ single, d, t }
 
 バイパス運転の評価方法は、「自立循環型住宅への設計ガイドライン　準寒冷地版」「自立循環型住宅への設計ガイドライン　温暖地版」を参考とした。
 
-====
-
-【メモ：バイパス運転の課題】
-
-. 夏期・中間期の定義は stem:[\neq] 暖房期　とする。
-+
-暖房期は、当面AE-Sim/Heat　のデータを利用する。
-
-. 時刻別で評価したいときは、全館連続運転時は外気温度で良いが、部分間歇運転時は熱負荷計算の戻り値（室内温度）が必要になるため、当面は外気温度参照が落としどころとなる。
-動的な熱負荷計算が実装された際に再協議する。
-====
 
 ====== 3.2.1. 時刻別比消費電力
 
@@ -436,8 +432,6 @@ f_{ SFP }
 
 バイパス運転時における暖房期は、<<_付属書1_空調期間,ここ>> に定める期間とする。
 
-
-
 <<<
 ===== 3.3． 温度差利用型ハイブリッド換気
 
@@ -464,7 +458,7 @@ f_{ SFP }
 +
 .. 本機能を有効化する条件および閾値（下限値）の情報があるが、上限値が存在しない。
 +
-過換気を防止する機構を有することを条件とする。（機構を突っ込まれたら、委員会を立ち上げて検討小目にする等で対応）
+過換気を防止する機構を有することを条件とする。（機構を突っ込まれたら、委員会を立ち上げて検討項目にする等で対応）
 
 .. 機械換気を停止する内外温度差の目安は、1、2（Ⅰ）地域21℃、3（Ⅱ）地域13℃、4～7（Ⅲ～Ⅴ）地域11℃となっているので、ほぼ冬季のみが対象となるのではないか？
 +
@@ -547,15 +541,10 @@ YES.　服部さんからの知見
 * 当面は2階建てのみの対応とするが、
 3階建て以上に対応するためは課題をクリアする必要がある。
 
-====
-
-
-====
 【課題】
 
-. 3階建て以上に対応させるために調整すべき項目
-.. 3階部分に割り当てる区分番号とその高さ
-.. 排気塔を用いる場合の2階部分に該当する区画に給排気端末を設置するか否かの判断
+. 3階部分に割り当てる高さ  
+. 排気塔を用いる場合の2階部分に該当する区画に給排気端末を設置するか否かの判断
 
 ====
 
@@ -580,7 +569,7 @@ f_{ SFP }
 |：日付 stem:[ d ] の時刻 stem:[ t ] における温度差利用型ハイブリッド換気の比消費電力,W/(m^3^/h)
 
 |stem:[ EnableHybrid_{ d, t } ]
-|：日付 stem:[ d ] の時刻 stem:[ t ] における温度差利用型ハイブリッド換気が有効であるかの判断,True/False
+|：日付 stem:[ d ] の時刻 stem:[ t ] において温度差利用型ハイブリッド換気が有効であるかの判断,True/False
 
 |stem:[ f_{ SFP }  ]
 |：比消費電力,W/(m^3^/h)
@@ -596,24 +585,12 @@ f_{ SFP }
 EnableHybrid_{ d, t } = 
 \begin{cases}
 \mbox{True}
-& , Q_{ vnt, ntrl, d, t } \geqq Q_{ vnt }
+& , Q_{ vnt, ntrl, d, t } \geqq Q_{ vnt, mch }
 \\
 \mbox{False}
-& , \mbox{Others}
+& , Q_{ vnt, ntrl, d, t } < Q_{ vnt, mch }
 \end{cases}
 ++++
-
-////
-[stem]
-++++
-Q_{ vent, mech } = 
-A_{ floor }
-\times
-H_{ ceil, ave }
-\times
-N_{ vent }
-++++
-////
 
 [cols="<.<1,<.<20", frame=none, grid=none, stripes=none]
 |===
@@ -621,412 +598,71 @@ N_{ vent }
 |stem:[ Q_{ vnt, ntrl, d, t }]
 |：日付 stem:[ d ] の時刻 stem:[ t ] における自然換気量,m^3^/h
 
-|stem:[ Q_{ vnt } ]
+|stem:[ Q_{ vnt, mch } ]
 |：機械換気量,m^3^/h
 
-|stem:[ A_{ floor }  ]
-|：建物の延床面積,m^2^
-
-|stem:[ H_{ ceil, ave } ]
-|：平均天井高さ(=2.4),m
-
-|stem:[ N_{ vent } ]
-|：換気回数(=0.5),回/h
 |===
 
 
+====== 3.3.1.1 機械換気量
+機械換気量は省エネ基準プログラムで算出した値を参照する。
 
-自然換気量は
-建物の6区画(n=0~5)のすきま風の収支が0となる区画0の差圧 stem:[\Delta p_{ 0, d, t }] を風量の許容誤差が10^-2^ m^3^/hの範囲内で定め、
-その時の流入空気（正の隙間風）の合計である。
 
-////
-    Q_bal = np.sum(Qs)
-    Q_in = np.sum(np.where(Qs < 0, 0, Qs))
-    Q_out = np.sum(np.where(Qs > 0, 0, Qs))
-    Q_leak = Q_in
-    
-    if TypeVnt == 2:
-        Q_bal += ventilation_volume
-    elif TypeVnt == 3:
-        Q_bal -= ventilation_volume
-        Q_leak -= ventilation_volume
-////
 
-////
-[stem]
-++++
-Q_{ vnt, ntrl, d, t } =
-\begin{cases}
-\sum_{ n } \max(0, Q_{ n, leak, d, t})
--
-Q_{ vnt, mech }
-& , VentType = 3
-\\
-\sum_{ n } \max(0, Q_{ n, leak, d, t})
-&, Others
-\end{cases}
-++++
-////
+====== 3.3.1.2 自然換気量
+自然換気量は各隙間（端末）における風量の収支が0となる場合における流入量とする。
+
+各隙間（端末）の風量は、風量と隙間と差圧の関係式を用いて求める。
+風量の収支が0となる条件は解析解で求める事が出来ないため収束計算を行う。
+
+まず、乾燥空気密度を求める。
+室内空気温度は、暖房方式により各室の温度が異なるため、平均空気温度が望ましいが算出が煩雑なため現時点では固定値とする。
+
+室外空気の乾燥空気密度は
 
 [stem]
 ++++
-Q_{ vnt, ntrl, d, t } =
-\sum_{ n } \max(0, Q_{ n, leak, d, t})
+\rho_{ out, d, t } =
+\frac
+{ 353.25 }
+{
+    T_{ out, d, t }
+    +
+    273.15
+}
 ++++
 
+室内空気の乾燥空気密度は
+[stem]
+++++
+\rho_{ in, d, t } =
+\frac
+{ 353.25 }
+{
+    T_{ in, ave, d, t }
+    +
+    273.15
+}
+++++
+
+である。
 
 [cols="<.<1,<.<20", frame=none, grid=none, stripes=none]
 |===
 
-|stem:[ Q_{ leak, n, d, t } ]
-|：日付 stem:[ d ] の時刻 stem:[ t ] における区画nのすきま風,m^3^/h
-
-|===
-
-区画番号がn(=0~5)のすきま風は以下の式で求める。
-
-
-[stem]
-++++
-Q_{ leak, n, d, t } =
-\begin{cases}
-\alpha A_{ n }
-\sqrt{
-    \frac
-    {
-        2
-        \times
-        \Delta p_{ n, d, t }
-    }
-    {
-        \rho_{ d, t }
-    }
-}
-& , \Delta p_{ n, d, t } \geqq 0
-\\
--1
-\times
-\alpha A_{ n }
-\sqrt{
-    \frac
-    {
-        2
-        \times
-        |\Delta p_{ n, d, t }|
-    }
-    {
-        \rho_{ d, t }
-    }
-}
-& , \Delta p_{ n, d, t } < 0
-\end{cases}
-++++
-
-[stem]
-++++
-\rho_{ d, t } =
-\begin{cases}
-\rho_{ oa, d, t}
-& , \Delta p_{ 0, d, t } > 0
-\\
-\rho_{ room, d, t}
-& , \Delta p_{ 0, d, t } \leqq 0
-\end{cases}
-++++
-
-
-[cols="<.<1,<.<20", frame=none, grid=none, stripes=none]
-|===
-
-|stem:[ Q_{ leak, n, d, t } ]
-|：日付 stem:[ d ] の時刻 stem:[ t ] における区画nのすきま風,m^3^/h
-
-|stem:[ \alpha A_{ n } ]
-|：区画nの相当隙間面積,m^2^
-
-|stem:[ \Delta p_{ n, d, t } ]
-|：日付 stem:[ d ] の時刻 stem:[ t ] における区画nの内外圧力差,Pa
-
-|stem:[ \rho_{ d, t } ]
-|：日付 stem:[ d ] の時刻 stem:[ t ] における乾燥空気密度,kg/m^3^
-
-|stem:[ \rho_{ oa, d, t } ]
+|stem:[ \rho_{ out, d, t } ]
 |：日付 stem:[ d ] の時刻 stem:[ t ] における外気の乾燥空気密度,kg/m^3^
 
-|stem:[ \rho_{ room, d, t } ]
+|stem:[ \rho_{ in, d, t } ]
 |：日付 stem:[ d ] の時刻 stem:[ t ] における室内空気の乾燥空気密度,kg/m^3^
 
-|===
-
-
-外気と、室内空気の空気密度は以下の式で求める。
-[stem]
-++++
-\rho_{ oa, d, t } =
-\frac
-{ 353.25 }
-{
-    T_{ ao, d, t }
-    +
-    273.15
-}
-++++
-
-[stem]
-++++
-\rho_{ room, d, t } =
-\frac
-{ 353.25 }
-{
-    T_{ room, d, t }
-    +
-    273.15
-}
-++++
-
-[cols="<.<1,<.<20", frame=none, grid=none, stripes=none]
-|===
-
-|stem:[ T_{ oa, d, t } ]
+|stem:[ T_{ out, d, t } ]
 |：日付 stem:[ d ] の時刻 stem:[ t ] における外気温度,℃
 
-|stem:[ T_{ ave, room, d, t } ]
+|stem:[ T_{ in, ave, d, t } ]
 |：日付 stem:[ d ] の時刻 stem:[ t ] における室内平均空気温度(=20。現時点では固定値),℃
 
 |===
-
-
-
-
-
-
-各区画の相当隙間面積を以下の式で求める。
-
-
-区画番号nが0,2,3,5の場合（躯体の隙間を想定）
-[stem]
-++++
-\alpha A_{ n } =
-\frac
-{
-    C_{ val }
-    \times
-    A_{ floor }
-}
-{
-    10^{ 4 }    
-}
-\times
-\frac
-{ 1 }
-{ 4 }
-++++
-
-区画番号nが1,4の場合（給排気端末を想定）
-
-////
-[stem]
-++++
-\alpha A_{ n } =
-\begin{cases}
-0
-& , TypeVent = 1
-\\
-\frac
-{
-    \frac
-    {
-        0.7
-        \times
-        Q_{ vent, mech }
-    }
-    { 10^{ 4 } }
-}
-{ 2 }
-& , Others
-\end{cases}
-++++
-////
-
-[stem]
-++++
-\alpha A_{ n } =
-\frac
-{
-    A_{ vnt, sum }
-}
-{
-    10^{ 4 }
-}
-\times
-\frac
-{ 1 }
-{ 2 }
-++++
-
-[cols="<.<1,<.<20", frame=none, grid=none, stripes=none]
-|===
-
-|stem:[ C_{ val } ]
-|：建物の気密性能,cm^2^/m^2^
-
-|stem:[ A_{ vnt, sum } ]
-|：給排気端末の有効開口面積（合計）,cm^2^
-
-|===
-
-////
-|stem:[ TypeVent ]
-|：換気種別（1:第一種、2:第二種、3:第三種）,-
-////
-
-
-区画別の内外圧力差を以下の式で求める。 +
-排気塔を使用する場合は、給排気端末を想定した区画（n=1,4）の高さが異なる。
-
-////
-delta_p0 = pressure_difference
-delta_p1 = delta_p0 - 9.8 * h1 * ( rho_o - rho_i )
-delta_p2 = delta_p0 - 9.8 * h2 * ( rho_o - rho_i )
-delta_p3 = delta_p0 - 9.8 * h3 * ( rho_o - rho_i )
-delta_p4 = delta_p0 - 9.8 * h4 * ( rho_o - rho_i )
-delta_p5 = delta_p0 - 9.8 * h5 * ( rho_o - rho_i )
-////
-
-////
-    h0 = 0
-    h1 = 1.6
-    h2 = 2.4
-    h3 = 2.9
-    h4 = 4.5
-    h5 = 5.3
-////
-
-
-
-
-[stem]
-++++
-\Delta p_{ 1, d, t } =
-\begin{cases}
-\Delta p_{ 0, d, t }
--
-9.8
-\times
-1.6
-\times
-( \rho_{ oa, d, t } - \rho_{ room, d, t} )
-& , UseChimney = \mbox{False}
-\\
-\Delta p_{ 0, d, t }
--
-9.8
-\times
--0.25
-\times
-( \rho_{ oa, d, t } - \rho_{ room, d, t} )
-& , UseChimney = \mbox{True}
-\end{cases}
-++++
-
-[stem]
-++++
-\Delta p_{ 2, d, t } =
-\Delta p_{ 0, d, t }
--
-9.8
-\times
-2.4
-\times
-( \rho_{ oa, d, t } - \rho_{ room, d, t} )
-++++
-
-[stem]
-++++
-\Delta p_{ 3, d, t } =
-\Delta p_{ 0, d, t }
--
-9.8
-\times
-2.9
-\times
-( \rho_{ oa, d, t } - \rho_{ room, d, t} )
-++++
-
-[stem]
-++++
-\Delta p_{ 4, d, t } =
-\begin{cases}
-\Delta p_{ 0, d, t }
--
-9.8
-\times
-4.5
-\times
-( \rho_{ oa, d, t } - \rho_{ room, d, t} )
-& , UseChimney = \mbox{False}
-\\
-\Delta p_{ 0, d, t }
--
-9.8
-\times
-7.75
-\times
-( \rho_{ oa, d, t } - \rho_{ room, d, t} )
-& , UseChimney = \mbox{True}
-\end{cases}
-++++
-
-[stem]
-++++
-\Delta p_{ 5, d, t } =
-\Delta p_{ 0, d, t }
--
-9.8
-\times
-5.3
-\times
-( \rho_{ oa, d, t } - \rho_{ room, d, t} )
-++++
-
-[cols="<.<1,<.<20", frame=none, grid=none, stripes=none]
-|===
-
-|stem:[ \Delta p_{ 0, d, t } ]
-|：日付 stem:[ d ] の時刻 stem:[ t ] における区画0の内外圧力差,Pa
-
-|stem:[ \Delta p_{ 1, d, t } ]
-|：日付 stem:[ d ] の時刻 stem:[ t ] における区画1の内外圧力差,Pa
-
-|stem:[ \Delta p_{ 2, d, t } ]
-|：日付 stem:[ d ] の時刻 stem:[ t ] における区画2の内外圧力差,Pa
-
-|stem:[ \Delta p_{ 3, d, t } ]
-|：日付 stem:[ d ] の時刻 stem:[ t ] における区画3の内外圧力差,Pa
-
-|stem:[ \Delta p_{ 4, d, t } ]
-|：日付 stem:[ d ] の時刻 stem:[ t ] における区画4の内外圧力差,Pa
-
-|stem:[ \Delta p_{ 5, d, t } ]
-|：日付 stem:[ d ] の時刻 stem:[ t ] における区画5の内外圧力差,Pa
-
-|stem:[ UseChimney ]
-|：排気塔を利用する,True/False
-
-|===
-
-
-
-
-
-
-
-
-====== 3.3.2. 暖房期の判定
-
-温度差利用型ハイブリッド換気における暖房期は、<<_付属書1_空調期間,ここ>> に定める期間とする。
-
 
 ====
 【コラム】平均室温の検討
@@ -1037,21 +673,9 @@ delta_p5 = delta_p0 - 9.8 * h5 * ( rho_o - rho_i )
 
 d日t時における平均室温は以下の式より求まる。
 
-
-【メモ】
-. 暖房の方法による補正が必要であるが、
-全館連続、全居室連続運転とみなし、一律20℃とする。
-しかし、非居室は全館運転であっても循環風量に依存するとみなし、0.7の温度補正は行う。
-
-. 本来であれば日中の日射によるオーバーヒート等も考慮すべきだが、現時点では無視する。
-自立の成果が利用できるか？
-負荷を動的に計算できるようになれば、逐次計算する形となるのでこの問題は解決するはず。（解が得られるのであれば）
-
-
-
 [stem]
 ++++
-T_{ ava, room, d, t } = 
+T_{ in, ave, d, t } = 
 \frac
 { 
     T_{ MR, d, t } \times A_{ MR } + 
@@ -1070,15 +694,12 @@ T_{ ava, room, d, t } =
 T_{ NR, d, t } = 
 ( 1 - 0.7 )
 \times
-T_{ room, AC }
+T_{ AC }
 +
 0.7
 \times
-T_{ oa, d, t }
+T_{ OA, d, t }
 ++++
-
-
-
 
 [stem]
 ++++
@@ -1111,63 +732,473 @@ T_{ AC } =
 [cols="<.<1,<.<20", frame=none, grid=none, stripes=none]
 |===
 
-|stem:[ T_{ ave, room, d, t } ]
-|：日付 stem:[ d ] の時刻 stem:[ t ] における室内平均空気温度,℃
+|stem:[ A_{ MR } ]
+|：主たる居室（main living room）の面積,m^2^
+
+|stem:[ A_{ OR } ]
+|：その他の居室（other living room）の面積,m^2^
+
+|stem:[ A_{ NR } ]
+|：主たる居室（non-living room）の面積,m^2^
+
+|stem:[ T_{ AC } ]
+|：空調（air-conditioing）設定温度,℃
+
+|stem:[ T_{ MR, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における主たる居室の温度,℃
+
+|stem:[ T_{ OR, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] におけるその他の居室の温度,℃
+
+|stem:[ T_{ NR, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における非居室の温度,℃
+
+|stem:[ T_{ OA, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における外気（outside air）温度,℃
 
 |===
 
 である。
 
+
+【検討メモ】
+
+. 暖房の方法による補正が必要であるが、
+全館連続、全居室連続運転とみなし、一律20℃とする。
+しかし、非居室は全館運転であっても循環風量に依存するとみなし、0.7の温度補正は行う。
+
+. 本来であれば日中の日射によるオーバーヒート等も考慮すべきだが、現時点では無視する。
+自立の成果が利用できるか？
+負荷を動的に計算できるようになれば、逐次計算する形となるのでこの問題は解決するはず。（解が得られるのであれば）
+
 ====
 
 
-<<<
-==== 4. 備考
 
-.（参考）省エネ基準地域区分の対応
-[cols="3*^", stripes=hover]
+
+次に、各高さの差圧を1階床面高さの差圧 stem:[\Delta P_{ 1FL, d, t }] を基準として求める。
+
+1階天井面高さの差圧は
+[stem]
+++++
+\Delta P_{ 1CL, d, t } =
+\Delta P_{ 1FL, d, t }
+-
+g
+\times
+(
+    H_{ 1CL }
+    -
+    H_{ 1FL }
+)
+\times
+(
+    \rho_{ out, d, t }
+    -
+    \rho_{ in, d, t }
+)
+++++
+
+2階床面高さの差圧は
+[stem]
+++++
+\Delta P_{ 2FL, d, t } =
+\Delta P_{ 1FL, d, t }
+-
+g
+\times
+(
+    H_{ 2FL }
+    -
+    H_{ 1FL }
+)
+\times
+(
+    \rho_{ out, d, t }
+    -
+    \rho_{ in, d, t }
+)
+++++
+
+2階天井面高さの差圧は
+[stem]
+++++
+\Delta P_{ 2CL, d, t } =
+\Delta P_{ 1FL, d, t }
+-
+g
+\times
+(
+    H_{ 2CL }
+    -
+    H_{ 1FL }
+)
+\times
+(
+    \rho_{ out, d, t }
+    -
+    \rho_{ in, d, t }
+)
+++++
+
+給気端末高さの差圧は
+[stem]
+++++
+\Delta P_{ SA, d, t } =
+\Delta P_{ 1FL, d, t }
+-
+g
+\times
+(
+    H_{ SA }
+    -
+    H_{ 1FL }
+)
+\times
+(
+    \rho_{ out, d, t }
+    -
+    \rho_{ in, d, t }
+)
+++++
+
+排気端末高さの差圧は
+[stem]
+++++
+\Delta P_{ EA, d, t } =
+\Delta P_{ 1FL, d, t }
+-
+g
+\times
+(
+    H_{ EA }
+    -
+    H_{ 1FL }
+)
+\times
+(
+    \rho_{ out, d, t }
+    -
+    \rho_{ in, d, t }
+)
+++++
+
+
+となる。
+
+
+ここで、各高さは排気塔の利用の有無により以下のように定める。
+
+.隙間（端末）高さ
+[cols="4*^", stripes=hover]
 |===
 
-^h|6区分（ローマ数字）
-^h|8区分（ローマ数字）
-^h|8区分（数字）
+^h|部位
+^h|記号
+^h|高さ[m](排気塔なし) stem:[UseChimney = False]
+^h|高さ[m](排気塔あり) stem:[UseChimney = True]
 
-.2+.^|Ⅰ
-|Ⅰa
-|1
+|1階床面
+|stem:[H_{ 1FL }]
+2+|0
 
-|Ⅰb
-|2
+|給気端末
+|stem:[H_{ SA }]
+|1.6
+|-0.25
 
-|Ⅱ
-|Ⅱ
-|3
+|1階天井面
+|stem:[H_{ 1CL }]
+2+|2.4
 
-|Ⅲ
-|Ⅲ
-|4
+|2階床面
+|stem:[H_{ 2FL }]
+2+|2.9
 
-.2+.^|Ⅳ
-|Ⅳa
-|5
+|排気端末
+|stem:[H_{ EA }]
+|4.5
+|7.75
 
-|Ⅳb
-|6
-
-|Ⅴ
-|Ⅴ
-|7
-
-|Ⅵ
-|Ⅵ
-|8
+|2階天井面
+|stem:[H_{ 2CL }]
+2+|5.3
 
 |===
+
+
+[cols="<.<1,<.<20", frame=none, grid=none, stripes=none]
+|===
+
+|stem:[ \Delta P_{ 1FL, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における1階床面の内外圧力差,Pa
+
+|stem:[ \Delta P_{ SA, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における給気端末の内外圧力差,Pa
+
+|stem:[ \Delta P_{ 1CL, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における1階天井面の内外圧力差,Pa
+
+|stem:[ \Delta P_{ 2FL, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における2階床面の内外圧力差,Pa
+
+|stem:[ \Delta P_{ EA, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における排気端末の内外圧力差,Pa
+
+|stem:[ \Delta P_{ 2CL, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における2階天井面の内外圧力差,Pa
+
+|stem:[ g ]
+|：重力加速度(=9.80665),m/^s^
+
+|stem:[ UseChimney ]
+|：排気塔を利用する,True/False
+
+|===
+
+
+
+続いて、相当開口面積を求める。
+
+住宅の総相当隙間面積は
+[stem]
+++++
+\alpha A_{ whole } =
+C_{ val }
+\times
+A_{ floor }
+++++
+
+となる。
+これを各階の床面高さと天井面高さに等分する。
+
+1階床面高さの相当隙間面積は
+[stem]
+++++
+\alpha A_{ 1FL } =
+\frac
+    { \alpha A_{ whole } }
+    { 4 }
+++++
+
+1階天井面高さの相当隙間面積は
+[stem]
+++++
+\alpha A_{ 1CL } =
+\frac
+    { \alpha A_{ whole } }
+    { 4 }
+++++
+
+2階床面高さの相当隙間面積は
+[stem]
+++++
+\alpha A_{ 2FL } =
+\frac
+    { \alpha A_{ whole } }
+    { 4 }
+++++
+
+2階天井面高さの相当隙間面積は
+[stem]
+++++
+\alpha A_{ 2CL } =
+\frac
+    { \alpha A_{ whole } }
+    { 4 }
+++++
+
+とする。
+
+今回は2階建て住宅を対象としているため4分割となるが、3階建てでは6分割となる。
+対象住宅の階数に応じて分割数が異なる事に注意する。
+
+
+[cols="<.<1,<.<20", frame=none, grid=none, stripes=none]
+|===
+
+|stem:[ \alpha A_{ whole } ]
+|：住宅の総相当隙間面積,m^2^
+
+|stem:[ C_{ val } ]
+|：住宅の相当隙間面積,cm^2^/m^2^
+
+|stem:[ A_{ floor } ]
+|：建物の延床面積,m^2^
+
+|stem:[ \alpha A_{ 1FL } ]
+|：1階床面の相当隙間面積,m^2^
+
+|stem:[ \alpha A_{ 1CL } ]
+|：1階天井面の相当隙間面積,m^2^
+
+|stem:[ \alpha A_{ 2FL } ]
+|：2階床面の相当隙間面積,m^2^
+
+|stem:[ \alpha A_{ 2CL } ]
+|：2階天井面の相当隙間面積,m^2^
+
+|===
+
+
+続いて、端末の有効開口面積を求める。
+
+ユーザーが入力する有効開口面積は給気と排気の合計値のため、給排気に分離する。
+現時点では等分とする。
+
+
+給気端末の有効開口面積は
+[stem]
+++++
+\alpha A_{ SA } =
+\frac
+    { \alpha A_{ SA+EA } }
+    { 2 }
+++++
+
+排気端末の有効開口面積は
+[stem]
+++++
+\alpha A_{ EA } =
+\alpha A_{ SA+EA }
+-
+\alpha A_{ SA }
+++++
+
+とする。
+
+[cols="<.<1,<.<20", frame=none, grid=none, stripes=none]
+|===
+
+|stem:[ \alpha A_{ SA } ]
+|：給気端末の有効開口面積,m^2^
+
+|stem:[ \alpha A_{ EA } ]
+|：排気端末の有効開口面積,m^2^
+
+|===
+
+
+続いて、風量を求める。
+
+開口面積と差圧から風量を求める関数は以下となる。
+
+[stem]
+++++
+f(\alpha A, \Delta P, \rho_{ out }, \rho_{ in }) =
+\begin{cases}
+\alpha A
+\sqrt{
+    \frac
+    {
+        2
+        \times
+        \Delta P
+    }
+    { \rho_{ out } }
+}
+& , \Delta P \geqq 0
+\\
+-1
+\times
+\alpha A
+\sqrt{
+    \frac
+    {
+        2
+        \times
+        | \Delta P |
+    }
+    { \rho_{ in } }
+}
+& , \Delta P < 0
+\end{cases}
+++++
+
+この関数を用いて、各隙間（端末）の風量を求める。
+質量保存則から各隙間（端末）の風量収支は0となるため、風量収支が10^-2^ m^3^/hの範囲内となる1階床面差圧 stem:[\Delta P_{ 1FL, d, t }] を求め、その差圧での風量を各隙間（端末）の風量とする。
+
+[stem]
+++++
+\left\{
+\begin{array}{l}
+Q_{ 1FL, d, t } = f( \alpha A_{ 1FL }, \Delta P_{ 1FL, d, t }, \rho_{ in, d, t }, \rho_{ out, d, t })
+\\
+Q_{ 1CL, d, t } = f( \alpha A_{ 1CL }, \Delta P_{ 1CL, d, t }, \rho_{ in, d, t }, \rho_{ out, d, t })
+\\
+Q_{ 2FL, d, t } = f( \alpha A_{ 2FL }, \Delta P_{ 2FL, d, t }, \rho_{ in, d, t }, \rho_{ out, d, t })
+\\
+Q_{ 2CL, d, t } = f( \alpha A_{ 2CL }, \Delta P_{ 2CL, d, t }, \rho_{ in, d, t }, \rho_{ out, d, t })
+\\
+Q_{ SA, d, t } = f( \alpha A_{ SA }, \Delta P_{ SA, d, t }, \rho_{ in, d, t }, \rho_{ out, d, t })
+\\
+Q_{ EA, d, t } = f( \alpha A_{ EA }, \Delta P_{ EA, d, t }, \rho_{ in, d, t }, \rho_{ out, d, t })
+\end{array}
+\right.
+++++
+
+
+[cols="<.<1,<.<20", frame=none, grid=none, stripes=none]
+|===
+
+|stem:[ Q_{ 1FL, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における1階床面の隙間を通過する風量,m^3^/h
+
+|stem:[ Q_{ 1CL, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における1階天井面の隙間を通過する風量,m^3^/h
+
+|stem:[ Q_{ 2FL, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における2階床面の隙間を通過する風量,m^3^/h
+
+|stem:[ Q_{ 2CL, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における2階天井面の隙間を通過する風量,m^3^/h
+
+|stem:[ Q_{ SA, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における給気端末を通過する風量,m^3^/h
+
+|stem:[ Q_{ EA, d, t } ]
+|：日付 stem:[ d ] の時刻 stem:[ t ] における排気端末を通過する風量,m^3^/h
+
+|===
+
+
+最後に、自然換気量を求める。
+
+自然換気量は流入空気（正の風量）の合計とする。
+
+[stem]
+++++
+Q_{ vnt, ntrl, d, t } =
+\max(0, Q_{ 1FL, d, t})
++
+\max(0, Q_{ 1CL, d, t})
++
+\max(0, Q_{ 2FL, d, t})
++
+\max(0, Q_{ 2CL, d, t})
++
+\max(0, Q_{ SA, d, t})
++
+\max(0, Q_{ EA, d, t})
+++++
+
+
+====== 3.3.2. 暖房期の判定
+
+温度差利用型ハイブリッド換気における暖房期は、<<_付属書1_空調期間,ここ>> に定める期間とする。
+
 
 
 
 <<<
 ==== 付属書1. 空調期間
+
+====
+
+【メモ】
+
+. 時刻別で評価したいときは、全館連続運転時は外気温度で良いが、部分間歇運転時は熱負荷計算の戻り値（室内温度）が必要になるため、当面は外気温度参照が落としどころとなる。よって、暖房期であるか否かで判定する。動的な熱負荷計算が実装された際に再協議する。
+====
 
 地域区分別の暖房、冷房期を以下に示す。
 中間期は暖房・冷房期以外の期間とする。
