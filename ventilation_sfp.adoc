@@ -1007,7 +1007,7 @@ P + g (\rho_{out, d, t} - \rho_{in, d, t}) H_{EA}
 |：日付 stem:[ d ] の時刻 stem:[ t ] における2階天井面の内外圧力差,Pa
 
 |stem:[ g ]
-|：重力加速度(=9.80665),m/^s^
+|：重力加速度(=9.80665),m/s^2^
 
 |stem:[ UseChimney ]
 |：排気塔を利用する,True/False
