@@ -138,7 +138,7 @@ https://www.kenken.go.jp/becc/documents/house/6_220401_v11.pdf +
 ^h|入力条件
 
 |C1~i~
-|窓面天空率
+|照明区画iの窓面天空率
 |選択肢
 |未定 +
 （用途地域、建蔽率、容積率などが選択肢の候補となる。 +
@@ -158,7 +158,7 @@ https://www.kenken.go.jp/becc/documents/house/6_220401_v11.pdf +
 |なし
 
 |V1~i~
-|LDKの開口部透過係数
+|照明区画iの開口部透過係数
 |値
 |小数（小数点3桁） +
 最小　0.000 +
@@ -168,7 +168,7 @@ https://www.kenken.go.jp/becc/documents/house/6_220401_v11.pdf +
 |C2=1
 
 |C3~i~
-|開口部透過係数
+|照明区画iの開口部透過係数
 |選択肢
 |
 1) 単板透明ガラス +
@@ -182,7 +182,7 @@ https://www.kenken.go.jp/becc/documents/house/6_220401_v11.pdf +
 |C2=2
 
 |C4~i~
-|室内仕上面の反射率
+|照明区画iの室内仕上面の反射率
 |選択肢
 |
 1) 天井70%、壁30%、床10% +
@@ -196,7 +196,7 @@ https://www.kenken.go.jp/becc/documents/house/6_220401_v11.pdf +
 |無し
 
 |C5~i~
-|室の形状（奥行と間口の比）
+|照明区画iの室の形状（奥行と間口の比）
 |選択肢
 |
 1) 奥行/開口が0.75以下 +
@@ -207,7 +207,7 @@ https://www.kenken.go.jp/becc/documents/house/6_220401_v11.pdf +
 |無し
 
 |C6~i~
-|室の広さに対する開口部の大きさ（開口率）
+|照明区画iの室の広さに対する開口部の大きさ（開口率）
 |選択肢
 |
 1) 0.15 +
