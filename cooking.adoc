@@ -189,7 +189,7 @@ E_{E,CC,d,t} =
     \times
     10^{-3}
 }
-{f_{prime}}
+{f'_{prime}}
 
 &
 , (UseInductionCooktop=True)
@@ -212,8 +212,8 @@ E_{E,CC,d,t} =
 |stem:[ E'_{G,CC,d,t} ]
 |：日付dの時刻tにおける1時間当たりの暫定ガス消費量, MJ/h
 
-|stem:[ f_{prim} ]
-|：電気の量 1kWh を熱量に換算する係数, kJ/kWh
+|stem:[ f'_{prim} ]
+|：当面の間、stem:[ f_{prim} ] (電気の量 1kWh を熱量に換算する係数)と同じ値である, kJ/kWh
 
 |===
 
